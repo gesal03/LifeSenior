@@ -1,9 +1,10 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-# Create your models here.
+# user 수정해야됨. 이런 식으로 하면 기본 유저 정보를 모두 사용해야하는 번거로움이..
 class Profile(models.Model):
     name = models.CharField("NAME", max_length=20) # 사용자 이름
     description = models.CharField("DESCRIPTION", max_length=30) # 사용자 한 줄 소개
@@ -18,4 +19,4 @@ class Profile(models.Model):
     answerCount = models.PositiveIntegerField("ANWERCOUNT", default=0) # 답변 수
     recommendCount = models.PositiveIntegerField("RECOMMENDCOUNT", default=0) # 추천 받은 답변 수
     questionCount = models.PositiveIntegerField("QUESTIONCOUNT", default=0) # 질문 수
-    user = models.ForeignKey(to=User, on_delete=models.CASCADE,null=True, blank=True)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
