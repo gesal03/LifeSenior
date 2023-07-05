@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>start</title>
+    <title>lifesenior</title>
     <link rel="stylesheet" href="{% static 'css/startStyle.css' %}">
 </head>
 <body>
@@ -13,10 +13,10 @@
     <nav>
         <div class="nav-left">
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
-            <a href="#" style="color: #FFFFFF;">인생선배</a>
+            <a href="{% url 'index' %}" style="color: #FFFFFF;">인생선배</a>
         </div>
         <div class="nav-right">
-            <a style="color: #FFFFFF;text-decoration: none;" href="{% url 'accounts:logIn' %}?next={{request.get_full_path}}"><p>로그인</p></a>
+            <a style="color: #FFFFFF;text-decoration: none;" href="{% url 'accounts:logIn' %}"><p>로그인</p></a>
         </div>
     </nav>
 
@@ -26,7 +26,7 @@
         <p>매일 하나씩 배워가는 인생조언</p>
         <p>어렵고 막막한 생활지식 배우기</p>
         <p>이제 인생선배를 통해 어른이 되어보아요.</p>
-        <a href="{% url 'accounts:signUp' %}"><button>지금 시작하기</button></a>
+        <a href="{% url 'accounts:logIn' %}"><button>지금 시작하기</button></a>
     </header>
 </body>
 </html>

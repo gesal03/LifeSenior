@@ -1,10 +1,10 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>lifesenior</title>
     <link rel="stylesheet" href="{% static 'css/loginStyle.css' %}">
 </head>
 <body>
@@ -15,31 +15,34 @@
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
             <a href="{% url 'index' %}" style="color: #FFFFFF;">인생선배</a>
         </div>
-        <div class="nav-right">
+        <!-- <div class="nav-right">
             <a style="color: #FFFFFF;text-decoration: none;" href="./login.html"><p>로그인</p></a>
-        </div>
+        </div> -->
     </nav>
 
     <!-- header -->
     <header>
         <div class="signup-box">
             <div class="signup-title">
-                <img src="{%static 'img/main-nav-logo.png' %}" alt="">
+                <img src="{% static 'img/main-nav-logo.png' %}" alt="">
                 <div class="signup-title-content">
                     <p>어른이 되기 위한 우리의</p>
                     <p>인생선배</p>
                 </div>
             </div>
-            <div class="signup-input-info">
-                <p>아이디</p>
-                <input type="text" placeholder="아이디를 입력해주세요">
-            </div>
-            <div class="signup-input-info">
-                <p>비밀번호</p>
-                <input type="text" placeholder="비밀번호를 입력해주세요">
-            </div>
-            <a href=""><button id="btn-login">로그인</button></a>
-            <a href=""><button id="btn-signup">회원가입</button></a>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="signup-input-info">
+                    <p>아이디</p>
+                    <input type="text" name="username" placeholder="아이디를 입력해주세요">
+                </div>
+                <div class="signup-input-info">
+                    <p>비밀번호</p>
+                    <input type="password" name="password" placeholder="비밀번호를 입력해주세요">
+                </div>
+                <input type="submit" id="btn-login" value="로그인">
+            </form>
+            <a href="{% url 'accounts:signUp' %}"><button id="btn-signup">회원가입</button></a>
         </div>
     </header>
 </body>
