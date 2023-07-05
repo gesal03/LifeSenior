@@ -1,18 +1,52 @@
-<form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <section>
-        <!--전체 큰 틀-->
-        <p class="inform">ID</p>
-        <input type="text" name="username" placeholder="Enter your ID" required>
-        <p class="inform">Password</p>
-        <input type="password" name="password1" placeholder="비밀번호를 입력해주세요" required>
-        <p class="inform">Confirm Password</p>
-        <input type="password" name="password2" placeholder="비밀번호를 다시한번 입력해주세요" required>
-        <input type="submit" value="Join" onclick="signupAlert()">
-        <script>
-            function signupAlert() {
-                alert("회원가입 하시겠습니까?")
-            }
-        </script>
-    </section>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="{% static 'css/signupStyle.css' %}">
+</head>
+<body>
+    <!-- nav bar -->
+    <!-- copy -->
+    <nav>
+        <div class="nav-left">
+            <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
+            <a href="{% url 'index' %}" style="color: #FFFFFF;">인생선배</a>
+        </div>
+        <div class="nav-right">
+            <p>로그인</p>
+        </div>
+    </nav>
+
+    <!-- header -->
+    <header>
+        <div class="signup-box">
+            <div class="signup-title">
+                <img src="{% static 'img/main-nav-logo.png' %}" alt="">
+                <div class="signup-title-content">
+                    <p>어른이 되기 위한 우리의</p>
+                    <p>인생선배</p>
+                </div>
+            </div>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="signup-input-info">
+                    <p>아이디</p>
+                    <input type="text" name="username" placeholder="6자 이상">
+                </div>
+                <div class="signup-input-info">
+                    <p>비밀번호</p>
+                    <input type="text" name="password1" placeholder="6자 이상">
+                </div>
+                <div class="signup-input-info">
+                    <p>비밀번호 확인</p>
+                    <input type="text" name="password2" placeholder="6자 이상">
+                </div>
+                <a href=""><button type="submit">인생선배 만나러 가기</button></a>
+            </form>
+        </div>
+    </header>
+</body>
+</html>
