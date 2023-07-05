@@ -1,7 +1,7 @@
 <h1> 회원가입 </h1>
 
 {% if request.user.is_authenticated %}
-    <h1>{{request.user.profile.name}}</h1>
+    <h1>{{user.profile.name}}</h1>
 {% endif %}
 
 <a href="{% url 'accounts:logIn' %}?next={{request.get_full_path}}">로그인</a>
