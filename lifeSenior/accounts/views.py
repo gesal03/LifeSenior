@@ -15,8 +15,29 @@ def signUp(request):
                 password=request.POST['password1']
             )
             profile = Profile(user=user)
-            profile.save
+            profile.save()
             auth.login(request,user)
-            return redirect('/')
+            return redirect('index')
         return redirect('accounts:signUp')
-    return render(request, 'main.html')
+    return render(request, 'accounts/signUp.html')
+
+def logIn(request):
+    if request.method == 'POST':
+        username = request.POST["username"]
+        password = request.POST["password"]
+        # next = request.POST["next"]
+        # print(next)
+        user = auth.authenticate(request, 
+        username=username, 
+        password=password, 
+        )
+        if user is not None:
+            auth.login(request, user)
+            return redirect('/')
+            # return redirect(next)
+    next = request.GET['next']
+    return render(request, 'accounts/login.html')
+
+def logOut(request):
+    auth.logout(request)
+    return redirect('index')
