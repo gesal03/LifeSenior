@@ -33,7 +33,7 @@ def logIn(request):
         )
         if user is not None:
             auth.login(request, user)
-            return redirect('/')
+            return redirect('main')
             # return redirect(next)
     next = request.GET['next']
     return render(request, 'accounts/login.html')
