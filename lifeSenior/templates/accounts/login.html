@@ -40,7 +40,9 @@
                     <p>비밀번호</p>
                     <input type="password" name="password" placeholder="비밀번호를 입력해주세요">
                 </div>
-                <input type="submit" id="btn-login" value="로그인">
+                <div style="display: flex; justify-content: center;">
+                    <input type="submit" id="btn-login" value="로그인">
+                </div>
             </form>
             <a href="{% url 'accounts:signUp' %}"><button id="btn-signup">회원가입</button></a>
         </div>
