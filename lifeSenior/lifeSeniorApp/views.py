@@ -11,6 +11,7 @@ def main(request):
     
     randomQuiz = get_random()
     
+    
     context = {
         'quiz': randomQuiz
     }

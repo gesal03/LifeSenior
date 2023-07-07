@@ -53,9 +53,10 @@
                 <div class="quiz-box">
                     <p>{{quiz.text}}</p>
                     <p>{{quiz.description}}</p>
-
-                    <input type="submit" value="{{quiz.text}}" id="correctA">
-                    <input type="submit" value="오답" id="incorrectA">
+                    {% for choice in quiz.choice_set.all %}
+                        <input type="submit" value="{{choice.text}}" id="{{choice.isCorrect}}">
+                    {% endfor %}
+                    {% comment %} <input type="submit" value="오답" id="incorrectA"> {% endcomment %}
                 </div>
                 <div class="quiz-overlay"></div>
                 <div class="quiz-correct-modal">

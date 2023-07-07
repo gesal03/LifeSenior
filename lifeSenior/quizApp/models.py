@@ -17,3 +17,4 @@ class Quiz(models.Model):
 class Choice(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     text = models.CharField("TEXT", max_length=10)
+    isCorrect = models.CharField("ISCORRECT", max_length=10, default="incorrectA")
