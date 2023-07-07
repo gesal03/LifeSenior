@@ -11,6 +11,9 @@ class Quiz(models.Model):
     correct = models.PositiveIntegerField("CORRECT", default=0) 
     content = models.TextField("CONTENT") # 오답노트
 
+    def __str__(self):
+        return self.description
+
 class Choice(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     text = models.CharField("TEXT", max_length=10)

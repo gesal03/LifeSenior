@@ -29,21 +29,6 @@
 
     <!-- header -->
     <header>
-        <!-- <div class="search-bar">
-            <form action="">
-                <input id="search-bar-btn" type="image" src="./main-header-search.png" alt="Submit">
-                <input id="search-input" type="text" placeholder="오늘은 어떤 인생 조언이 듣고 싶나요?" >
-            </form>
-        </div>
-        <div class="popular-text">
-            <p>인기 검색어</p>
-            <p>전세 사기</p>
-            <p>당하지마</p>
-            <p>인생 선배</p>
-            <p>이용하면 돼</p>
-            <p>하이루</p>
-            <p>방가루</p>
-        </div> -->
         <div class="header-explain">
             <p>매일 하나씩 배워가는 인생조언</p>
             <p>어렵고 막막한 생활지식 배우기</p>
@@ -66,9 +51,10 @@
             <p id="container-quiz-p-first">얼마나 많이 알고 있나요?</p>
             <div class="quiz-box-container">
                 <div class="quiz-box">
-                    <p>알쏭달쏭 부동산 지식</p>
-                    <p>문제</p>
-                    <input type="submit" value="정답" id="correctA">
+                    <p>{{quiz.text}}</p>
+                    <p>{{quiz.description}}</p>
+
+                    <input type="submit" value="{{quiz.text}}" id="correctA">
                     <input type="submit" value="오답" id="incorrectA">
                 </div>
                 <div class="quiz-overlay"></div>
@@ -119,14 +105,14 @@
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      최신순
+                        최신순
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">최신순</a></li>
-                      <li><a class="dropdown-item" href="#">Ano</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        <li><a class="dropdown-item" href="#">최신순</a></li>
+                        <li><a class="dropdown-item" href="#">Ano</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
                     </ul>
                 </div>
             </div>
