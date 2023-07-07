@@ -11,15 +11,16 @@
     <!-- copy -->
     <nav>
         <div class="nav-left">
-            <img src="./img/main-nav-logo.png" alt="로고">
+
+            <img src="{% static './img/main-nav-logo.png' %}" alt="로고">
             <a href="./main.html" style=" color: #95969D;" >홈</a>
             <a class="nav-second" style="color: #FFFFFF;" href="./study.html">오늘의 공부</a>
             <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
         </div>
         <div class="nav-right">
-            <img class="nav-icon-first" src="./img/nav-icon-first.png" alt="">
-            <img class="nav-icon-second" src="./img/nav-icon-second.png" alt="">
-            <img class="nav-icon-third" src="./img/nav-icon-third.png" alt="">
+            <img class="nav-icon-first" src="{% static './img/nav-icon-first.png' %}" alt="">
+            <img class="nav-icon-second" src="{% static './img/nav-icon-second.png' %}" alt="">
+            <img class="nav-icon-third" src="{% static './img/nav-icon-third.png' %}" alt="">
         </div>
     </nav>
     <!-- nav bar end -->
@@ -40,8 +41,10 @@
 
     <!-- main-scroll-icon -->
     <!-- copy -->
+    
+            
     <div class="main-scroll-icon">
-        <img src="./img/main-scroll-icon.png" alt="Scroll Icon">
+        <img src="{% static './img/main-scroll-icon.png' %}" alt="Scroll Icon">
     </div>
      <!-- main-scroll-icon end -->
 
@@ -50,7 +53,7 @@
         <div class="advice-box">
             <div class="speech-bubble-box">
                 <div class="speech-bubble">
-                    <img src="./img/study-logo.png" alt="">
+                    <img src="{% static './img/study-logo.png' %}" alt="">
                     <div class="speech-bubble-content">
                         <div id="speech-bubble-content-first">
                             <p>오늘은&nbsp;</p>
@@ -65,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="today-first-box">
                 <p class="today-box-title">오늘의 부동산 용어</p>
                 <div class="today-study-box">
@@ -96,9 +99,10 @@
             </div>
         </div>
         <hr>
+                    
         <div class="quiz-container">
             <div class="quiz-container-title">
-                <img src="./img/main-nav-logo.png" alt="">
+                <img src=" {% static './img/main-nav-logo.png' %}" alt="">
                 <p>퀴즈를 풀어보아요!</p>
                 <p>내 수준에 맞는 난이도를 선책하고 퀴즈를 풀어보세요.</p>
             </div>
@@ -107,28 +111,28 @@
                     <p class="quiz-level-comment">인생선배가 처음이신가요?</p>
                     <div class="quiz-level">
                         <p class="quiz-level-name">쉬움</p>
-                        <img src="./img/study-easy.png" alt="">
+                        <img src=" {% static './img/study-easy.png' %}" alt="">
                     </div>
                 </div>
                 <div class="quiz-level-box">
                     <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
                     <div class="quiz-level">
                         <p class="quiz-level-name">보통</p>
-                        <img src="./img/study-normal.png" alt="">
+                        <img src=" {% static './img/study-normal.png' %}" alt="">
                     </div>
                 </div>
                 <div class="quiz-level-box">
                     <p class="quiz-level-comment">난이도를 높여볼까요?</p>
                     <div class="quiz-level">
                         <p class="quiz-level-name">어려움</p>
-                        <img src="./img/study-hard.png" alt="">
+                        <img src="{% static './img/study-hard.png' %}" alt="">
                     </div>
                 </div>
                 <div class="quiz-level-box">
                     <p class="quiz-level-comment">이제 인생선배가 되어봐요!</p>
                     <div class="quiz-level">
                         <p class="quiz-level-name">아주 어려움</p>
-                        <img src="./img/study-very-hard.png" alt="">
+                        <img src="{% static './img/study-very-hard.png' %}" alt="">
                     </div>
                 </div>
             </div>
@@ -176,7 +180,8 @@
                         </div>
                     </div>
                 </div>
-                <img class="study-next-btn" src="./img/study-next-btn.png" alt="">
+                
+                <img class="study-next-btn" src="{% static './img/study-next-btn.png' %}" alt="">
             </div>
         </div>
     </div>
@@ -185,7 +190,7 @@
     <div id="current-situation">
         <div class="score-container">
             <div class="score-container-text" id="ss">
-                <img class="score-container-text-img" src="./img/main-nav-logo.png" alt="">
+                <img class="score-container-text-img" src="{% static './img/main-nav-logo.png' %}" alt="">
                 <div class="score-container-text-first">
                     <p>안녕하세요!&nbsp;</p>
                     <p class="score-container-text-highlight">부기&nbsp;</p>
@@ -355,7 +360,7 @@
                 </div>
             </div>
             <div style="margin-top: 102px;" class="not-all-score-container-footer-text">
-                <img class="score-container-text-img" src="./img/main-nav-logo.png" alt="">
+                <img class="score-container-text-img" src="{% static './img/main-nav-logo.png' %}" alt="">
                 <div class="not-all-score-container-text-first">
                     <p class="score-container-text-highlight">자기개발/자기계발&nbsp;</p>
                     <p>분야의 정답률이&nbsp;</p>
@@ -373,7 +378,7 @@
         <!-- quiz-note : 하나의 오답노트 -->
         <div class="quiz-note">
             <div class="score-container-text" id="sss">
-                <img class="score-container-text-img" src="./img/main-nav-logo.png" alt="">
+                <img class="score-container-text-img" src="{% static './img/main-nav-logo.png' %}" alt="">
                 <div class="score-container-text-first">
                     <p class="score-container-text-highlight">오늘&nbsp;푼&nbsp;문제의&nbsp;오답노트</p>
                     <p>를&nbsp;확인해볼까요?</p>
@@ -387,7 +392,7 @@
                     <div class="quiz-note-box-top-left">
                         <div class="quiz-note-box-top-first-top">
                             <p>경제</p>
-                            <img src="./img/study-easy.png" alt="">
+                            <img src="{% static './img/study-easy.png' %}" alt="">
                         </div>
                         <div class="quiz-note-box-top-first-bottom">
                             <p>오답률&nbsp;</p>
@@ -401,7 +406,7 @@
                             <p>운영자 인생선배</p>
                         </div>
                         <div class="quiz-note-box-top-right-second">
-                            <img src="./img/study-user-img.png" alt="">
+                            <img src="{% static './img/study-user-img.png' %}" alt="">
                         </div>
                     </div>       
                 </div>
@@ -419,32 +424,33 @@
                     margin-left: 40px;"
                     >관련 퀴즈로 확실히 익히기</p>
                     <div style="margin-top: 16px;margin-left: 40px; margin-right: 40px; " class="quiz-level-container">
+
                         <div class="quiz-level-box" id="this">
                             <p class="quiz-level-comment">인생선배가 처음이신가요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">쉬움</p>
-                                <img src="./img/study-easy.png" alt="">
+                                <img src="{% static './img/study-easy.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">보통</p>
-                                <img src="./img/study-normal.png" alt="">
+                                <img src="{% static './img/study-normal.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">난이도를 높여볼까요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">어려움</p>
-                                <img src="./img/study-hard.png" alt="">
+                                <img src="{% static './img/study-hard.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">이제 인생선배가 되어봐요!</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">아주 어려움</p>
-                                <img src="./img/study-very-hard.png" alt="">
+                                <img src="{% static './img/study-very-hard.png' %}" alt="">
                             </div>
                         </div>
                     </div>
@@ -455,7 +461,7 @@
                     <div class="quiz-note-box-top-left">
                         <div class="quiz-note-box-top-first-top">
                             <p>경제</p>
-                            <img src="./img/study-easy.png" alt="">
+                            <img src="{% static './img/study-easy.png' %}" alt="">
                         </div>
                         <div class="quiz-note-box-top-first-bottom">
                             <p>오답률&nbsp;</p>
@@ -469,7 +475,7 @@
                             <p>운영자 인생선배</p>
                         </div>
                         <div class="quiz-note-box-top-right-second">
-                            <img src="./img/study-user-img.png" alt="">
+                            <img src="{% static './img/study-user-img.png' %}" alt="">
                         </div>
                     </div>       
                 </div>
@@ -491,28 +497,28 @@
                             <p class="quiz-level-comment">인생선배가 처음이신가요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">쉬움</p>
-                                <img src="./img/study-easy.png" alt="">
+                                <img src="{% static './img/study-easy.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">보통</p>
-                                <img src="./img/study-normal.png" alt="">
+                                <img src="{% static './img/study-normal.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">난이도를 높여볼까요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">어려움</p>
-                                <img src="./img/study-hard.png" alt="">
+                                <img src="{% static './img/study-hard.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">이제 인생선배가 되어봐요!</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">아주 어려움</p>
-                                <img src="./img/study-very-hard.png" alt="">
+                                <img src="{% static './img/study-very-hard.png' %}" alt="">
                             </div>
                         </div>
                     </div>
@@ -523,7 +529,7 @@
                     <div class="quiz-note-box-top-left">
                         <div class="quiz-note-box-top-first-top">
                             <p>경제</p>
-                            <img src="./img/study-easy.png" alt="">
+                            <img src="{% static './img/study-easy.png' %}" alt="">
                         </div>
                         <div class="quiz-note-box-top-first-bottom">
                             <p>오답률&nbsp;</p>
@@ -537,7 +543,7 @@
                             <p>운영자 인생선배</p>
                         </div>
                         <div class="quiz-note-box-top-right-second">
-                            <img src="./img/study-user-img.png" alt="">
+                            <img src="{% static './img/study-user-img.png' %}" alt="">
                         </div>
                     </div>       
                 </div>
@@ -559,28 +565,28 @@
                             <p class="quiz-level-comment">인생선배가 처음이신가요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">쉬움</p>
-                                <img src="./img/study-easy.png" alt="">
+                                <img src="{% static './img/study-easy.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">보통</p>
-                                <img src="./img/study-normal.png" alt="">
+                                <img src="{% static './img/study-normal.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">난이도를 높여볼까요?</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">어려움</p>
-                                <img src="./img/study-hard.png" alt="">
+                                <img src="{% static './img/study-hard.png' %}" alt="">
                             </div>
                         </div>
                         <div class="quiz-level-box">
                             <p class="quiz-level-comment">이제 인생선배가 되어봐요!</p>
                             <div class="quiz-level">
                                 <p class="quiz-level-name">아주 어려움</p>
-                                <img src="./img/study-very-hard.png" alt="">
+                                <img src="{% static './img/study-very-hard.png' %}" alt="">
                             </div>
                         </div>
                     </div>
@@ -588,7 +594,7 @@
             </div>
         </div>
         <div class="check">
-            <img src="./img/study-check.png" alt="">
+            <img src="{% static './img/study-check.png' %}" alt="">
             <p style="color: var(--unnamed, #17181A);
             text-align: center;
             font-size: 24px;
@@ -601,7 +607,7 @@
      <!-- footer -->
      <!-- copy -->
      <footer>
-        <img src="./img/footer.png" alt="">
+        <img src="{% static './img/footer.png' %}" alt="">
     </footer>
      <!-- footer end -->
 
