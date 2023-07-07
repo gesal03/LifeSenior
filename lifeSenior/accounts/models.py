@@ -21,3 +21,8 @@ class Profile(models.Model):
     answerCount = models.PositiveIntegerField("ANWERCOUNT", default=0) # 답변 수
     recommendCount = models.PositiveIntegerField("RECOMMENDCOUNT", default=0) # 추천 받은 답변 수
     questionCount = models.PositiveIntegerField("QUESTIONCOUNT", default=0) # 질문 수
+
+class CorrectByDate(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE) #유저
+    date = models.DateTimeField("DATE", auto_now_add=True) #날짜
+    count = models.PositiveIntegerField("COUNT", default=0) #맞춘 개수
