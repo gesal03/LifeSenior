@@ -13,7 +13,7 @@
     <nav>
         <div class="nav-left">
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
-            <a href="./main.html" style=" color: #95969D;" >홈</a>
+            <a href="{% url 'main'%}" style=" color: #95969D;" >홈</a>
             <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' %}">오늘의 공부</a>
             <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
         </div>
