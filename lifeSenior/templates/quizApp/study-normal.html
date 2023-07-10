@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lifesenior</title>
+    <link rel="stylesheet" href="{% static 'css/studyStyle.css' %}">
+    <!-- <link rel="stylesheet" href="../../static/css/studyStyle.css"> -->
+</head>
+<body>
+    <!-- nav bar -->
+    <!-- copy -->
+    <nav>
+        <div class="nav-left">
+            <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
+            <a href="./main.html" style=" color: #95969D;" >홈</a>
+            <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' %}">오늘의 공부</a>
+            <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
+        </div>
+        <div class="nav-right">
+            <img class="nav-icon-first" src="{% static 'img/nav-icon-first.png' %}" alt="">
+            <img class="nav-icon-second" src="{% static 'img/nav-icon-second.png' %}" alt="">
+            <img class="nav-icon-third" src="{% static 'img/nav-icon-third.png' %}" alt="">
+        </div>
+    </nav>
+    <!-- nav bar end -->
+
+    <!-- header -->
+    <!-- copy -->
+    <header class="study-title">
+        <p>어른이 되기 위한 우리의</p>       
+        <p>오늘의 공부</p>
+    </header>
+    <!-- header end -->
+
+    <!-- nav2 -->
+    <nav id="nav2">
+        <a href="#" style="text-decoration: none;
+        color: inherit;"><p id="nav2-first" style="color: #F6F7FB; ">학 습 공 간</p></a>
+        <a href="#" style="text-decoration: none;
+        color: inherit;"><p id="nav2-second">현 황</p></a>
+    </nav>
+
+    <!-- main-scroll-icon -->
+    <!-- copy -->
+    <div class="main-scroll-icon">
+        <img src="{% static 'img/main-scroll-icon.png' %}" alt="Scroll Icon">
+    </div>
+    <!-- main-scroll-icon end -->
+
+    <!-- 학습공간 페이지 -->
+    <div id="study-place">
+        <div class="advice-box">
+            <div class="speech-bubble-box">
+                <div class="speech-bubble">
+                    <img src="{% static 'img/study-logo.png' %}" alt="">
+                    <div class="speech-bubble-content">
+                        <div id="speech-bubble-content-first">
+                            <p>오늘은&nbsp;</p>
+                            <p id="speech-bubble-content-date1">7</p>
+                            <p>일째 공부중</p>
+                        </div>
+                        <div id="speech-bubble-content-second">
+                            <p>인생선배의&nbsp;</p>
+                            <p id="speech-bubble-content-date2">6월 12일&nbsp;</p>
+                            <p>조언</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="today-first-box">
+                <p class="today-box-title">오늘의 부동산 용어</p>
+                <div class="today-study-box">
+                    <p class="today-study-box-title">이것만은 알고가자 부동산 용어</p>
+                    <div class="today-study-box-word">
+                        <p><strong>{{ realtyTerm.title }}</strong>: {{ realtyTerm.description }}</p>
+                    </div>
+                    <div class="today-study-box-info">
+                        {% for content in realtyContents%}
+                        <p>{{ content }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="today-second-box">
+                <p class="today-box-title">오늘의 경제 용어</p>
+                <div class="today-study-box">
+                    <p class="today-study-box-title">이것만은 알고가자 부동산 용어</p>
+                    <div class="today-study-box-word">
+                        <p><strong>{{ economyTerm.title }}</strong>: {{ economyTerm.description}}</p>
+                    </div>
+                    <div class="today-study-box-info">
+                        {% for content in economyContents %}
+                        <p>{{ content }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="quiz-container">
+            <div class="quiz-container-title">
+                <img src="{% static 'img/main-nav-logo.png' %}" alt="">
+                <p>퀴즈를 풀어보아요!</p>
+                <p>내 수준에 맞는 난이도를 선책하고 퀴즈를 풀어보세요.</p>
+            </div>
+            <div class="quiz-level-container">
+                <a href="#" style="text-decoration: none;
+                color: inherit;">
+                    <div class="quiz-level-box" >
+                        <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
+                        <div class="quiz-level">
+                            <p class="quiz-level-name" >쉬움</p>
+                            <img src="{% static 'img/study-easy.png' %}" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;
+                color: inherit;">
+                    <div class="quiz-level-box" style="background-color: #17181A;">
+                        <p class="quiz-level-comment" style="color: #F6F7FB;">많은 조언을 얻었나요?</p>
+                        <div class="quiz-level">
+                            <p class="quiz-level-name" style="color: #F6F7FB;">보통</p>
+                            <img src="{% static 'img/study-normal.png' %}" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;
+                color: inherit;">
+                    <div class="quiz-level-box" >
+                        <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
+                        <div class="quiz-level">
+                            <p class="quiz-level-name">어려움</p>
+                            <img src="{% static 'img/study-hard.png' %}" alt="">
+                        </div>
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;
+                color: inherit;">
+                    <div class="quiz-level-box">
+                        <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
+                        <div class="quiz-level">
+                            <p class="quiz-level-name">아주 어려움</p>
+                            <img src="{% static 'img/study-very-hard.png' %}" alt="">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <p class="quiz-container-p">오늘 배운 내용을 복습해 봅시다.</p>
+            <div class="quiz-box">
+                <div class="quiz-box-content">
+                    <p class="quiz-box-content-title">1일 1퀴즈</p>
+                    <div class="quiz-box-content-nav">
+                        <p>전체</p>
+                        <p>부동산</p>
+                        <p>경제</p>
+                        <p>자기개발/자기계발</p>
+                        <p>할인</p>
+                        <p>시사상식</p>
+                        <p>기타</p>
+                    </div>
+                    <div class="quiz-change-box">
+                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
+                        <p class="quiz-box-content-p-second">문제</p>
+                        <div class="quiz-box-content-quizBtn">
+                            <button>답1</button>
+                            <button>답1</button>
+                            <button>답1</button>
+                            <button>답1</button>
+                        </div>
+                    </div>
+                    <div class="quiz-change-box">
+                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
+                        <p class="quiz-box-content-p-second">문제2</p>
+                        <div class="quiz-box-content-quizBtn">
+                            <button>답2</button>
+                            <button>답2</button>
+                            <button>답2</button>
+                            <button>답2</button>
+                        </div>
+                    </div>
+                    <div class="quiz-change-box">
+                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
+                        <p class="quiz-box-content-p-second">문제3</p>
+                        <div class="quiz-box-content-quizBtn">
+                            <button>답3</button>
+                            <button>답3</button>
+                            <button>답3</button>
+                            <button>답3</button>
+                        </div>
+                    </div>
+                </div>
+                <img class="study-next-btn" src="{% static 'img/study-next-btn.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <!-- copy -->
+    <footer>
+        <img src="{% static 'img/footer.png' %}" alt="">
+    </footer>
+    <!-- footer end -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/studyJs.js' %}"></script>
+</body>
+</html>
