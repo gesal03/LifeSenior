@@ -8,7 +8,7 @@ class Quiz(models.Model):
     difficulty = models.PositiveIntegerField("DIFFICULTY", default=0) # 난이도
     total = models.PositiveIntegerField("TOTAL", default=0) # 전체 정답 시도 수
     incorrect = models.PositiveIntegerField("INCORRECT", default=0) # 문제 오답 수
-    correct = models.PositiveIntegerField("CORRECT", default=0) 
+    correct = models.CharField("CORRECT", max_length=10) # 문제의 정답
     content = models.TextField("CONTENT") # 오답노트
 
 class Choice(models.Model):

@@ -21,7 +21,7 @@
             <a style=" color: #95969D;" href="#">소통 게시판</a>
         </div>
         <div class="nav-right">
-            <img class="nav-icon-first" src="{% static 'img/nav-icon-first.png' %}" alt="">
+            <img class="nav-icon-first" src="{% static 'img/nav-icon-first.png' %}" alt="" href="{% url 'accounts:logOut' %}">
             <img class="nav-icon-second" src="{% static 'img/nav-icon-second.png' %}" alt="">
             <img class="nav-icon-third" src="{% static 'img/nav-icon-third.png' %}" alt="">
         </div>
@@ -53,10 +53,11 @@
                 <div class="quiz-box">
                     <p>{{quiz.text}}</p>
                     <p>{{quiz.description}}</p>
-                    <form action="" method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
                         {% for choice in quiz.choice_set.all %}
-                            <input type="submit" value="{{choice.text}}" id="{{choice.isCorrect}}">
+                            <form action="{% url 'quizApp:solveQuiz' quiz.id choice.text%}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="submit" value="{{choice.text}}" id="{{choice.isCorrect}}">
+                            </form>
                         {% endfor %}
                     {% comment %} <input type="submit" value="오답" id="incorrectA"> {% endcomment %}
                 </div>
