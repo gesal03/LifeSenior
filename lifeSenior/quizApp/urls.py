@@ -4,7 +4,7 @@ from .views import home
 app_name = 'quizApp'
 
 urlpatterns = [
-    path('', home),
+    path('home', home, name="home"),
 
 ]
     
