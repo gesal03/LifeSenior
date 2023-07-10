@@ -11,7 +11,15 @@ class Quiz(models.Model):
     correct = models.CharField("CORRECT", max_length=10) # 문제의 정답
     content = models.TextField("CONTENT") # 오답노트
 
+
+
 class Choice(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     text = models.CharField("TEXT", max_length=10)
     isCorrect = models.CharField("ISCORRECT", max_length=10, default="incorrectA")
+
+class Term(models.Model):
+    title = models.CharField(max_length=30)
+    description = models.CharField(max_length=50)
+    content = models.TextField("TEXT")
+    category = models.CharField("CATEGORY", max_length=30)

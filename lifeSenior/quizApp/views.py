@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Quiz
 from accounts.models import Profile
+from .models import Term
 
 # Create your views here.
 def home(request):
@@ -33,4 +34,22 @@ def solveQuiz(request, quiz_id, choice_text):
         quiz.save()
 
     # 이 전 페이지로 돌아가버리기
-    return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))     
+    return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))   
+
+def studySpace(request):
+    def get_random(category):
+        term = Term.objects.filter(category=category).order_by("?").first()
+        return term
+
+    randomRealtyTerm = get_random("Realty")
+    realtyContents = randomRealtyTerm.content.split("\n")
+    randomEconomyTerm = get_random("Economy")
+    economyContents = randomEconomyTerm.content.split("\n")
+
+    context = {
+        'realtyTerm': randomRealtyTerm,
+        'realtyContents': realtyContents,
+        'economyTerm': randomEconomyTerm,
+        'economyContents': economyContents
+    }
+    return render(request, 'quizApp/study.html', context)

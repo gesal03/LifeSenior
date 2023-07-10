@@ -17,7 +17,7 @@
         <div class="nav-left">
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
             <a href="{% url 'main' %}" style="color: #FFFFFF;">홈</a>
-            <a style=" color: #95969D;" href="{% url 'quizApp:home' %}">오늘의 공부</a>
+            <a style=" color: #95969D;" href="{% url 'quizApp:studySpace' %}">오늘의 공부</a>
             <a style=" color: #95969D;" href="#">소통 게시판</a>
         </div>
         <div class="nav-right">
@@ -53,8 +53,9 @@
                 <div class="quiz-box">
                     <p>{{quiz.text}}</p>
                     <p>{{quiz.description}}</p>
-                        {% for choice in quiz.choice_set.all %}
-                            <form action="{% url 'quizApp:solveQuiz' quiz.id choice.text%}" method="POST" enctype="multipart/form-data">
+                    {% comment %} 하나의 form을 보기 개수만큼 반복 {% endcomment %}
+                        {% for choice in quiz.choice_set.all %} 
+                            <form action="{% url 'quizApp:solveQuiz' quiz.id choice.text%}" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <input type="submit" value="{{choice.text}}" id="{{choice.isCorrect}}">
                             </form>
