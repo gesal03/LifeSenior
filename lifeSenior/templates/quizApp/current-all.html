@@ -35,8 +35,10 @@
 
     <!-- nav2 -->
     <nav id="nav2">
-        <p id="nav2-first">학 습 공 간</p>
-        <p id="nav2-second">현 황</p>
+        <a href="#" style="text-decoration: none;
+        color: inherit;"><p id="nav2-first">학 습 공 간</p></a>
+        <a href="#" style="text-decoration: none;
+        color: inherit;"><p id="nav2-second" style="color: #F6F7FB;">현 황</p></a>
     </nav>
 
     <!-- main-scroll-icon -->
@@ -45,142 +47,6 @@
         <img src="{% static 'img/main-scroll-icon.png' %}" alt="Scroll Icon">
     </div>
     <!-- main-scroll-icon end -->
-
-    <!-- 학습공간 페이지 -->
-    <div id="study-place">
-        <div class="advice-box">
-            <div class="speech-bubble-box">
-                <div class="speech-bubble">
-                    <img src="{% static 'img/study-logo.png' %}" alt="">
-                    <div class="speech-bubble-content">
-                        <div id="speech-bubble-content-first">
-                            <p>오늘은&nbsp;</p>
-                            <p id="speech-bubble-content-date1">7</p>
-                            <p>일째 공부중</p>
-                        </div>
-                        <div id="speech-bubble-content-second">
-                            <p>인생선배의&nbsp;</p>
-                            <p id="speech-bubble-content-date2">6월 12일&nbsp;</p>
-                            <p>조언</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="today-first-box">
-                <p class="today-box-title">오늘의 부동산 용어</p>
-                <div class="today-study-box">
-                    <p class="today-study-box-title">이것만은 알고가자 부동산 용어</p>
-                    <div class="today-study-box-word">
-                        <p><strong>{{ realtyTerm.title }}</strong>: {{ realtyTerm.description }}</p>
-                    </div>
-                    <div class="today-study-box-info">
-                        {% for content in realtyContents%}
-                        <p>{{ content }}</p>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-            <div class="today-second-box">
-                <p class="today-box-title">오늘의 경제 용어</p>
-                <div class="today-study-box">
-                    <p class="today-study-box-title">이것만은 알고가자 부동산 용어</p>
-                    <div class="today-study-box-word">
-                        <p><strong>{{ economyTerm.title }}</strong>: {{ economyTerm.description}}</p>
-                    </div>
-                    <div class="today-study-box-info">
-                        {% for content in economyContents %}
-                        <p>{{ content }}</p>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="quiz-container">
-            <div class="quiz-container-title">
-                <img src="{% static 'img/main-nav-logo.png' %}" alt="">
-                <p>퀴즈를 풀어보아요!</p>
-                <p>내 수준에 맞는 난이도를 선책하고 퀴즈를 풀어보세요.</p>
-            </div>
-            <div class="quiz-level-container">
-                <div class="quiz-level-box">
-                    <p class="quiz-level-comment">인생선배가 처음이신가요?</p>
-                    <div class="quiz-level">
-                        <p class="quiz-level-name">쉬움</p>
-                        <img src="{% static 'img/study-easy.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="quiz-level-box">
-                    <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
-                    <div class="quiz-level">
-                        <p class="quiz-level-name">보통</p>
-                        <img src="{% static 'img/study-normal.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="quiz-level-box">
-                    <p class="quiz-level-comment">난이도를 높여볼까요?</p>
-                    <div class="quiz-level">
-                        <p class="quiz-level-name">어려움</p>
-                        <img src="{% static 'img/study-hard.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="quiz-level-box">
-                    <p class="quiz-level-comment">이제 인생선배가 되어봐요!</p>
-                    <div class="quiz-level">
-                        <p class="quiz-level-name">아주 어려움</p>
-                        <img src="{% static 'img/study-very-hard.png' %}" alt="">
-                    </div>
-                </div>
-            </div>
-            <p class="quiz-container-p">오늘 배운 내용을 복습해 봅시다.</p>
-            <div class="quiz-box">
-                <div class="quiz-box-content">
-                    <p class="quiz-box-content-title">1일 1퀴즈</p>
-                    <div class="quiz-box-content-nav">
-                        <p>전체</p>
-                        <p>부동산</p>
-                        <p>경제</p>
-                        <p>자기개발/자기계발</p>
-                        <p>할인</p>
-                        <p>시사상식</p>
-                        <p>기타</p>
-                    </div>
-                    <div class="quiz-change-box">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
-                        <p class="quiz-box-content-p-second">문제</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답1</button>
-                            <button>답1</button>
-                            <button>답1</button>
-                            <button>답1</button>
-                        </div>
-                    </div>
-                    <div class="quiz-change-box">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
-                        <p class="quiz-box-content-p-second">문제2</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답2</button>
-                            <button>답2</button>
-                            <button>답2</button>
-                            <button>답2</button>
-                        </div>
-                    </div>
-                    <div class="quiz-change-box">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
-                        <p class="quiz-box-content-p-second">문제3</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                        </div>
-                    </div>
-                </div>
-                <img class="study-next-btn" src="{% static 'img/study-next-btn.png' %}" alt="">
-            </div>
-        </div>
-    </div>
 
     <!-- 현황 페이지 -->
     <div id="current-situation">
@@ -204,10 +70,10 @@
                     <p>분야의&nbsp;</p>
                     <p>성적이 가장 좋습니다!</p>
                 </div>
-                <div class="not-all-score-conatiner-text-second">
+                <!-- <div class="not-all-score-conatiner-text-second">
                     <p>부기&nbsp;</p>
                     <p>후배님의 공부현황을 확인하세요</p>
-                </div>
+                </div> -->
             </div>
             <p style="color: #17181A;
             font-size: 32px;
@@ -217,8 +83,11 @@
             >점수 통계</p>
             <div class="score-box">
                 <div class="score-box-nav">
-                    <p id="nav-all-score">전체 점수</p>
-                    <p id="nav-not-all-score">항목별 점수</p>
+                    <a href="#" style="text-decoration: none;
+                    color: inherit;"><p id="nav-all-score" style="
+                    color: #17181A; border-bottom: 3px solid #FF5B16;">전체 점수</p></a>
+                    <a href="#" style="text-decoration: none;
+                    color: inherit;"><p id="nav-not-all-score" >항목별 점수</p></a>
                 </div>
                 <div class="score-graph" id="all-score">
                     <div class="score-graph-count">
@@ -287,61 +156,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="score-graph" id="not-all-score">
-                    <div class="score-graph-count">
-                        <p>100</p>
-                        <p>80</p>
-                        <p>60</p>
-                        <p>40</p>
-                        <p>20</p>
-                        <p>0</p>
-                    </div>
-                    <div class="score-graph-view-box">
-                        <div class="score-graph-view">
-                            <div class="score-graph-body" id="not-all-score-body">
-                            </div>
-                            <div class="score-graph-date">
-                                <p>전체</p>
-                            </div>
-                        </div>
-                        <div class="score-graph-view">
-                            <div class="score-graph-body" id="not-all-score-body">
-                            </div>
-                            <div class="score-graph-date">
-                                <p>부동산</p>
-                            </div>
-                        </div>
-                        <div class="score-graph-view">
-                            <div class="score-graph-body" id="not-all-score-body">
-                            </div>
-                            <div class="score-graph-date">
-                                <p>경제</p>
-                            </div>
-                        </div>
-                        <div class="score-graph-view">
-                            <div class="score-graph-body" id="not-all-score-body">
-                            </div>
-                            <div style="display: flex; flex-direction: column;" class="score-graph-date">
-                                <p>자기개발</p>
-                                <!-- <p>자기계발</p> -->
-                            </div>
-                        </div>
-                        <div class="score-graph-view">
-                            <div class="score-graph-body" id="not-all-score-body">
-                            </div>
-                            <div class="score-graph-date">
-                                <p>시사상식</p>
-                            </div>
-                        </div>
-                        <div class="score-graph-view">
-                            <div class="score-graph-body" id="not-all-score-body">
-                            </div>
-                            <div class="score-graph-date">
-                                <p>기타</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="score-container-footer-text">
                 <div class="score-container-footer-text-first">
@@ -353,20 +167,6 @@
                     <p>내일도&nbsp;</p>
                     <p>모두&nbsp;</p>
                     <p>맞춰서 멋진 인생선배가 되어봐요!</p>
-                </div>
-            </div>
-            <div style="margin-top: 102px;" class="not-all-score-container-footer-text">
-                <img class="score-container-text-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
-                <div class="not-all-score-container-text-first">
-                    <p class="score-container-text-highlight">자기개발/자기계발&nbsp;</p>
-                    <p>분야의 정답률이&nbsp;</p>
-                    <p class="score-container-text-highlight">저조</p>
-                    <p>해요.</p>
-                </div>
-                <div class="not-all-score-container-text-second">
-                    <p>오늘은&nbsp;</p>
-                    <p class="score-container-text-highlight">자기개발/자기계발&nbsp;</p>
-                    <p>분야의 정보를 살펴보는 것은 어떤가요?</p>
                 </div>
             </div>
         </div>

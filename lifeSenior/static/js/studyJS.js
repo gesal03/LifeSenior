@@ -1,19 +1,19 @@
-$("#current-situation").hide();
+// $("#current-situation").hide();
 
-$("#nav2-first").css("color","#F6F7FB");
-$("#nav2-first").click(function(){
-  $("#current-situation").hide();
-  $("#study-place").show();
-  $("#nav2-first").css("color","#F6F7FB");
-  $("#nav2-second").css("color","#95969D");
-});
+// $("#nav2-first").css("color","#F6F7FB");
+// $("#nav2-first").click(function(){
+//   $("#current-situation").hide();
+//   $("#study-place").show();
+//   $("#nav2-first").css("color","#F6F7FB");
+//   $("#nav2-second").css("color","#95969D");
+// });
 
-$("#nav2-second").click(function(){
-  $("#current-situation").show();
-  $("#study-place").hide();
-  $("#nav2-second").css("color","#F6F7FB");
-  $("#nav2-first").css("color","#95969D");
-});
+// $("#nav2-second").click(function(){
+//   $("#current-situation").show();
+//   $("#study-place").hide();
+//   $("#nav2-second").css("color","#F6F7FB");
+//   $("#nav2-first").css("color","#95969D");
+// });
 
 
 
@@ -128,45 +128,45 @@ $(document).ready(function() {
 
 
 
-//그래프 하나만 보이게
-$("#not-all-score").hide();
-$("#nav-all-score").css("border-bottom", "3px solid #FF5B16");
-$("#nav-all-score").css("color","#17181A");
-$(".not-all-score-conatiner-text-second").hide();
-$(".not-all-score-container-footer-text").hide();
+// //그래프 하나만 보이게
+// $("#not-all-score").hide();
+// $("#nav-all-score").css("border-bottom", "3px solid #FF5B16");
+// $("#nav-all-score").css("color","#17181A");
+// $(".not-all-score-conatiner-text-second").hide();
+// $(".not-all-score-container-footer-text").hide();
 
-$("#nav-all-score").click(function(){
-  $("#all-score").show();
-  $("#not-all-score").hide();
-  $("#nav-all-score").css("border-bottom", "3px solid #FF5B16");
-  $("#nav-all-score").css("color","#17181A");
-  $("#nav-not-all-score").css("border-bottom", "3px solid #F6F7FB");
-  $("#nav-not-all-score").css("color","#95969D");
+// $("#nav-all-score").click(function(){
+//   $("#all-score").show();
+//   $("#not-all-score").hide();
+//   $("#nav-all-score").css("border-bottom", "3px solid #FF5B16");
+//   $("#nav-all-score").css("color","#17181A");
+//   $("#nav-not-all-score").css("border-bottom", "3px solid #F6F7FB");
+//   $("#nav-not-all-score").css("color","#95969D");
 
-  $(".not-all-score-conatiner-text-second").hide();
-  $(".not-all-score-container-footer-text").hide();
-  $(".score-container-text-second").show();
-  $(".score-container-text-third").show();
-  $(".score-container-footer-text").show();
-  $(".quiz-note").show();
-  $(".check").show();
-});
-$("#nav-not-all-score").click(function(){
-  $("#not-all-score").show();
-  $("#all-score").hide();
-  $("#nav-not-all-score").css("border-bottom", "3px solid #FF5B16");
-  $("#nav-not-all-score").css("color","#17181A");
-  $("#nav-all-score").css("border-bottom", "3px solid #F6F7FB");
-  $("#nav-all-score").css("color","#95969D");
+//   $(".not-all-score-conatiner-text-second").hide();
+//   $(".not-all-score-container-footer-text").hide();
+//   $(".score-container-text-second").show();
+//   $(".score-container-text-third").show();
+//   $(".score-container-footer-text").show();
+//   $(".quiz-note").show();
+//   $(".check").show();
+// });
+// $("#nav-not-all-score").click(function(){
+//   $("#not-all-score").show();
+//   $("#all-score").hide();
+//   $("#nav-not-all-score").css("border-bottom", "3px solid #FF5B16");
+//   $("#nav-not-all-score").css("color","#17181A");
+//   $("#nav-all-score").css("border-bottom", "3px solid #F6F7FB");
+//   $("#nav-all-score").css("color","#95969D");
 
-  $(".not-all-score-conatiner-text-second").show();
-  $(".not-all-score-container-footer-text").show();
-  $(".score-container-text-second").hide();
-  $(".score-container-text-third").hide();
-  $(".score-container-footer-text").hide();
-  $(".quiz-note").hide();
-  $(".check").hide();
-});
+//   $(".not-all-score-conatiner-text-second").show();
+//   $(".not-all-score-container-footer-text").show();
+//   $(".score-container-text-second").hide();
+//   $(".score-container-text-third").hide();
+//   $(".score-container-footer-text").hide();
+//   $(".quiz-note").hide();
+//   $(".check").hide();
+// });
 
 
 
