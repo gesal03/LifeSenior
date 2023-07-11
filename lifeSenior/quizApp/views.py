@@ -46,6 +46,8 @@ def studySpace(request, level):
     randomEconomyTerm = get_random("Economy")
     economyContents = randomEconomyTerm.content.split("\n")
 
+    
+
     context = {
         'realtyTerm': randomRealtyTerm,
         'realtyContents': realtyContents,
