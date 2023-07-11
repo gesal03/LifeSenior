@@ -15,7 +15,7 @@
         <div class="nav-left">
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
             <a href="./main.html" style=" color: #95969D;" >홈</a>
-            <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' %}">오늘의 공부</a>
+            <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
             <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
         </div>
         <div class="nav-right">
@@ -107,7 +107,7 @@
                 <p>내 수준에 맞는 난이도를 선책하고 퀴즈를 풀어보세요.</p>
             </div>
             <div class="quiz-level-container">
-                <a href="#" style="text-decoration: none;
+                <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
                 color: inherit;">
                     <div class="quiz-level-box" >
                         <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" style="text-decoration: none;
+                <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
                 color: inherit;">
                     <div class="quiz-level-box">
                         <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
@@ -127,7 +127,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" style="text-decoration: none;
+                <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
                 color: inherit;">
                     <div class="quiz-level-box">
                         <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="#" style="text-decoration: none;
+                <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
                 color: inherit;">
                     <div class="quiz-level-box"  style="background-color: #17181A;">
                         <p class="quiz-level-comment" style="color: #F6F7FB;">많은 조언을 얻었나요?</p>

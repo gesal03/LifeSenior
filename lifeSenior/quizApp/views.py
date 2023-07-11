@@ -5,7 +5,7 @@ from .models import Term
 
 # Create your views here.
 def home(request):
-    return render(request, 'quizApp/study.html')
+    return render(request, 'quizApp/study-easy.html')
 
 def solveQuiz(request, quiz_id, choice_text):
     quiz = get_object_or_404(Quiz, pk=quiz_id)
@@ -36,7 +36,7 @@ def solveQuiz(request, quiz_id, choice_text):
     # 이 전 페이지로 돌아가버리기
     return redirect(request.META.get('HTTP_REFERER', 'redirect_if_referer_not_found'))   
 
-def studySpace(request):
+def studySpace(request, level):
     def get_random(category):
         term = Term.objects.filter(category=category).order_by("?").first()
         return term
@@ -52,4 +52,11 @@ def studySpace(request):
         'economyTerm': randomEconomyTerm,
         'economyContents': economyContents
     }
-    return render(request, 'quizApp/study.html', context)
+    if level == 0:
+        return render(request, 'quizApp/study-easy.html', context)
+    elif level == 1:
+        return render(request, 'quizApp/study-normal.html', context)
+    elif level == 2:
+        return render(request, 'quizApp/study-hard.html', context)
+    else:
+        return render(request, 'quizApp/study-very-hard.html', context)
