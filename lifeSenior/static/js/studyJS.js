@@ -17,39 +17,39 @@
 
 
 
-//난이도 버튼 클릭한 요소에만 색깔 변경
-const container = document.querySelector('.quiz-level-container');
-const submitButtons = container.querySelectorAll('.quiz-level-box');
+// //난이도 버튼 클릭한 요소에만 색깔 변경
+// const container = document.querySelector('.quiz-level-container');
+// const submitButtons = container.querySelectorAll('.quiz-level-box');
 
-window.addEventListener('DOMContentLoaded', function() {
-  // 첫 번째 submit 버튼에 active 클래스 추가
-  submitButtons[0].classList.add('active');
-});
+// window.addEventListener('DOMContentLoaded', function() {
+//   // 첫 번째 submit 버튼에 active 클래스 추가
+//   submitButtons[0].classList.add('active');
+// });
 
-submitButtons.forEach(function(button) {
-  button.addEventListener('click', function(event) {
-    const isActive = button.classList.contains('active');
+// submitButtons.forEach(function(button) {
+//   button.addEventListener('click', function(event) {
+//     const isActive = button.classList.contains('active');
     
-    submitButtons.forEach(function(btn) {
-      btn.classList.remove('active');
-    });
+//     submitButtons.forEach(function(btn) {
+//       btn.classList.remove('active');
+//     });
 
-    if (!isActive) {
-      button.classList.add('active');
-    }
-  });
-});
+//     if (!isActive) {
+//       button.classList.add('active');
+//     }
+//   });
+// });
 
-container.addEventListener('click', function(event) {
-  const target = event.target;
-  const isButtonClick = target.closest('.quiz-level-box');
+// container.addEventListener('click', function(event) {
+//   const target = event.target;
+//   const isButtonClick = target.closest('.quiz-level-box');
 
-  if (!isButtonClick) {
-    submitButtons.forEach(function(button) {
-      button.classList.remove('active');
-    });
-  }
-});
+//   if (!isButtonClick) {
+//     submitButtons.forEach(function(button) {
+//       button.classList.remove('active');
+//     });
+//   }
+// });
 
 
 
