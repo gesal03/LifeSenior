@@ -38,7 +38,7 @@
     <nav id="nav2">
         <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
         color: inherit;"><p id="nav2-first" style="color: #F6F7FB; ">학 습 공 간</p></a>
-        <a href="#" style="text-decoration: none;
+        <a href="{% url 'quizApp:stateAll' %}" style="text-decoration: none;
         color: inherit;"><p id="nav2-second">현 황</p></a>
     </nav>
 
@@ -107,6 +107,7 @@
                 <p>내 수준에 맞는 난이도를 선책하고 퀴즈를 풀어보세요.</p>
             </div>
             <div class="quiz-level-container">
+                <a id="quiz"></a>
                 <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
                 color: inherit;">
                     <div class="quiz-level-box" style="background-color: #17181A;">

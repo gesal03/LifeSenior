@@ -14,7 +14,7 @@
     <nav>
         <div class="nav-left">
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
-            <a href="./main.html" style=" color: #95969D;" >홈</a>
+            <a href="{% url 'main' %}" style=" color: #95969D;" >홈</a>
             <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
             <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
         </div>
@@ -36,9 +36,9 @@
 
     <!-- nav2 -->
     <nav id="nav2">
-        <a href="#" style="text-decoration: none;
+        <a href="{% url 'quizApp:studySpace' level=2%}" style="text-decoration: none;
         color: inherit;"><p id="nav2-first" style="color: #F6F7FB; ">학 습 공 간</p></a>
-        <a href="#" style="text-decoration: none;
+        <a href="{% url 'quizApp:stateAll' %}" style="text-decoration: none;
         color: inherit;"><p id="nav2-second">현 황</p></a>
     </nav>
 

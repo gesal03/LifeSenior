@@ -14,7 +14,7 @@
         <div class="nav-left">
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
             <a href="{% url 'main'%}" style=" color: #95969D;" >홈</a>
-            <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' %}">오늘의 공부</a>
+            <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
             <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
         </div>
         <div class="nav-right">
@@ -35,7 +35,7 @@
 
     <!-- nav2 -->
     <nav id="nav2">
-        <a href="#" style="text-decoration: none;
+        <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
         color: inherit;"><p id="nav2-first">학 습 공 간</p></a>
         <a href="#" style="text-decoration: none;
         color: inherit;"><p id="nav2-second" style="color: #F6F7FB;">현 황</p></a>
@@ -83,10 +83,10 @@
             >점수 통계</p>
             <div class="score-box">
                 <div class="score-box-nav">
-                    <a href="#" style="text-decoration: none;
+                    <a href="{% url 'quizApp:stateAll' %}" style="text-decoration: none;
                     color: inherit;"><p id="nav-all-score" style="
                     color: #17181A; border-bottom: 3px solid #FF5B16;">전체 점수</p></a>
-                    <a href="#" style="text-decoration: none;
+                    <a href="{% url 'quizApp:stateCategory' %}" style="text-decoration: none;
                     color: inherit;"><p id="nav-not-all-score" >항목별 점수</p></a>
                 </div>
                 <div class="score-graph" id="all-score">

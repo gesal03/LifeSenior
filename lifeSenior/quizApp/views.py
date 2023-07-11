@@ -46,7 +46,7 @@ def studySpace(request, level):
     randomEconomyTerm = get_random("Economy")
     economyContents = randomEconomyTerm.content.split("\n")
 
-    
+
 
     context = {
         'realtyTerm': randomRealtyTerm,
@@ -62,3 +62,10 @@ def studySpace(request, level):
         return render(request, 'quizApp/study-hard.html', context)
     else:
         return render(request, 'quizApp/study-very-hard.html', context)
+    
+
+def stateAll(request):
+    return render(request, 'quizApp/current-all.html')
+
+def stateCategory(request):
+    return render(request, 'quizApp/current-not-all.html')
