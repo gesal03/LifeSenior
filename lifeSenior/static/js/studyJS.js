@@ -182,7 +182,13 @@ kindbuttons.forEach(function(button) {
   });
 
   $("#p-1").click(function(){
-    
+    $("#box-1").show();
+    $("#box-2").hide();
+    $("#box-3").hide();
+    $("#box-4").hide();
+    $("#box-5").hide();
+    $("#box-6").hide();
+    $("#box-7").hide();
   });
   $("#p-2").click(function(){
     $("#box-1").hide();
@@ -201,6 +207,46 @@ kindbuttons.forEach(function(button) {
     $("#box-5").hide();
     $("#box-6").hide();
     $("#box-7").hide();
+    console.log("3성공");
+  });
+  $("#p-4").click(function(){
+    $("#box-1").hide();
+    $("#box-2").hide();
+    $("#box-3").hide();
+    $("#box-4").show();
+    $("#box-5").hide();
+    $("#box-6").hide();
+    $("#box-7").hide();
+    console.log("3성공");
+  });
+  $("#p-5").click(function(){
+    $("#box-1").hide();
+    $("#box-2").hide();
+    $("#box-3").hide();
+    $("#box-4").hide();
+    $("#box-5").show();
+    $("#box-6").hide();
+    $("#box-7").hide();
+    console.log("3성공");
+  });
+  $("#p-6").click(function(){
+    $("#box-1").hide();
+    $("#box-2").hide();
+    $("#box-3").hide();
+    $("#box-4").hide();
+    $("#box-5").hide();
+    $("#box-6").show();
+    $("#box-7").hide();
+    console.log("3성공");
+  });
+  $("#p-7").click(function(){
+    $("#box-1").hide();
+    $("#box-2").hide();
+    $("#box-3").hide();
+    $("#box-4").hide();
+    $("#box-5").hide();
+    $("#box-6").hide();
+    $("#box-7").show();
     console.log("3성공");
   });
 console.log("dd");
