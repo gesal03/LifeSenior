@@ -43,21 +43,32 @@ def studySpace(request, level):
     def get_random(category):
         term = Term.objects.filter(category=category).order_by("?").first()
         return term
+    
+
 
     randomRealtyTerm = get_random("Realty")
     realtyContents = randomRealtyTerm.content.split("\n")
     randomEconomyTerm = get_random("Economy")
     economyContents = randomEconomyTerm.content.split("\n")
 
+    quizs = []
+    quizAll = Quiz.objects.order_by("?").first()
+    quizs.append(quizAll)
 
+    ids = ["box-1", "box-2", "box-3", "box-4", "box-5", "box-6", "box-7"]
+
+    for category in range(6):
+        quiz = Quiz.objects.filter(category=category, difficulty=level).order_by("?").first()
+        quizs.append(quiz)
 
     context = {
         'realtyTerm': randomRealtyTerm,
         'realtyContents': realtyContents,
         'economyTerm': randomEconomyTerm,
-        'economyContents': economyContents
-    }
-    if level == 0:
+        'economyContents': economyContents,
+        'quizs': quizs,
+        }
+    if level == 0:                    
         return render(request, 'quizApp/study-easy.html', context)
     elif level == 1:
         return render(request, 'quizApp/study-normal.html', context)

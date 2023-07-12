@@ -4,7 +4,8 @@ from django.db import models
 class Quiz(models.Model):
     text = models.CharField("TEXT", max_length=100) # 질문 문항
     description = models.CharField("DESCRIPTION", max_length=40) # 카테고리 요약금
-    category = models.CharField("CATEGORY", max_length=20) # 카테고리
+    category = models.PositiveIntegerField("CATEGORY") # 카테고리
+    #REALTY: 0, ECONOMY: 1, SELFDEVELOPMENT: 2, DISCOUNT: 3, COMMONSENSE: 4, ETC: 5
     difficulty = models.PositiveIntegerField("DIFFICULTY", default=0) # 난이도
     total = models.PositiveIntegerField("TOTAL", default=0) # 전체 정답 시도 수
     incorrect = models.PositiveIntegerField("INCORRECT", default=0) # 문제 오답 수

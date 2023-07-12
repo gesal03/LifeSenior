@@ -163,74 +163,15 @@
                         <p id="p-6">시사상식</p>
                         <p id="p-7">기타</p>
                     </div>
-                    <div class="quiz-change-box" id="box-1">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
-                        <p class="quiz-box-content-p-second">문제</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답1</button>
-                            <button>답1</button>
+                    {% for quiz in quizs%}
+                        <div class="quiz-change-box" id="box-1">
+                            <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
+                            <p class="quiz-box-content-p-second">문제</p>
+                            <div class="quiz-box-content-quizBtn">
+                                <button>답1</button>
+                                <button>답1</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="quiz-change-box" id="box-2">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
-                        <p class="quiz-box-content-p-second">문제2</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답2</button>
-                            <button>답2</button>
-                            <button>답2</button>
-                        </div>
-                    </div>
-                    <div class="quiz-change-box" id="box-3">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 경제 지식</p>
-                        <p class="quiz-box-content-p-second">문제3</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                        </div>
-                    </div>
-                    <div class="quiz-change-box" id="box-4">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 자기개발/자기계발 지식</p>
-                        <p class="quiz-box-content-p-second">문제4</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                        </div>
-                    </div>
-                    <div class="quiz-change-box" id="box-5">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 할인 지식</p>
-                        <p class="quiz-box-content-p-second">문제5</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                        </div>
-                    </div>
-                    <div class="quiz-change-box" id="box-6">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 시사상식 지식</p>
-                        <p class="quiz-box-content-p-second">문제6</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                        </div>
-                    </div>
-                    <div class="quiz-change-box" id="box-7">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 기타 지식</p>
-                        <p class="quiz-box-content-p-second">문제7</p>
-                        <div class="quiz-box-content-quizBtn">
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                            <button>답3</button>
-                        </div>
-                    </div>
                 </div>
                 <img class="study-next-btn" src="{% static 'img/study-next-btn.png' %}" alt="">
             </div>
