@@ -94,27 +94,116 @@ kindbuttons.forEach(function(button) {
 
 
 //quiz slide
-$(document).ready(function() {
   var currentIndex = 0;
-  var quizBoxes = $('.quiz-change-box');
 
-  // 초기에는 첫 번째 문제만 보이도록 설정
-  quizBoxes.hide();
-  quizBoxes.eq(currentIndex).show();
-
-  // 다음 버튼 클릭 시 다음 문제 표시
   $('.study-next-btn').click(function() {
-    // 현재 문제 숨기기
-    quizBoxes.eq(currentIndex).hide();
-
-    // 다음 문제 표시
-    currentIndex++;
-    if (currentIndex >= quizBoxes.length) {
-      currentIndex = 0; // 마지막 문제일 경우 처음으로 돌아감
+    ++currentIndex;
+    console.log(currentIndex);
+    if (currentIndex == 7) {
+      currentIndex = 0; 
     }
-    quizBoxes.eq(currentIndex).show();
+    if(currentIndex == 0){
+      $("#box-1").show();
+      $("#box-2").hide();
+      $("#box-3").hide();
+      $("#box-4").hide();
+      $("#box-5").hide();
+      $("#box-6").hide();
+      $("#box-7").hide();
+      $("#p-1").css("border-bottom","4px solid #FF5B16");
+      $("#p-1").css("color","#17181A");
+    }
+    if(currentIndex == 1){
+      $("#box-1").hide();
+      $("#box-2").show();
+      $("#box-3").hide();
+      $("#box-4").hide();
+      $("#box-5").hide();
+      $("#box-6").hide();
+      $("#box-7").hide();
+      $("#p-2").css("border-bottom","4px solid #FF5B16");
+      $("#p-2").css("color","#17181A");
+    }
+    if(currentIndex == 2){
+      $("#box-1").hide();
+      $("#box-2").hide();
+      $("#box-3").show();
+      $("#box-4").hide();
+      $("#box-5").hide();
+      $("#box-6").hide();
+      $("#box-7").hide();
+      $("#p-3").css("border-bottom","4px solid #FF5B16");
+      $("#p-3").css("color","#17181A");
+    }
+    if(currentIndex == 3){
+      $("#box-1").hide();
+      $("#box-2").hide();
+      $("#box-3").hide();
+      $("#box-4").show();
+      $("#box-5").hide();
+      $("#box-6").hide();
+      $("#box-7").hide();
+      $("#p-4").css("border-bottom","4px solid #FF5B16");
+      $("#p-4").css("color","#17181A");
+    }
+    if(currentIndex == 4){
+      $("#box-1").hide();
+      $("#box-2").hide();
+      $("#box-3").hide();
+      $("#box-4").hide();
+      $("#box-5").show();
+      $("#box-6").hide();
+      $("#box-7").hide();
+      $("#p-5").css("border-bottom","4px solid #FF5B16");
+      $("#p-5").css("color","#17181A");
+    }
+    if(currentIndex == 5){
+      $("#box-1").hide();
+      $("#box-2").hide();
+      $("#box-3").hide();
+      $("#box-4").hide();
+      $("#box-5").hide();
+      $("#box-6").show();
+      $("#box-7").hide();
+      $("#p-6").css("border-bottom","4px solid #FF5B16");
+      $("#p-6").css("color","#17181A");
+    }
+    if(currentIndex == 6){
+      $("#box-1").hide();
+      $("#box-2").hide();
+      $("#box-3").hide();
+      $("#box-4").hide();
+      $("#box-5").hide();
+      $("#box-6").hide();
+      $("#box-7").show();
+      $("#p-7").css("border-bottom","4px solid #FF5B16");
+      $("#p-7").css("color","#17181A");
+    }
   });
 
+  $("#p-1").click(function(){
+    
+  });
+  $("#p-2").click(function(){
+    $("#box-1").hide();
+    $("#box-2").show();
+    $("#box-3").hide();
+    $("#box-4").hide();
+    $("#box-5").hide();
+    $("#box-6").hide();
+    $("#box-7").hide();
+  });
+  $("#p-3").click(function(){
+    $("#box-1").hide();
+    $("#box-2").hide();
+    $("#box-3").show();
+    $("#box-4").hide();
+    $("#box-5").hide();
+    $("#box-6").hide();
+    $("#box-7").hide();
+    console.log("3성공");
+  });
+console.log("dd");
   // 각 버튼의 너비 설정
   quizBoxes.each(function() {
     var quizBtnContainer = $(this).find('.quiz-box-content-quizBtn');
@@ -124,7 +213,7 @@ $(document).ready(function() {
 
     quizBtns.css('width', btnWidth + 'px');
   });
-});
+
 
 
 
@@ -181,7 +270,7 @@ allScoreGraphViews.forEach(function(allScoreGraphView, index) {
 });
 //마지막 그래프 색깔 변경
 const allScoreLastScoreGraphView = allScoreGraphViews[allScoreGraphViews.length - 1];
-allScoreLastScoreGraphView .style.backgroundColor = '#FF5B16';
+allScoreLastScoreGraphView.style.backgroundColor = '#FF5B16';
 
 
 //항목별 점수 그래프 높이 설정
