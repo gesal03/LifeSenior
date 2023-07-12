@@ -58,7 +58,7 @@
                         {% for choice in quiz.choice_set.all %} 
                             <form action="{% url 'quizApp:solveQuiz' quiz.id choice.text%}" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                <input type="submit" class="quiz-select-btn" value="{{choice.text}}" id="{{choice.isCorrect}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
+                                <input type="submit" class="quiz-select-btn" value="{{choice.text}}" id="{{choice.isCorrect}}" {% if forloop.last %}style="margin-right: 0;cursor: pointer;"{% endif %}>
                             </form>
                         {% endfor %}
                     </div>
