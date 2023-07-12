@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from quizApp.models import Quiz
 
 User = get_user_model()
 
@@ -25,4 +26,9 @@ class Profile(models.Model):
 class CorrectByDate(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) #유저
     date = models.DateTimeField("DATE", auto_now_add=True) #날짜
-    count = models.PositiveIntegerField("COUNT", default=0) #맞춘 개수
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, null=True) #맞춘 퀴즈
+
+class InCorrectByDate(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE) #유저
+    date = models.DateTimeField("DATE", auto_now_add=True) #날짜
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, null=True) #틀린 퀴즈
