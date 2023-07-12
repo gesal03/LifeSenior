@@ -40,6 +40,7 @@ kindbuttons.forEach(function(button) {
 
       // 클릭된 버튼에 .active 클래스 추가
       button.classList.add('kindactive');
+      console.log("클릭됨");
     });
 });
 
@@ -231,6 +232,20 @@ kindbuttons.forEach(function(button) {
     $("#box-5").hide();
     $("#box-6").hide();
     $("#box-7").hide();
+    $("#p-1").css("border-bottom","4px solid #FF5B16");
+      $("#p-1").css("color","#17181A");
+      $("#p-2").css("border-bottom","4px solid #F6F7FB");
+      $("#p-2").css("color","#95969D");
+      $("#p-3").css("border-bottom","4px solid #F6F7FB");
+      $("#p-3").css("color","#95969D");
+      $("#p-4").css("border-bottom","4px solid #F6F7FB");
+      $("#p-4").css("color","#95969D");
+      $("#p-5").css("border-bottom","4px solid #F6F7FB");
+      $("#p-5").css("color","#95969D");
+      $("#p-6").css("border-bottom","4px solid #F6F7FB");
+      $("#p-6").css("color","#95969D");
+      $("#p-7").css("border-bottom","4px solid #F6F7FB");
+      $("#p-7").css("color","#95969D");
   });
   $("#p-2").click(function(){
     $("#box-1").hide();
@@ -240,6 +255,20 @@ kindbuttons.forEach(function(button) {
     $("#box-5").hide();
     $("#box-6").hide();
     $("#box-7").hide();
+    $("#p-2").css("border-bottom","4px solid #FF5B16");
+      $("#p-2").css("color","#17181A");
+      $("#p-1").css("border-bottom","4px solid #F6F7FB");
+      $("#p-1").css("color","#95969D");
+      $("#p-3").css("border-bottom","4px solid #F6F7FB");
+      $("#p-3").css("color","#95969D");
+      $("#p-4").css("border-bottom","4px solid #F6F7FB");
+      $("#p-4").css("color","#95969D");
+      $("#p-5").css("border-bottom","4px solid #F6F7FB");
+      $("#p-5").css("color","#95969D");
+      $("#p-6").css("border-bottom","4px solid #F6F7FB");
+      $("#p-6").css("color","#95969D");
+      $("#p-7").css("border-bottom","4px solid #F6F7FB");
+      $("#p-7").css("color","#95969D");
   });
   $("#p-3").click(function(){
     $("#box-1").hide();
@@ -249,7 +278,20 @@ kindbuttons.forEach(function(button) {
     $("#box-5").hide();
     $("#box-6").hide();
     $("#box-7").hide();
-    console.log("3성공");
+    $("#p-3").css("border-bottom","4px solid #FF5B16");
+      $("#p-1").css("color","#17181A");
+      $("#p-1").css("border-bottom","4px solid #F6F7FB");
+      $("#p-1").css("color","#95969D");
+      $("#p-2").css("border-bottom","4px solid #F6F7FB");
+      $("#p-2").css("color","#95969D");
+      $("#p-4").css("border-bottom","4px solid #F6F7FB");
+      $("#p-4").css("color","#95969D");
+      $("#p-5").css("border-bottom","4px solid #F6F7FB");
+      $("#p-5").css("color","#95969D");
+      $("#p-6").css("border-bottom","4px solid #F6F7FB");
+      $("#p-6").css("color","#95969D");
+      $("#p-7").css("border-bottom","4px solid #F6F7FB");
+      $("#p-7").css("color","#95969D");
   });
   $("#p-4").click(function(){
     $("#box-1").hide();
@@ -259,7 +301,20 @@ kindbuttons.forEach(function(button) {
     $("#box-5").hide();
     $("#box-6").hide();
     $("#box-7").hide();
-    console.log("3성공");
+    $("#p-4").css("border-bottom","4px solid #FF5B16");
+      $("#p-4").css("color","#17181A");
+      $("#p-1").css("border-bottom","4px solid #F6F7FB");
+      $("#p-1").css("color","#95969D");
+      $("#p-3").css("border-bottom","4px solid #F6F7FB");
+      $("#p-3").css("color","#95969D");
+      $("#p-2").css("border-bottom","4px solid #F6F7FB");
+      $("#p-2").css("color","#95969D");
+      $("#p-5").css("border-bottom","4px solid #F6F7FB");
+      $("#p-5").css("color","#95969D");
+      $("#p-6").css("border-bottom","4px solid #F6F7FB");
+      $("#p-6").css("color","#95969D");
+      $("#p-7").css("border-bottom","4px solid #F6F7FB");
+      $("#p-7").css("color","#95969D");
   });
   $("#p-5").click(function(){
     $("#box-1").hide();
@@ -269,7 +324,20 @@ kindbuttons.forEach(function(button) {
     $("#box-5").show();
     $("#box-6").hide();
     $("#box-7").hide();
-    console.log("3성공");
+    $("#p-5").css("border-bottom","4px solid #FF5B16");
+      $("#p-5").css("color","#17181A");
+      $("#p-1").css("border-bottom","4px solid #F6F7FB");
+      $("#p-1").css("color","#95969D");
+      $("#p-3").css("border-bottom","4px solid #F6F7FB");
+      $("#p-3").css("color","#95969D");
+      $("#p-4").css("border-bottom","4px solid #F6F7FB");
+      $("#p-4").css("color","#95969D");
+      $("#p-2").css("border-bottom","4px solid #F6F7FB");
+      $("#p-2").css("color","#95969D");
+      $("#p-6").css("border-bottom","4px solid #F6F7FB");
+      $("#p-6").css("color","#95969D");
+      $("#p-7").css("border-bottom","4px solid #F6F7FB");
+      $("#p-7").css("color","#95969D");
   });
   $("#p-6").click(function(){
     $("#box-1").hide();
@@ -279,7 +347,20 @@ kindbuttons.forEach(function(button) {
     $("#box-5").hide();
     $("#box-6").show();
     $("#box-7").hide();
-    console.log("3성공");
+    $("#p-6").css("border-bottom","4px solid #FF5B16");
+      $("#p-6").css("color","#17181A");
+      $("#p-1").css("border-bottom","4px solid #F6F7FB");
+      $("#p-1").css("color","#95969D");
+      $("#p-3").css("border-bottom","4px solid #F6F7FB");
+      $("#p-3").css("color","#95969D");
+      $("#p-4").css("border-bottom","4px solid #F6F7FB");
+      $("#p-4").css("color","#95969D");
+      $("#p-5").css("border-bottom","4px solid #F6F7FB");
+      $("#p-5").css("color","#95969D");
+      $("#p-2").css("border-bottom","4px solid #F6F7FB");
+      $("#p-2").css("color","#95969D");
+      $("#p-7").css("border-bottom","4px solid #F6F7FB");
+      $("#p-7").css("color","#95969D");
   });
   $("#p-7").click(function(){
     $("#box-1").hide();
@@ -289,7 +370,20 @@ kindbuttons.forEach(function(button) {
     $("#box-5").hide();
     $("#box-6").hide();
     $("#box-7").show();
-    console.log("3성공");
+    $("#p-7").css("border-bottom","4px solid #FF5B16");
+      $("#p-7").css("color","#17181A");
+      $("#p-1").css("border-bottom","4px solid #F6F7FB");
+      $("#p-1").css("color","#95969D");
+      $("#p-3").css("border-bottom","4px solid #F6F7FB");
+      $("#p-3").css("color","#95969D");
+      $("#p-4").css("border-bottom","4px solid #F6F7FB");
+      $("#p-4").css("color","#95969D");
+      $("#p-5").css("border-bottom","4px solid #F6F7FB");
+      $("#p-5").css("color","#95969D");
+      $("#p-6").css("border-bottom","4px solid #F6F7FB");
+      $("#p-6").css("color","#95969D");
+      $("#p-2").css("border-bottom","4px solid #F6F7FB");
+      $("#p-2").css("color","#95969D");
   });
 var quizBoxes = $('.quiz-change-box');
 // 각 버튼의 너비 설정
@@ -329,7 +423,9 @@ window.onload = function() {
 
 
 //전체 함수 그래프 높이 설정
-const allScoreDataValues = [2, 4, 3, 2, 3, 6, 0]; //맞춘 수
+const dd = $("#test").attr('name');
+console.log(dd);
+const allScoreDataValues = dd //맞춘 수
 const allScoreGraphViews = document.querySelectorAll('#all-score-body');
 
 if (allScoreGraphViews.length > 0) {

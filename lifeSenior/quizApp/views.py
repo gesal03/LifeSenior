@@ -7,7 +7,10 @@ from .models import Term
 def home(request):
     return render(request, 'quizApp/study-easy.html')
 
-def solveQuiz(request, quiz_id, choice_text):
+def solveQuiz(request):
+    quiz_id = request.POST.get('pk', None) # ajax 통신을 통해서 template에서 POST방식으로 전달
+    choice_text = request.POST.get('text', None)
+
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     user = Profile.objects.get(user = request.user)
 
@@ -65,7 +68,11 @@ def studySpace(request, level):
     
 
 def stateAll(request):
-    return render(request, 'quizApp/current-all.html')
+    arr = 234566
+    context = {
+        'arr': arr
+    }
+    return render(request, 'quizApp/current-all.html', context)
 
 def stateCategory(request):
     return render(request, 'quizApp/current-not-all.html')

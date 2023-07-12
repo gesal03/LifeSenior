@@ -10,8 +10,8 @@ def main(request):
         return Quiz.objects.order_by("?").first()
 
     randomQuiz = get_random()
-
+    
     context = {
-        'quiz': randomQuiz
+        'quiz': randomQuiz,
     }
     return render(request, 'lifeSeniorApp/main.html', context)

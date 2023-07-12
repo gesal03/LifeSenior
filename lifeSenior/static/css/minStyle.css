@@ -14,8 +14,8 @@ nav{
     justify-content: space-between;
 
     width: 100%;
-    height: 64px;
-    font: 24px;
+    height: 100px;
+    font: 40px;
     line-height: 23.76px;
 
     background-color: #17181A;
@@ -24,6 +24,7 @@ nav{
 .nav-left,.nav-right{
     display: flex;
     flex-direction: row;
+    font: 40px;
 }
 .nav-left {
     margin-left: 55.59px;
@@ -39,7 +40,7 @@ nav{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 135px;
+    margin-right: 35px;
 }
 .nav-right img{
     cursor: pointer;
@@ -245,7 +246,6 @@ header button:hover{
     line-height: 23.76px;
     text-align: center;
     margin-right: 40px;
-    z-index: 1;
 }
 .container-quiz #quiz-select-box:last-child {
     margin-right: 0;
