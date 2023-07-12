@@ -51,15 +51,17 @@
             <p id="container-quiz-p-first">얼마나 많이 알고 있나요?</p>
             <div class="quiz-box-container">
                 <div class="quiz-box">
-                    <p>{{quiz.text}}</p>
-                    <p>{{quiz.description}}</p>
+                    <p class="quiz-box-p-first">{{quiz.text}}</p>
+                    <p class="quiz-box-p-second">{{quiz.description}}</p>
                     {% comment %} 하나의 form을 보기 개수만큼 반복 {% endcomment %}
+                    <div id="quiz-select-box" style=" width: 976px;height: 180px;display: flex;flex-direction: row;justify-content: center;margin: 0 auto;">
                         {% for choice in quiz.choice_set.all %} 
                             <form action="{% url 'quizApp:solveQuiz' quiz.id choice.text%}" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                <input type="submit" value="{{choice.text}}" id="{{choice.isCorrect}}">
+                                <input type="submit" class="quiz-select-btn" value="{{choice.text}}" id="{{choice.isCorrect}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
                             </form>
                         {% endfor %}
+                    </div>
                     {% comment %} <input type="submit" value="오답" id="incorrectA"> {% endcomment %}
                 </div>
                 <div class="quiz-overlay"></div>

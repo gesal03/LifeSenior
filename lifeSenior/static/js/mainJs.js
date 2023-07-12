@@ -49,3 +49,11 @@ $("#incorrectA").click(function(){
   $(".quiz-overlay").show();
   $(".quiz-incorrect-modal").show();
 });
+
+var quizSelectBox = $('#quiz-select-box');
+var quizBtns = quizSelectBox.find('.quiz-select-btn');
+var btnCount = quizBtns.length;
+console.log(btnCount);
+var btnWidth = quizSelectBox.width() / btnCount;
+quizBtns.css('width', btnWidth + 'px');
+
