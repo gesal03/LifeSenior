@@ -407,7 +407,7 @@ header :nth-child(2){
     font-size: 24px;
 }
 .quiz-box-content-nav p{
-    border-bottom: 3px solid #F6F7FB;
+    border-bottom: 4px solid #F6F7FB;
     padding-bottom: 11.5px;
 }
 .quiz-box-content-nav p:hover{
