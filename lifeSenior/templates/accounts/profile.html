@@ -20,7 +20,19 @@
             <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
         </div>
         <div class="nav-right">
-            <img class="nav-icon-third" src="{% static 'img/nav-icon-third.png' %}" alt="">
+            <img class="nav-icon-third" style="margin-right: 15px;" src="{% static 'img/nav-icon-third.png' %}" alt="">
+            <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:30px;
+            color: var(--unnamed, #F6F7FB);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;">부기님</p>
+            <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:40px;
+            color: var(--1, #95969D);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;" href="{% url 'accounts:logOut' %}">로그아웃</p>
         </div>
     </nav>
 

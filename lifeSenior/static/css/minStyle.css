@@ -44,18 +44,9 @@ nav{
 }
 .nav-right img{
     cursor: pointer;
-    margin-right: 35px;
 }
 .nav-right :last-child{
     margin-right: 0px;
-}
-.nav-icon-first{
-    width: 23px;
-    height: 35.764px; 
-}
-.nav-icon-second{
-    width: 26px;
-    height: 39.464px;
 }
 .nav-icon-third{
     width: 43px;
