@@ -243,7 +243,7 @@
                         >관련 퀴즈로 확실히 익히기</p>
                         <div style="margin-left: 40px; margin-right: 40px; " class="quiz-level-container">
                             <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
-                            color: inherit;">
+                            color: inherit; " name="{% url 'quizApp:studySpace' level=0 %}" id="go" >
                                 <div class="quiz-level-box" id="this">
                                     <p class="quiz-level-comment">인생선배가 처음이신가요?</p>
                                     <div class="quiz-level">
@@ -309,6 +309,24 @@
     <!-- footer end -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>
+        function loadContentAndScroll() {
+            var url = document.getElementById('go').getAttribute('name');
+          $.ajax({
+            url: url,
+            dataType: 'html',
+            success: function(response) {
+              var targetDiv = $(response).find('.quiz-container');
+              if (targetDiv.length > 0) {
+                $('html, body').animate({
+                  scrollTop: targetDiv.offset().top
+                }, 1000); // 1000은 애니메이션의 속도를 나타냅니다.
+              }
+            }
+          });
+        }
+      </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="{% static 'js/scroll.js' %}"></script>
     <script src="{% static 'js/studyJs.js' %}"></script>
 </body>
