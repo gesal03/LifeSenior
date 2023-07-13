@@ -25,10 +25,10 @@ class Profile(models.Model):
 
 class CorrectByDate(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) #유저
-    date = models.DateTimeField("DATE") #날짜
+    date = models.DateField("DATE") #날짜
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, null=True) #맞춘 퀴즈
 
 class InCorrectByDate(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE) #유저
-    date = models.DateTimeField("DATE") #날짜
+    date = models.DateField("DATE") #날짜
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, null=True) #틀린 퀴즈

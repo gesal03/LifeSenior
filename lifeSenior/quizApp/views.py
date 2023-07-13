@@ -1,3 +1,5 @@
+from datetime import date
+import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Quiz
@@ -16,7 +18,7 @@ def solveQuiz(request):
     user = Profile.objects.get(user = request.user)
 
     if quiz.correct == choice_text:
-        today = timezone.now().strftime('%Y-%m-%d %H:%M:%S%z')
+        today = timezone.now().strftime('%Y-%m-%d')
         correct = CorrectByDate(user=request.user, date=today, quiz=quiz)
         correct.save()
         quiz.total += 1
@@ -36,7 +38,7 @@ def solveQuiz(request):
         quiz.save()
         user.save()
     else:
-        today = timezone.now().strftime('%Y-%m-%d %H:%M:%S%z')
+        today = timezone.now().strftime('%Y-%m-%d')
         inCorrect = InCorrectByDate(user=request.user, date=today, quiz=quiz)
         inCorrect.save()
         quiz.total += 1
@@ -84,10 +86,14 @@ def studySpace(request, level):
     
 
 def stateAll(request):
+    today = date.today()
+    
+    inCorrectQuiz = InCorrectByDate.objects.filter(user=request.user, date=today).distinct().values_list('quiz')
 
     arr = 234566
     context = {
-        'arr': arr
+        'arr': arr,
+        'inCorrectQuiz': inCorrectQuiz
     }
     return render(request, 'quizApp/current-all.html', context)
 
