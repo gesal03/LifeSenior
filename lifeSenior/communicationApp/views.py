@@ -78,6 +78,14 @@ def my_answer(request):
 
 #질문하기 작성할 때 : question_create
 def question_create(request):
+    if request.method == 'POST':
+        question = Question(author=request.user,
+                            title=request.POST['title'],
+                            category=request.POST['category'],
+                            content=request.POST['content'],
+                            )
+        question.save()
+        return redirect('communicationApp:communcation')
     return render(request, 'communicationAPP/question_create.html')
 
 #답변하기 작성할 때 : answer_create
