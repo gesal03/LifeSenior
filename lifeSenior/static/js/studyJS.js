@@ -448,7 +448,7 @@ if (notAllScoreDataValues.length > 0) {
   // 데이터 값에 따라 높이를 조정
   notAllScoreGraphViews.forEach(function(notAllScoreGraphView, index) {
     const notAllScoreDataValue = notAllScoreDataValues[index]; // 해당 요소에 대응하는 데이터 값
-    notAllScoreGraphView.style.height = `${(638 / 5) * notAllScoreDataValue}px`; // 데이터 값을 픽셀 단위로 높이로 설정
+    notAllScoreGraphView.style.height = `${(638 / 10) * notAllScoreDataValue}px`; // 데이터 값을 픽셀 단위로 높이로 설정
   });
   //마지막 그래프 색깔 변경
   const notAllScoreLastScoreGraphView = notAllScoreGraphViews[notAllScoreGraphViews.length - 1];
