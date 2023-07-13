@@ -8,9 +8,40 @@ def home(request):
 #-----기본 메인 화면-----
 #소통게시판 : communication_list
 def communication_list(request):
-    communication_list = Question.objects.all().order_by('-date')
+    if request.method == 'POST':
+        categorys = [0, 1, 2, 3, 4, 5]
+        # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+        sort = 'date'
+
+        index=0
+        for category in categorys:
+            if index==0:
+                questions = Question.objects.filter(category=category)
+            else:
+                index+=1
+                question = Question.objects.filter(category=category)
+                questions.union(question)
+
+        if sort == 'date':
+            communication_list = questions.order_by('-date')
+        elif sort == 'likes':
+            communication_list = questions.order_by('-recommend')
+        elif sort == 'views':
+            communication_list = questions.order_by('-views')
+        elif sort == 'answerd':
+            communication_list = questions.filter(answerd=True).order_by('-date')
+        else:
+            communication_list = questions.filter(answerd=False).order_by('-date')
+    else:
+        communication_list = Question.objects.all().order_by('-date')
+
+    noQuestion = Question.objects.filter(anserd=False).order_by("?")[:2]
+    myQuestion = Question.objects.filter(autor=request.user).order_by("?")[:2]
     context = {
-        'communication_list': communication_list
+        'communication_list': communication_list,
+        'noQuestion': noQuestion,
+        'myQuestion': myQuestion,
+
     }
     return render(request, 'communicationAPP/communication_list.html', context)
 
