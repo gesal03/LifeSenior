@@ -58,7 +58,7 @@ def communication_detail(request, question_id):
         'question': question,
         'sameCategory': sameCategory,
     }
-    return render(request, 'communicationAPP/question-detail.html', context)
+    return render(request, 'communicationApp/question-detail.html', context)
 
 #답변하기 : answer_list
 def answer_list(request):
@@ -125,7 +125,7 @@ def my_question(request):
     context = {
         'communication_list': communication_list,
     }
-    return render(request, 'my_question.html', context)
+    return render(request, 'communication/my-question.html', context)
 
 #내가 한 답변 : my_answer
 def my_answer(request):
