@@ -114,17 +114,49 @@ def stateAll(request):
 def stateCategory(request):
     index = ""
     profile = Profile.objects.get(user = request.user)
+
+    big = 0
+    bigCategory=""
+
+    small = 100000000
+    smallCategory=""
+
+    count={}
     
     index += str(profile.total // 10)
     index += str(profile.realty // 10)
-    index += str(profile.economy // 10)
-    index += str(profile.selfDevelopment // 10)
-    index += str(profile.discount // 10)
-    index += str(profile.commonSense // 10)
-    index += str(profile.etc // 10)
+    count['부동산']=profile.realty
 
-    print(index)
+    index += str(profile.economy // 10)
+    count['경제']=profile.economy
+
+    index += str(profile.selfDevelopment // 10)
+    count['트렌드']=profile.selfDevelopment
+
+    index += str(profile.discount // 10)
+    count['할인']=profile.discount
+
+    index += str(profile.commonSense // 10)
+    count['시사상식']=profile.commonSense
+
+    index += str(profile.etc // 10)
+    count['기타']=profile.etc
+
+    for key, value in count.items():
+        if big <= value:
+            big = value
+            bigCategory = key
+        if small >= value:
+            small=value
+            smallCategory = key
+
+
+    print(bigCategory)
+    print(smallCategory)
+
     context = {
-        'index': index
+        'index': index,
+        'bigCategory': bigCategory,
+        'smallCategory': smallCategory,
     }
     return render(request, 'quizApp/current-not-all.html', context)
