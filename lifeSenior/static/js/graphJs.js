@@ -1,8 +1,7 @@
 //전체 함수 그래프 높이 설정
-// const dd = $("#test").attr('name');
-// console.log(dd);
-// const allScoreDataValues = dd //맞춘 수
-const allScoreDataValues = [1, 2, 3, 4, 5, 6];
+const dd = $("#test").attr('name');
+console.log(dd);
+const allScoreDataValues = dd //맞춘 수
 const allScoreGraphViews = document.querySelectorAll('#all-score-body');
 
 if (allScoreGraphViews.length > 0) {
@@ -18,7 +17,10 @@ if (allScoreGraphViews.length > 0) {
 
 
 //항목별 점수 그래프 높이 설정
-const notAllScoreDataValues = [2, 4, 5, 2, 3, 2, 4]; //맞춘 수
+const index = $("#category").attr('name');
+console.log(index)
+//항목별 점수 그래프 높이 설정
+const notAllScoreDataValues = index; //맞춘 수
 const notAllScoreGraphViews = document.querySelectorAll('#not-all-score-body');
 
 if (notAllScoreDataValues.length > 0) {
