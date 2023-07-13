@@ -14,7 +14,8 @@ urlpatterns = [
     path('question_create', question_create, name='question_create'), #질문하기_작성할때
     path('answer_create', answer_create, name='answer_create'), #답변하기_작성할때
     path('answer_list', answer_list, name='answer_list'), #답변하기_리스트
-    path('test', test, name="test")
+    path('test', test, name="test"),
+    
 ]
 
     
