@@ -61,12 +61,17 @@ def communication_detail(request, question_id):
 
 #답변하기 : answer_list
 def answer_list(request):
+    questions = Question.objects.filter(answerd=False).exclude(autor=request.user).order_by("-date")
     return render(request, 'communicationApp/answer.html')
 
 
 #내가 한 질문 : my_question
 def my_question(request):
-    return render(request, 'my_question.html')
+    questions = Question.objects.filter(autor=request.user).order_by("-date")
+    context = {
+        'questions': questions,
+    }
+    return render(request, 'my_question.html', context)
 
 #내가 한 답변 : my_answer
 def my_answer(request):
