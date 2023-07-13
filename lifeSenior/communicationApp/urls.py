@@ -6,7 +6,7 @@ from .views import home, communication_list, communication_detail, my_question, 
 app_name = 'communicationApp'
 
 urlpatterns = [
-    path('', home),
+    path('home', home, name="home"),
     path('communication_list', communication_list, name='communication_list'), #소통게시판 메인
     path('communication_detail/<int:question_id>', communication_detail, name='communication_detail'), #소통게시판 메인_질문하나 클릭하면 나오는 화면
     path('my_question', my_question, name='my_question'), #내가 한 질문
