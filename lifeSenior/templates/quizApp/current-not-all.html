@@ -18,9 +18,19 @@
             <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
         </div>
         <div class="nav-right">
-            <img class="nav-icon-first" src="{% static 'img/nav-icon-first.png' %}" alt="">
-            <img class="nav-icon-second" src="{% static 'img/nav-icon-second.png' %}" alt="">
-            <img class="nav-icon-third" src="{% static 'img/nav-icon-third.png' %}" alt="">
+            <img class="nav-icon-third" style="margin-right: 15px;" src="{% static 'img/nav-icon-third.png' %}" alt="">
+            <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:30px;
+            color: var(--unnamed, #F6F7FB);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;">부기님</p>
+            <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:40px;
+            color: var(--1, #95969D);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;" href="{% url 'accounts:logOut' %}">로그아웃</p>
         </div>
     </nav>
     <!-- nav bar end -->
@@ -58,10 +68,22 @@
                     <p class="score-container-text-highlight">부기&nbsp;</p>
                     <p>후배님</p>
                 </div>
-                <div class="not-all-score-conatiner-text-second">
+                <div class="score-container-text-second">
+                    <p class="score-container-text-highlight">부기&nbsp;</p>
+                    <p>후배님의&nbsp;</p>
+                    <p>성적이&nbsp;</p>
+                    <p>오르고 있군요!</p>
+                </div>
+                <div class="score-container-text-third">
+                    <p>특히&nbsp;</p>
+                    <p class="score-container-text-highlight">경제</p>
+                    <p>분야의&nbsp;</p>
+                    <p>성적이 가장 좋습니다!</p>
+                </div>
+                <!-- <div class="not-all-score-conatiner-text-second">
                     <p>부기&nbsp;</p>
                     <p>후배님의 공부현황을 확인하세요</p>
-                </div>
+                </div> -->
             </div>
             <p style="color: #17181A;
             font-size: 32px;
@@ -113,8 +135,15 @@
                             <div class="score-graph-body" id="not-all-score-body">
                             </div>
                             <div style="display: flex; flex-direction: column;" class="score-graph-date">
-                                <p>자기개발</p>
+                                <p>트렌드</p>
                                 <!-- <p>자기계발</p> -->
+                            </div>
+                        </div>
+                        <div class="score-graph-view">
+                            <div class="score-graph-body" id="not-all-score-body">
+                            </div>
+                            <div class="score-graph-date">
+                                <p>할인</p>
                             </div>
                         </div>
                         <div class="score-graph-view">

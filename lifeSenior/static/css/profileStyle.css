@@ -16,7 +16,7 @@ nav{
     justify-content: space-between;
 
     width: 100%;
-    height: 64px;
+    height: 100px;
     font: 24px;
     line-height: 23.76px;
 
@@ -41,22 +41,13 @@ nav{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 135px;
+    margin-right: 35px;
 }
 .nav-right img{
     cursor: pointer;
-    margin-right: 35px;
 }
 .nav-right :last-child{
     margin-right: 0px;
-}
-.nav-icon-first{
-    width: 23px;
-    height: 35.764px; 
-}
-.nav-icon-second{
-    width: 26px;
-    height: 39.464px;
 }
 .nav-icon-third{
     width: 43px;
@@ -71,7 +62,7 @@ header{
     align-items: center;
 
     color: #f6f7FB;
-    background-image: url(./study-header-img.png);
+    background-image: url(../img/study-header-img.png);
     background-color: black;
     background-size: cover;
     background-position: center;
@@ -238,7 +229,7 @@ header :nth-child(2){
     justify-content: space-between;
 
     width: 1180px;
-    height: 460px;
+    height: 660px;
     margin-top: 40px;
     margin-bottom: 100px;
 }
@@ -381,6 +372,85 @@ header :nth-child(2){
     line-height: 30px;
     margin-top: 10px;
     z-index: 2;
+}
+.score-box{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background: #F6F7FB;
+    box-shadow: 8px 8px 50px 10px rgba(0, 0, 0, 0.10);
+}
+.score-box-nav{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    margin-top: 60px;
+    width: 360px;
+
+    color: #95969D;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.score-box-nav p{
+    border-bottom: 3px solid #F6F7FB;
+    padding-bottom: 10px;
+}
+.score-box-nav p:hover{
+    border-bottom: 3px solid #FF5B16;
+    cursor: pointer;
+    color: #17181A;
+}
+.score-graph{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    margin-top: 40px;
+    margin-left: 65px;
+    margin-right: 84px;
+    width: 650px;
+    height: 500px;
+}
+.score-graph-count{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 50px;
+}
+.score-graph-view-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    margin-left: 54px;
+    margin-right: 84px;
+    width: 100%;
+    height: 100%;
+}
+.score-graph-body{
+    background-color: #EBECF0;
+    border-radius: 30px;
+
+    width: 100%;
+    margin-bottom: 30px;
+}
+.score-graph-view{
+    display: flex;
+    flex-direction: column;
+
+    width: 60px;
+}
+.score-graph-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 /* footer */
 footer img{

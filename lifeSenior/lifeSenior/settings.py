@@ -96,6 +96,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+DATE_INPUT_FORMATS =  ['%d/%m/%Y']
+
 TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True

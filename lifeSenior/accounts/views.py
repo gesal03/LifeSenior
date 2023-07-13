@@ -37,3 +37,6 @@ def logIn(request):
 def logOut(request):
     auth.logout(request)
     return redirect('index')
+
+def profile(request):
+    return render(request, "accounts/profile.html")

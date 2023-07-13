@@ -13,6 +13,34 @@ const buttons = document.querySelectorAll('.quiz-box-content-quizBtn input');
     });
 });
 
+$(".quiz-correct-modal").hide();
+$(".quiz-incorrect-modal").hide();
+$(".quiz-overlay").hide();
+
+$(".correctA").click(function(){
+  console.log("ss");
+  $(this).css("background-color","#FF5B16");
+  $(this).css("color","#F6F7FB");
+  $(".quiz-overlay").show();
+  $(".quiz-correct-modal").show();
+
+  setTimeout(function() {
+    $(".quiz-overlay").hide();
+    $(".quiz-correct-modal").hide();
+  }, 1000);
+});
+$(".incorrectA").click(function(){
+  $(this).css("background-color","#FF5B16");
+  $(this).css("color","#F6F7FB");
+  $(".quiz-overlay").show();
+  $(".quiz-incorrect-modal").show();
+
+  setTimeout(function() {
+    $(".quiz-overlay").hide();
+    $(".quiz-incorrect-modal").hide();
+  }, 1000);
+});
+
 
 
 //오늘 날짜 가져오기
@@ -432,7 +460,7 @@ if (allScoreGraphViews.length > 0) {
   // 데이터 값에 따라 높이를 조정
   allScoreGraphViews.forEach(function(allScoreGraphView, index) {
     const allScoreDataValue = allScoreDataValues[index]; // 해당 요소에 대응하는 데이터 값
-    allScoreGraphView.style.height = `${(638 / 6) * allScoreDataValue}px`; // 데이터 값을 픽셀 단위로 높이로 설정
+    allScoreGraphView.style.height = `${(638 / 10) * allScoreDataValue}px`; // 데이터 값을 픽셀 단위로 높이로 설정
   });
   //마지막 그래프 색깔 변경
   const allScoreLastScoreGraphView = allScoreGraphViews[allScoreGraphViews.length - 1];
@@ -448,12 +476,13 @@ if (notAllScoreDataValues.length > 0) {
   // 데이터 값에 따라 높이를 조정
   notAllScoreGraphViews.forEach(function(notAllScoreGraphView, index) {
     const notAllScoreDataValue = notAllScoreDataValues[index]; // 해당 요소에 대응하는 데이터 값
-    notAllScoreGraphView.style.height = `${(638 / 5) * notAllScoreDataValue}px`; // 데이터 값을 픽셀 단위로 높이로 설정
+    notAllScoreGraphView.style.height = `${(638 / 10) * notAllScoreDataValue}px`; // 데이터 값을 픽셀 단위로 높이로 설정
   });
   //마지막 그래프 색깔 변경
   const notAllScoreLastScoreGraphView = notAllScoreGraphViews[notAllScoreGraphViews.length - 1];
   notAllScoreLastScoreGraphView.style.backgroundColor = '#FF5B16';
 }
+
 
 
 // //그래프 하나만 보이게
