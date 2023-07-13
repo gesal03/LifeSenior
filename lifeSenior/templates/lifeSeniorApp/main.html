@@ -18,7 +18,7 @@
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
             <a href="{% url 'main' %}" style="color: #FFFFFF;">홈</a>
             <a style=" color: #95969D;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
-            <a style=" color: #95969D;" href="#">소통 게시판</a>
+            <a style=" color: #95969D;" href="{% url 'communicationApp:communication_list' %}">소통 게시판</a>
         </div>
         <div class="nav-right">
             <a href="{% url 'accounts:profile' %}">
