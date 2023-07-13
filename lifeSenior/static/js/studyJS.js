@@ -1,5 +1,5 @@
 //답 버튼 하나만
-const buttons = document.querySelectorAll('.quiz-box-content-quizBtn button');
+const buttons = document.querySelectorAll('.quiz-box-content-quizBtn input');
 
   buttons.forEach(function(button) {
     button.addEventListener('click', function() {
@@ -389,7 +389,7 @@ var quizBoxes = $('.quiz-change-box');
 // 각 버튼의 너비 설정
 quizBoxes.each(function() {
   var quizBtnContainer = $(this).find('.quiz-box-content-quizBtn');
-  var quizBtns = quizBtnContainer.find('button');
+  var quizBtns = quizBtnContainer.find('.quiz-select-btn');
   var btnCount = quizBtns.length;
   var btnWidth = quizBtnContainer.width() / btnCount;
   quizBtns.css('width', btnWidth + 'px');

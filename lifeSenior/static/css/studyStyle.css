@@ -445,7 +445,7 @@ header :nth-child(2){
     width: 980px;
     height: 180px;
 }
-.quiz-box-content-quizBtn button{
+.quiz-box-content-quizBtn input{
     color: var(--unnamed, #17181A);
     text-align: center;
     font-size: 24px;
@@ -460,16 +460,13 @@ header :nth-child(2){
     border: none;
     cursor: pointer;
 }
-.quiz-box-content-quizBtn button:hover{
+.quiz-box-content-quizBtn input:hover{
     background-color: #FF5B16;
     color: #F6F7FB;
 }
-.quiz-box-content-quizBtn button.answeractive {
+.quiz-box-content-quizBtn input.answeractive {
     background-color: #FF5B16;
     color: #F6F7FB;
-  }
-.quiz-box-content-quizBtn button:last-child {
-    margin-right: 0;
 }
 .study-next-btn {
     position: absolute;
