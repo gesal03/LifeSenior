@@ -1,0 +1,594 @@
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 64px;
+  font: 24px;
+  line-height: 23.76px;
+
+  background-color: #17181A;
+  color: #FFFFFF;
+}
+.nav-left,.nav-right{
+  display: flex;
+  flex-direction: row;
+}
+.nav-left {
+  margin-left: 55.59px;
+}
+.nav-left a{
+  margin-left: 16px;
+  text-decoration: none;
+}
+.nav-left img{
+  max-width: 10%;
+}
+.nav-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 135px;
+}
+.nav-right img{
+  cursor: pointer;
+  margin-right: 35px;
+}
+.nav-right :last-child{
+  margin-right: 0px;
+}
+.nav-icon-first{
+  width: 23px;
+  height: 35.764px; 
+}
+.nav-icon-second{
+  width: 26px;
+  height: 39.464px;
+}
+.nav-icon-third{
+  width: 43px;
+  height: 42px;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #f6f7FB;
+  background-image: url(../img/study-header-img.png);
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 344px;
+}
+header :nth-child(1){
+  margin-top: 94px;
+  font-size: 35px;
+  line-height: 80px;
+}
+header :nth-child(2){
+  font-size: 70px;
+  line-height: 80px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae {
+  align-items: flex-start;
+  background-color: var(--ecrue6);
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  gap: 92px;
+  height: 2920px;
+  width: 1920px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .lnb {
+  align-items: center;
+  background-color: var(--black);
+  display: flex;
+  gap: 64px;
+  height: 62px;
+  justify-content: center;
+  padding: 12px 0px;
+  position: relative;
+  width: 1920px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .menu0 {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  margin-bottom: -3.00px;
+  margin-top: -3.00px;
+  padding: 10px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-1 {
+  color: var(--ecrue6);
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-1000002984 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 2691px;
+  width: 1920px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-499 {
+  align-items: flex-start;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-left: 370px;
+  min-height: 105px;
+  width: 421px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-421 {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 10.69px;
+  margin-top: -11px;
+  min-width: 41px;
+  transform: rotate(-90.00deg);
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .overlap-group {
+  height: 63px;
+  margin-top: 0;
+  position: relative;
+  width: 41px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .ellipse-54 {
+  background-color: var(--x8sew3i);
+  border-radius: 20.63px;
+  height: 41px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(180.00deg);
+  width: 41px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .union {
+  height: 41px;
+  left: 0;
+  position: absolute;
+  top: 21px;
+  transform: rotate(90.00deg);
+  width: 41px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-2 {
+  color: transparent;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .overlap-group2 {
+  border-radius: 30px;
+  height: 587px;
+  margin-left: 1.0px;
+  margin-top: 36px;
+  position: relative;
+  width: 1181px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-524 {
+  align-items: flex-start;
+  background-color: var(--ecrue6);
+  border-radius: 30px;
+  box-shadow: 8px 8px 50px 10px #0000001a;
+  display: flex;
+  height: 587px;
+  left: 0;
+  min-width: 1181px;
+  position: absolute;
+  top: 0;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .rectangle-100 {
+  background-color: var(--x8sew3i);
+  border-radius: 30px 30px 0px 0px;
+  height: 122px;
+  width: 1181px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-1000002852 {
+  align-items: flex-start;
+  display: flex;
+  gap: 239px;
+  height: 134px;
+  left: 40px;
+  min-width: 1102px;
+  position: absolute;
+  top: 22px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-1000002850 {
+  align-items: center;
+  display: flex;
+  margin-top: 24.74px;
+  min-width: 566px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .price {
+  color: var(--ecrue6);
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  height: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+  min-width: 35px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-12 {
+  color: var(--ecrue6);
+  font-size: var(--font-size-l);
+  font-weight: 700;
+  height: 28px;
+  line-height: normal;
+  min-width: 527px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-1000002851 {
+  align-items: flex-start;
+  display: flex;
+  gap: 16px;
+  min-width: 297px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-518 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12.74px;
+  min-height: 52px;
+  width: 147px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-10 {
+  color: #ffffff;
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  height: 24px;
+  line-height: normal;
+  margin-right: 4px;
+  min-width: 143px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-11 {
+  color: #ffffff;
+  font-size: var(--font-size-s);
+  font-weight: 700;
+  height: 20px;
+  line-height: normal;
+  margin-right: 4px;
+  min-width: 131px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-495 {
+  background-image: url(../img/ellipse-18@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 134px;
+  width: 134px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .line-9 {
+  height: 1px;
+  left: 40px;
+  object-fit: cover;
+  position: absolute;
+  top: 494px;
+  width: 1102px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-522 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 79px;
+  left: 40px;
+  min-height: 297px;
+  position: absolute;
+  top: 177px;
+  width: 1097px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-13 {
+  color: var(--cjhppe);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  line-height: 40px;
+  min-height: 200px;
+  width: 1039px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .date {
+  align-self: flex-end;
+  color: #17181b;
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+  height: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: 4px;
+  min-width: 88px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .frame-44 {
+  align-items: flex-start;
+  gap: 20px;
+  left: 42px;
+  position: absolute;
+  top: 520px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .frame-15 {
+  align-items: center;
+  background-color: var(--cjhppe);
+  border-radius: 24px;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .frame-14 {
+  align-items: flex-start;
+  border-radius: 22px;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .frame-18 {
+  align-items: center;
+  background-color: var(--x8sew3i);
+  border-radius: 22px;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .frame-14-1 {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .frame {
+  align-items: flex-start;
+  background-color: var(--x8sew3i);
+  border-radius: 22px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .line-19 {
+  height: 20px;
+  margin-top: 180px;
+  width: 1920px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-267 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-right: 656.0px;
+  margin-top: 78px;
+  min-height: 105px;
+  padding: 0 0.0px;
+  width: 524px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-266 {
+  align-items: flex-end;
+  display: flex;
+  margin-left: 10.69px;
+  margin-top: -11px;
+  min-width: 41px;
+  transform: rotate(-90.00deg);
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .overlap-group-1 {
+  height: 63px;
+  margin-bottom: 0;
+  position: relative;
+  width: 41px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-138 {
+  align-items: flex-start;
+  display: flex;
+  gap: 86px;
+  margin-left: 2.0px;
+  margin-top: 36px;
+  min-width: 1182px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-5 {
+  color: var(--black);
+  font-size: var(--font-size-l);
+  font-weight: 700;
+  height: 28px;
+  line-height: normal;
+  margin-top: 23px;
+  min-width: 114px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .overlap-group-2 {
+  align-items: flex-start;
+  background-color: var(--ecrue6);
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px 5px #0000001a;
+  display: flex;
+  gap: 3px;
+  height: 1099px;
+  min-width: 980px;
+  padding: 14px 40px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .line-15 {
+  height: 46px;
+  object-fit: cover;
+  width: 1px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-6 {
+  color: var(--x1);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  height: 24px;
+  line-height: normal;
+  margin-top: 11px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .frame-79 {
+  align-items: flex-start;
+  gap: 25px;
+  margin-left: 5.0px;
+  margin-top: 200px;
+  position: relative;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-143 {
+  height: 80px;
+  min-width: 182px;
+  position: relative;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .overlap-group-3 {
+  align-items: center;
+  background-color: var(--cjhppe);
+  border-radius: 40px;
+  display: flex;
+  height: 80px;
+  min-width: 180px;
+  padding: 0 41px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-7 {
+  color: var(--ecrue6);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  height: 60px;
+  line-height: normal;
+  width: 97px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-144 {
+  height: 80px;
+  margin-right: -2.00px;
+  min-width: 182px;
+  position: relative;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .overlap-group1 {
+  align-items: center;
+  background-color: var(--x2);
+  border-radius: 40px;
+  display: flex;
+  height: 80px;
+  min-width: 180px;
+  padding: 0 41px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-8 {
+  color: var(--x1);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  height: 60px;
+  line-height: normal;
+  width: 97px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .group-1000002888 {
+  align-items: flex-end;
+  align-self: flex-end;
+  background-color: var(--x1);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-right: 67px;
+  margin-top: 85px;
+  min-height: 80px;
+  padding: 23px 26px;
+  width: 80px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .vector-1 {
+  align-self: center;
+  height: 13px;
+  width: 26px;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .price-1 {
+  color: var(--ecrue6);
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-xxs);
+  font-weight: 700;
+  height: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  min-width: 27px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .frame-1 {
+  display: flex;
+  width: fit-content;
+}
+
+.sotonggesipan-dabbyeonhagi-jagseonghalddyae .text-3 {
+  font-family: var(--font-family-nanum_gothic);
+  letter-spacing: 0;
+}

@@ -15,12 +15,12 @@
   <body style="margin: 0; background: #f6f7fb">
     <!-- nav bar -->
     <!-- copy -->
-    <nav>
+    <nav style="display: flex;">
       <div class="nav-left">
           <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
           <a href="{% url 'main' %}" style=" color: #95969D;" >홈</a>
           <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
-          <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
+          <a class="nav-third" href="{% url 'communicationApp:communication_list' %}" style=" color: #95969D;">소통 게시판</a>
       </div>
       <div class="nav-right">
           <img class="nav-icon-third" style="margin-right: 15px;" src="{% static 'img/nav-icon-third.png' %}" alt="">
@@ -42,7 +42,7 @@
 
   <!-- header -->
   <!-- copy -->
-  <header class="study-title">
+  <header class="study-title" style="display: flex;">
       <p>어른이 되기 위한 우리의</p>       
       <p>오늘의 공부</p>
   </header>
@@ -67,7 +67,7 @@
             </a>
           </div>
           <div class="menu0">
-            <a href="{% url 'communicationApp:my_answer' %}"></a>
+            <a href="{% url 'communicationApp:my_answer' %}">
               <div class="text-4 valign-text-middle text-7 nanumgothic-bold-mountain-mist-24px">내가 한 답변</div>
             </a>
           </div>
