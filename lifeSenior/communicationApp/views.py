@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Question
 
 # Create your views here.
@@ -15,16 +15,22 @@ def communication_list(request):
     return render(request, 'communicationAPP/communication_list.html', context)
 
 #소통게시판 메인_질문하나 클릭하면 나오는 화면 : communication_detail
-def communication_detail(request):
-    return render(request, 'communicationAPP/communication_detail.html')
+def communication_detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    category = question.category
+    
+    sameCategory = Question.objects.filter(category=category).exclude(pk=question_id).order_by("?")[:5]
+
+    context = {
+        'question': question,
+        'sameCategory': sameCategory,
+    }
+    return render(request, 'communicationAPP/communication_detail.html', context)
 
 #답변하기 : answer_list
 def answer_list(request):
     return render(request, 'communicationAPP/answer_list.html')
 
-#질문에 답변하기_질문하나 클릭시 : answer_detail
-def answer_detail(request, answer_detail):
-    return render(request, 'communicationAPP/answer_detail.html')
 
 #내가 한 질문 : my_question
 def my_question(request):

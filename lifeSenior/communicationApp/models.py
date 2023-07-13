@@ -9,9 +9,9 @@ class Question(models.Model):
     autor       = models.ForeignKey(user, on_delete=models.CASCADE, related_name='author_question') #작성자
     title       = models.CharField("TITLE", max_length=20, default="질문 제목") #질문 제목
     content     = models.TextField("CONTENT", max_length=300, default="질문 내용") #질문 내용
-    date        = models.DateTimeField("DATE", auto_now_add=True) #작성일자
+    date        = models.DateField("DATE", auto_now_add=True) #작성일자
     recommend   = models.PositiveIntegerField("RECOMMEND", default=0) #추천수
-    category    = models.CharField("CATEGORY", max_length=10) #카테고리
+    category    = models.PositiveIntegerField("CATEGORY") #카테고리
     views       = models.PositiveIntegerField("VIEWS", default=0) #조회수
     answerd     = models.BooleanField("ANSWERD", default=False) #답변 여부
     
