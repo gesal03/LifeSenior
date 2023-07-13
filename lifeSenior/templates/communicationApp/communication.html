@@ -11,7 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
     <title>lifesenior</title>
 </head>
-<body>
+<body id="Context">
     <!-- nav bar -->
     <!-- copy -->
     <nav>
@@ -222,44 +222,48 @@
                 </ul>
             </div>
         </div>
-        {% for question in communication_list%}
-            <!-- 답변 없는 질문 박스 -->
-            <a href="#" style="text-decoration: none; color: inherit;">
-                <div class="community-box" >
-                    <div class="community-box-num">
-                        {% if question.answerd == False %}
-                            <p id="unanswer">Q</p>
-                        {% else %}
-                            <p id="answer">Q</p>
-                            <p>답변완료</p>
-                        {% endif %}
-                    </div>
-                    <div class="community-box-content">
-                        <p id="community-box-content-title">{{question.title}}</p>
-                        <p id="community-box-content-detail-content">{{question.content}}</p>
-                        <div class="community-box-content-footer">
-                            <div class="content-icon-box">
-                                <div class="save">
-                                    <img src="{% static 'img/main-save-icon.png' %}" alt="">
-                                    <p>{{question.recommend}}</p>
-                                </div>
-                                <div class="saw">
-                                    <img src="{% static 'img/main-saw-icon.png' %}" alt="">
-                                    <p>{{question.views}}</p>
-                                </div>
-                                <div class="comment">
-                                    <img src="{% static 'img/main-comment-icon.png' %}" alt="">
-                                    <p>{{question.comment_set.count}}</p>
-                                </div>
+        <a id="question">
+            <a id="question2">
+                {% for question in communication_list%}
+                    <!-- 답변 없는 질문 박스 -->
+                    <a href="#" style="text-decoration: none; color: inherit;" >
+                        <div class="community-box" >
+                            <div class="community-box-num">
+                                {% if question.answerd == False %}
+                                    <p id="unanswer">Q</p>
+                                {% else %}
+                                    <p id="answer">Q</p>
+                                    <p>답변완료</p>
+                                {% endif %}
                             </div>
-                            <div class="content-date">
-                                <p>{{question.date}}</p>
+                            <div class="community-box-content">
+                                <p id="community-box-content-title">{{question.title}}</p>
+                                <p id="community-box-content-detail-content">{{question.content}}</p>
+                                <div class="community-box-content-footer">
+                                    <div class="content-icon-box">
+                                        <div class="save">
+                                            <img src="{% static 'img/main-save-icon.png' %}" alt="">
+                                            <p>{{question.recommend}}</p>
+                                        </div>
+                                        <div class="saw">
+                                            <img src="{% static 'img/main-saw-icon.png' %}" alt="">
+                                            <p>{{question.views}}</p>
+                                        </div>
+                                        <div class="comment">
+                                            <img src="{% static 'img/main-comment-icon.png' %}" alt="">
+                                            <p>{{question.comment_set.count}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="content-date">
+                                        <p>{{question.date}}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </a>
-        {% endfor %}
+                    </a>
+                {% endfor %}
+            </a>    
+        </a>
     </div>
 
     <!-- footer -->
@@ -342,11 +346,14 @@
                 $("#two").css("background-color","#EBECF0");
             }
             $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
-                type: "GET", // 데이터를 전송하는 방법을 지정
+                type: "POST", // 데이터를 전송하는 방법을 지정
                 url: "{% url 'communicationApp:getList' %}", // 통신할 url을 지정
                 data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
                 dataType: "text", 
                 success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
+                    console.log(response)
+                    $("#question2").remove();
+                    $("#question").html(response);
                     console.log("success")
                 },
                 error: function(request, status, error){ // 통신 실패시 - 로그인 페이지 리다이렉트  
