@@ -18,7 +18,8 @@
     font-weight: 700;
     line-height: normal;
 }
-.box-title input{
+.text-box input[type="text"]{
+    padding: 20px;
     border-radius: 20px;
     background: #F6F7FB;
     box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.10);
@@ -26,4 +27,5 @@
     font-family: NanumGothic;
     font-size: 24px;
     width: 980px;
+    margin-bottom: 50px;
 }
