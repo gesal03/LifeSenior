@@ -212,11 +212,11 @@
                     최신순
                 </button>
                 <ul class="dropdown-menu" style="text-align: center;">
-                    <li><a class="dropdown-item" href="#">최신순</a></li>
-                    <li><a class="dropdown-item" href="#">추천순</a></li>
-                    <li><a class="dropdown-item" href="#">조회순</a></li>
-                    <li><a class="dropdown-item" href="#">답변완료순</a></li>
-                    <li><a class="dropdown-item" href="#">답변없는순</a></li>
+                    <li><a class="dropdown-item" href="#" id="list-one">최신순</a></li>
+                    <li><a class="dropdown-item" href="#" id="list-two">추천순</a></li>
+                    <li><a class="dropdown-item" href="#" id="list-three">조회순</a></li>
+                    <li><a class="dropdown-item" href="#" id="list-four">답변완료순</a></li>
+                    <li><a class="dropdown-item" href="#" id="list-five">답변없는순</a></li>
                 </ul>
             </div>
         </div>
@@ -294,17 +294,55 @@
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript">
-        $(".quiz-select-btn").click(function(){
-            var pk = $(this).attr('name')
-            var text = $(this).attr('value')
+    <script type="text/javascript">
+        var clickedIds = [];
+        var oneCount =0;
+        var twoCount =0;
+        var threeCount =0;
+        var fourCount =0;
+        var fiveCount =0;
+        var sixCount =0;
+        var oneNum = 1;
+        var twoNum =2;
+        var threeNum =3;
+        var fourNum =4;
+        var fiveNum =5;
+        var sixNum =6;
+        var sort ="date";
+        $("#list-one").click(function(){
+            sort="date";
+        });
+        $("#list-two").click(function(){
+            sort="likes";
+        });
+        $("#list-three").click(function(){
+            sort="views";
+        });
+        $("#list-four").click(function(){
+            sort="answerd";
+        });
+        $("#list-five").click(function(){
+            sort="notAnswerd";
+        });
+        $("#one").click(function(){
+            oneCount++;
+            if(oneCount==1){
+                clickedIds.push(oneNum);
+                $("#one").css("color","#F6F7FB");
+                $("#one").css("background-color","#17181A");
+            }else if(oneCount==2){
+                clickedIds = clickedIds.filter(function(number) {
+                    return number !== oneNum;
+                });
+                oneCount=0;
+                $("#one").css("color","#95969D");
+                $("#one").css("background-color","#EBECF0");
+            }
             $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
                 type: "POST", // 데이터를 전송하는 방법을 지정
-                url: "{% url 'quizApp:solveQuiz' %}", // 통신할 url을 지정
-                data: {'pk': pk, 'text': text, 'csrfmiddlewaretoken': '{{ csrf_token }}'}, // 서버로 데이터 전송시 옵션
-                dataType: "json", // 서버측에서 전송한 데이터를 어떤 형식의 데이터로서 해석할 것인가를 지정, 없으면 알아서 판단
-                // 서버측에서 전송한 Response 데이터 형식 (json)
-                // {'likes_count': post.like_count, 'message': message }
+                url: "{% url 'communicationApp:communication_list' %}}", // 통신할 url을 지정
+                data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: "json", 
                 success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
                     console.log("success")
                 },
@@ -312,8 +350,157 @@
                     console.log("fail")
                 },
             });
-        })
-    </script> -->
+            console.log(sort);
+            console.log(clickedIds);
+        });
+        $("#two").click(function(){
+            twoCount++;
+            if(twoCount==1){
+                clickedIds.push(twoNum);
+                $("#two").css("color","#F6F7FB");
+                $("#two").css("background-color","#17181A");
+            }else if(twoCount==2){
+                clickedIds = clickedIds.filter(function(number) {
+                    return number !== twoNum;
+                });
+                twoCount=0;
+                $("#two").css("color","#95969D");
+                $("#two").css("background-color","#EBECF0");
+            }
+            $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
+                type: "POST", // 데이터를 전송하는 방법을 지정
+                url: "{% url 'communicationApp:communication_list' %}", // 통신할 url을 지정
+                data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: "json", 
+                success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
+                    console.log("success")
+                },
+                error: function(request, status, error){ // 통신 실패시 - 로그인 페이지 리다이렉트  
+                    console.log("fail")
+                },
+            });
+            console.log(sort);
+            console.log(clickedIds);
+        });
+
+        $("#three").click(function(){
+            threeCount++;
+            if(threeCount==1){
+                clickedIds.push(threeNum);
+                $("#three").css("color","#F6F7FB");
+                $("#three").css("background-color","#17181A");
+            }else if(threeCount==2){
+                clickedIds = clickedIds.filter(function(number) {
+                    return number !== threeNum;
+                });
+                threeCount=0;
+                $("#three").css("color","#95969D");
+                $("#three").css("background-color","#EBECF0");
+            }
+            $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
+                type: "POST", // 데이터를 전송하는 방법을 지정
+                url: "{% url 'communicationApp:communication_list' %}", // 통신할 url을 지정
+                data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: "json", 
+                success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
+                    console.log("success")
+                },
+                error: function(request, status, error){ // 통신 실패시 - 로그인 페이지 리다이렉트  
+                    console.log("fail")
+                },
+            });
+            console.log(sort);
+            console.log(clickedIds);
+        });
+        $("#four").click(function(){
+            fourCount++;
+            if(fourCount==1){
+                clickedIds.push(fourNum);
+                $("#four").css("color","#F6F7FB");
+                $("#four").css("background-color","#17181A");
+            }else if(fourCount==2){
+                clickedIds = clickedIds.filter(function(number) {
+                    return number !== fourNum;
+                });
+                fourCount=0;
+                $("#four").css("color","#95969D");
+                $("#four").css("background-color","#EBECF0");
+            }
+            $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
+                type: "POST", // 데이터를 전송하는 방법을 지정
+                url: "{% url 'communicationApp:communication_list' %}", // 통신할 url을 지정
+                data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: "json", 
+                success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
+                    console.log("success")
+                },
+                error: function(request, status, error){ // 통신 실패시 - 로그인 페이지 리다이렉트  
+                    console.log("fail")
+                },
+            });
+            console.log(sort);
+            console.log(clickedIds);
+        });
+        $("#five").click(function(){
+            fiveCount++;
+            if(fiveCount==1){
+                clickedIds.push(fiveNum);
+                $("#five").css("color","#F6F7FB");
+                $("#five").css("background-color","#17181A");
+            }else if(fiveCount==2){
+                clickedIds = clickedIds.filter(function(number) {
+                    return number !== fiveNum;
+                });
+                fiveCount=0;
+                $("#five").css("color","#95969D");
+                $("#five").css("background-color","#EBECF0");
+            }
+            $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
+                type: "POST", // 데이터를 전송하는 방법을 지정
+                url: "{% url 'communicationApp:communication_list' %}", // 통신할 url을 지정
+                data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: "json", 
+                success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
+                    console.log("success")
+                },
+                error: function(request, status, error){ // 통신 실패시 - 로그인 페이지 리다이렉트  
+                    console.log("fail")
+                },
+            });
+            console.log(sort);
+            console.log(clickedIds);
+        });
+        $("#six").click(function(){
+            sixCount++;
+            if(sixCount==1){
+                clickedIds.push(sixNum);
+                $("#six").css("color","#F6F7FB");
+                $("#six").css("background-color","#17181A");
+            }else if(sixCount==2){
+                clickedIds = clickedIds.filter(function(number) {
+                    return number !== sixNum;
+                });
+                sixCount=0;
+                $("#six").css("color","#95969D");
+                $("#six").css("background-color","#EBECF0");
+            }
+            $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
+                type: "POST", // 데이터를 전송하는 방법을 지정
+                url: "{% url 'communicationApp:communication_list' %}", // 통신할 url을 지정
+                data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
+                dataType: "json", 
+                success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
+                    console.log("success")
+                },
+                error: function(request, status, error){ // 통신 실패시 - 로그인 페이지 리다이렉트  
+                    console.log("fail")
+                },
+            });
+            console.log(sort);
+            console.log(clickedIds);
+        });
+    </script>
+    
     
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="{% static 'js/scroll.js' %}"></script>
