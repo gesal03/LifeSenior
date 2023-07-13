@@ -38,6 +38,7 @@ $(".quiz-incorrect-modal").hide();
 $(".quiz-overlay").hide();
 
 $(".correctA").click(function(){
+  console.log("ss");
   $(".correctA").css("background-color","#FF5B16");
   $(".correctA").css("color","#F6F7FB");
   $(".quiz-overlay").show();
