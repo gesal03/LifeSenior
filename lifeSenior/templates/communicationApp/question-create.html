@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/communicationStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/questionCreateStyle.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <title>lifesenior</title>
+</head>
+
+    <!-- nav bar -->
+    <!-- copy -->
+    <nav>
+        <div class="nav-left">
+            <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
+            <a href="{% url 'main' %}" style="color: #95969D;">홈</a>
+            <a style=" color: #95969D;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
+            <a style=" color: #FFFFFF;" href="{% url 'communicationApp:communication_list' %}">소통 게시판</a>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'accounts:profile' %}">
+                <img class="nav-icon-third" style="margin-right: 15px;" src="{{request.user.profile.image.url}}" alt="">
+            </a>
+            <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:30px;
+            color: var(--unnamed, #F6F7FB);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;">{{request.user.profile.name}}님</p>
+            <a href="{% url 'accounts:logOut' %}" style="text-decoration: none;
+            color: inherit;">
+            <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:40px;
+            color: var(--1, #95969D);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;">로그아웃</p>
+            </a>
+        </div>
+    </nav>
+
+        <!-- header -->
+    <!-- copy -->
+    <header class="study-title">
+        <p>어른이 되기 위한 우리의</p>       
+        <p>소통게시판</p>
+    </header>
+    <!-- header end -->
+
+    <!-- nav2 -->
+    <nav id="nav2">
+        <a href="{% url 'communicationApp:question_create' %}" style="text-decoration: none;
+        color: inherit;margin-right: 84px;"><p id="nav2-first" style="color: #FFFFFF;">질문하기</p></a>
+        <a href="{% url 'communicationApp:my_question' %}" style="text-decoration: none;
+        color: inherit;margin-right: 84px;"><p id="nav2-second" style="color:#95969D;">내가 한 질문</p></a>
+        <a href="{% url 'communicationApp:answer_list' %}" style="text-decoration: none;
+        color: inherit;color:#95969D;"><p>답변하기</p></a>
+    </nav>
+
+    <!-- main-scroll-icon -->
+    <!-- copy -->
+    <div class="main-scroll-icon">
+        <img src="{% static 'img/main-scroll-icon.png' %}" alt="Scroll Icon">
+    </div>
+    <!-- main-scroll-icon end -->
+
+    <!-- main-container -->
+    <div style="margin-top: 92px;" id="main-container">
+        <div class="top-text" style="margin-bottom: 123px; text-align: left;">
+            <img style="width: 50.3px;
+            height: 32.6px;" src="{% static 'img/main-nav-logo.png' %}" alt="">
+            <div style="color: #17181A;
+            font-family: NanumGothic;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 50px; /* 156.25% */
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            margin-top: 14px;
+            width: 1180px;">
+                <p>인생선배에게&nbsp;
+                </p>
+                <p style="color: #FF5B16;">질문</p>
+                <p>을 해보세요!</p>
+            </div>
+        </div>
+        <div class="text-box">
+            <p class="box-title">질문 제목</p>
+            <form action="" method="post">
+                <input style="height: 120px;" type="text" placeholder="ㄴ">
+            </form>
+        </div>
+        <div class="text-box">
+            <p class="box-title">관련 키워드</p>
+            <div class="key-word">
+                <p>부동산</p>
+                <p>경제</p>
+                <p>트렌드</p>
+                <p>할인</p>
+                <p>시사상식</p>
+                <p>기타</p>
+            </div>
+        </div>
+        <div class="text-box">
+            <p class="box-title">질문 제목</p>
+            <form action="" method="post">
+                <input style="height: 1099px;" type="text" placeholder="ㄴ">
+            </form>
+        </div> 
+        <div style="display: flex;flex-direction: row; margin-top: 220px;">
+            <input type="submit" style="border-radius: 40px;
+            background: #17181A;
+            width: 180px;
+            height: 80px;
+            color: #F6F7FB;
+            font-family: NanumGothic;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;" value="업로드">
+            <a href="#" style="text-decoration: none;
+            color: inherit;">
+                <p style="border-radius: 40px;
+                background: #EBECF0;
+                width: 180px;
+                height: 80px;
+                color: #95969D;
+                font-family: NanumGothic;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-align: center;
+                padding-top: 12%;
+                margin-left: 30px;">나가기</p>
+            </a>
+        </div>   
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <img src="{% static 'img/footer.png' %}" alt="">
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(".key-word p").click(function(){
+            $(this).css("color","#F5F6FA");
+            $(this).css("background-color","#FF5B16");
+        })
+    </script>
+    <script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/mainJs.js' %}"></script>
+</body>
+</html>
