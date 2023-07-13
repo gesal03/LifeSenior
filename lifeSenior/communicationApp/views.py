@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Answer, Question
 
@@ -5,41 +6,76 @@ from .models import Answer, Question
 def home(request):
     return render(request, 'main.html')
 
+def getList(request):
+    categoryArr = request.GET.getlist('array[]', None)
+    sort = request.GET.get('sort', None)
+    categorys=[]
+    for index in categoryArr:
+        categorys.append(int(index)-1)
+    # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+    print(categorys)
+    print(sort)
+    index=0
+    for category in categorys:
+        if index==0:
+            questions = Question.objects.filter(category=category)
+        else:
+            question = Question.objects.filter(category=category)
+            questions = questions | question
+        index += 1
+
+    if sort == 'date':
+        communication_list = questions.order_by('-date')
+    elif sort == 'likes':
+        communication_list = questions.order_by('-recommend')
+    elif sort == 'views':
+        communication_list = questions.order_by('-views')
+    elif sort == 'answerd':
+        communication_list = questions.filter(answerd=True).order_by('-date')
+    else:
+        communication_list = questions.filter(answerd=False).order_by('-date')
+    context={
+        "communication_list":communication_list,
+    }
+    return HttpResponse(context)
+
 #-----기본 메인 화면-----
 #소통게시판 : communication_list
 def communication_list(request):
-    if request.method == 'POST':
-        categoryArr = request.POST.getlist('array[]', None)
-        sort = request.POST.get('sort', None)
+    # if request.method == 'POST':
+    #     categoryArr = request.POST.getlist('array[]', None)
+    #     sort = request.POST.get('sort', None)
 
-        categorys=[]
-        for index in categoryArr:
-            categorys.append(int(index)-1)
-        # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+    #     categorys=[]
+    #     for index in categoryArr:
+    #         categorys.append(int(index)-1)
+    #     # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
 
-        print(categorys)
-        print(sort)
-        index=0
-        for category in categorys:
-            if index==0:
-                questions = Question.objects.filter(category=category)
-            else:
-                question = Question.objects.filter(category=category)
-                questions = questions | question
-            index += 1
+    #     print(categorys)
+    #     print(sort)
+    #     index=0
+    #     for category in categorys:
+    #         if index==0:
+    #             questions = Question.objects.filter(category=category)
+    #         else:
+    #             question = Question.objects.filter(category=category)
+    #             questions = questions | question
+    #         index += 1
 
-        if sort == 'date':
-            communication_list = questions.order_by('-date')
-        elif sort == 'likes':
-            communication_list = questions.order_by('-recommend')
-        elif sort == 'views':
-            communication_list = questions.order_by('-views')
-        elif sort == 'answerd':
-            communication_list = questions.filter(answerd=True).order_by('-date')
-        else:
-            communication_list = questions.filter(answerd=False).order_by('-date')
-    else:
-        communication_list = Question.objects.all().order_by('-date')
+    #     if sort == 'date':
+    #         communication_list = questions.order_by('-date')
+    #     elif sort == 'likes':
+    #         communication_list = questions.order_by('-recommend')
+    #     elif sort == 'views':
+    #         communication_list = questions.order_by('-views')
+    #     elif sort == 'answerd':
+    #         communication_list = questions.filter(answerd=True).order_by('-date')
+    #     else:
+    #         communication_list = questions.filter(answerd=False).order_by('-date')
+    #     # return redirect("communicationApp:communication_list")
+    #     return redirect("main")
+    # else:
+    communication_list = Question.objects.all().order_by('-date')
 
     noQuestion = Question.objects.filter(answerd=False).exclude(autor=request.user).order_by("?")[:2]
     myQuestion = Question.objects.filter(autor=request.user).order_by("?")[:2]
