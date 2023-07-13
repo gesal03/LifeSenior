@@ -89,4 +89,4 @@ def answer_recommend(request, answer_id):
     return render(request, 'answer_recommend.html')
 
 def test(request):
-    return render(request, 'communicationApp/question-detail')
+    return render(request, 'communicationApp/question-detail.html')
