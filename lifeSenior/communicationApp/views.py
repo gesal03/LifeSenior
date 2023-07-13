@@ -35,7 +35,7 @@ def communication_list(request):
     else:
         communication_list = Question.objects.all().order_by('-date')
 
-    noQuestion = Question.objects.filter(anserd=False).order_by("?")[:2]
+    noQuestion = Question.objects.filter(answerd=False).order_by("?")[:2]
     myQuestion = Question.objects.filter(autor=request.user).order_by("?")[:2]
     context = {
         'communication_list': communication_list,
@@ -49,6 +49,7 @@ def communication_list(request):
 def communication_detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     category = question.category
+    question.views += 1
     
     sameCategory = Question.objects.filter(category=category).exclude(pk=question_id).order_by("?")[:5]
 
