@@ -37,15 +37,15 @@ $(".quiz-correct-modal").hide();
 $(".quiz-incorrect-modal").hide();
 $(".quiz-overlay").hide();
 
-$("#correctA").click(function(){
-  $("#correctA").css("background-color","#FF5B16");
-  $("#correctA").css("color","#F6F7FB");
+$(".correctA").click(function(){
+  $(".correctA").css("background-color","#FF5B16");
+  $(".correctA").css("color","#F6F7FB");
   $(".quiz-overlay").show();
   $(".quiz-correct-modal").show();
 });
-$("#incorrectA").click(function(){
-  $("#incorrectA").css("background-color","#FF5B16");
-  $("#incorrectA").css("color","#F6F7FB");
+$(".incorrectA").click(function(){
+  $(".incorrectA").css("background-color","#FF5B16");
+  $(".incorrectA").css("color","#F6F7FB");
   $(".quiz-overlay").show();
   $(".quiz-incorrect-modal").show();
 });

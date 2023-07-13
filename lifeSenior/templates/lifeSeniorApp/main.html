@@ -68,7 +68,7 @@
                     {% comment %} 하나의 form을 보기 개수만큼 반복 {% endcomment %}
                     <div id="quiz-select-box" style=" width: 976px;height: 180px;display: flex;flex-direction: row;justify-content: center;margin: 0 auto;">
                         {% for choice in quiz.choice_set.all %} 
-                            <input type="submit" class="quiz-select-btn" name="{{quiz.id}}" value="{{choice.text}}" id="{{choice.isCorrect}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
+                            <input type="submit" class="quiz-select-btn {{choice.isCorrect}}" name="{{quiz.id}}" value="{{choice.text}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
                         {% endfor %}
                     </div>
                     {% comment %} <input type="submit" value="오답" id="incorrectA"> {% endcomment %}
