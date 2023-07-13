@@ -13,8 +13,8 @@ urlpatterns = [
     path('my_answer', my_answer, name='my_answer'), #내가 한 답변
     path('question_create', question_create, name='question_create'), #질문하기_작성할때
     path('answer_create', answer_create, name='answer_create'), #답변하기_작성할때
-    path('answer_list', answer_list, name='answer_list'), #질문에 답변하기_리스트
-    path('answer_detail', answer_detail, name='answer_detail') #질문에 답변하기_질문하나 클릭하면 나오는 화면
+    path('answer_list', answer_list, name='answer_list'), #답변하기_리스트
+    path('answer_detail', answer_detail, name='answer_detail') #답변하기_질문하나 클릭하면 나오는 화면
 ]
 
     
