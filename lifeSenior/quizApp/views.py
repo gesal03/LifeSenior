@@ -91,18 +91,23 @@ def stateAll(request):
     inCorrectQuiz = InCorrectByDate.objects.filter(user=request.user, date=today)
     quizIds = inCorrectQuiz.values_list('quiz', flat=True).distinct()
 
-    quizs=[]
+    quizArr=[]
     for quizId in quizIds:
         quiz = Quiz.objects.get(pk=quizId)
-        quizs.append(quiz)
+        print(quiz)
+        quizArr.append(quiz)
+    print(quizArr)
+    correctQuizCount = ""
 
-
-    # print(inCorrectQuiz)
-    arr = 234566
+    for index in range(6,0,-1):
+        day = today - datetime.timedelta(days=index)
+        correctQuiz = CorrectByDate.objects.filter(user=request.user, date=day)
+        quizs = correctQuiz.values_list('quiz', flat=True).distinct()
+        correctQuizCount += str(quizs.count())
+    
     context = {
-        'arr': arr,
-        'inCorrectQuiz': inCorrectQuiz,
-        'quizs':quizs
+        'correctQuizCount': correctQuizCount,
+        'quizs':quizArr
     }
     return render(request, 'quizApp/current-all.html', context)
 
