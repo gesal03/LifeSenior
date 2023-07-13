@@ -22,7 +22,7 @@
         </div>
         <div class="nav-right">
             <a href="{% url 'accounts:profile' %}">
-                <img class="nav-icon-third" style="margin-right: 15px;" src="{% static 'img/nav-icon-third.png' %}" alt="">
+                <img class="nav-icon-third" style="margin-right: 15px;" src="{{request.user.profile.image.url}}" alt="">
             </a>
             <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:30px;
             color: var(--unnamed, #F6F7FB);
