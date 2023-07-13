@@ -13,6 +13,34 @@ const buttons = document.querySelectorAll('.quiz-box-content-quizBtn input');
     });
 });
 
+$(".quiz-correct-modal").hide();
+$(".quiz-incorrect-modal").hide();
+$(".quiz-overlay").hide();
+
+$(".correctA").click(function(){
+  console.log("ss");
+  $(this).css("background-color","#FF5B16");
+  $(this).css("color","#F6F7FB");
+  $(".quiz-overlay").show();
+  $(".quiz-correct-modal").show();
+
+  setTimeout(function() {
+    $(".quiz-overlay").hide();
+    $(".quiz-correct-modal").hide();
+  }, 1000);
+});
+$(".incorrectA").click(function(){
+  $(this).css("background-color","#FF5B16");
+  $(this).css("color","#F6F7FB");
+  $(".quiz-overlay").show();
+  $(".quiz-incorrect-modal").show();
+
+  setTimeout(function() {
+    $(".quiz-overlay").hide();
+    $(".quiz-incorrect-modal").hide();
+  }, 1000);
+});
+
 
 
 //오늘 날짜 가져오기
@@ -454,6 +482,7 @@ if (notAllScoreDataValues.length > 0) {
   const notAllScoreLastScoreGraphView = notAllScoreGraphViews[notAllScoreGraphViews.length - 1];
   notAllScoreLastScoreGraphView.style.backgroundColor = '#FF5B16';
 }
+
 
 
 // //그래프 하나만 보이게

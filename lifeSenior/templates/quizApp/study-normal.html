@@ -190,6 +190,17 @@
                     {% endfor %}
                 </div>
                 <img class="study-next-btn" src="{% static 'img/study-next-btn.png' %}" alt="">
+                <div class="quiz-overlay"></div>
+                <div class="quiz-correct-modal">
+                    <p class="quiz-correct-modal-content">정답이에요!</p>
+                    <img src="{% static 'img/correct.png' %}" alt="">
+                    <p class="quiz-modal-content">완벽히 이해했군요! 다음 퀴즈도 풀어보세요!</p>
+                </div>
+                <div class="quiz-incorrect-modal">
+                    <p class="quiz-incorrect-modal-content">틀렸어요,,!</p>
+                    <img src="{% static 'img/incorrect.png' %}" alt="">
+                    <p class="quiz-modal-content">완벽히 이해했군요! 다음 퀴즈도 풀어보세요!</p>
+                </div>
             </div>
         </div>
     </div>
