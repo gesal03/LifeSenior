@@ -9,12 +9,13 @@ def index(request):
 def main(request):
     if request.method == 'POST':
         categoryArr = request.POST.getlist('array[]', None)
-        sort = request.POST.get('sort', None)
         
         categorys=[]
         for index in categoryArr:
             categorys.append(int(index))
         # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+
+        print(categorys)
 
         index=0
         for category in categorys:
@@ -25,18 +26,9 @@ def main(request):
                 question = Question.objects.filter(category=category)
                 questions.union(question)
 
-        if sort == 'date':
-            communication_list = questions.order_by('-date')
-        elif sort == 'likes':
-            communication_list = questions.order_by('-recommend')
-        elif sort == 'views':
-            communication_list = questions.order_by('-views')
-        elif sort == 'answerd':
-            communication_list = questions.filter(answerd=True).order_by('-date')
-        else:
-            communication_list = questions.filter(answerd=False).order_by('-date')
+        communication_list = questions.order_by('-date')[:10]
     else:
-        communication_list = Question.objects.all().order_by('-date')
+        communication_list = Question.objects.all().order_by('-date')[:10]
 
     def get_random():
         return Quiz.objects.order_by("?").first()

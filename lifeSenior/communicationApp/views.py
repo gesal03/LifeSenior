@@ -9,12 +9,16 @@ def home(request):
 #소통게시판 : communication_list
 def communication_list(request):
     if request.method == 'POST':
-        arr = request.POST.get('array', False)
-        print(arr)
-        categorys = [0, 1, 2, 3, 4, 5]
-        # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
-        sort = 'date'
+        categoryArr = request.POST.getlist('array[]', None)
+        sort = request.POST.get('sort', None)
 
+        categorys=[]
+        for index in categoryArr:
+            categorys.append(int(index))
+        # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+
+        print(categorys)
+        print(sort)
         index=0
         for category in categorys:
             if index==0:
