@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
 from .models import Quiz
 from accounts.models import Profile, CorrectByDate, InCorrectByDate
 from .models import Term
@@ -15,7 +16,8 @@ def solveQuiz(request):
     user = Profile.objects.get(user = request.user)
 
     if quiz.correct == choice_text:
-        correct = CorrectByDate(user=request.user, quiz=quiz)
+        today = timezone.now().strftime('%Y-%m-%d %H:%M:%S%z')
+        correct = CorrectByDate(user=request.user, date=today, quiz=quiz)
         correct.save()
         quiz.total += 1
         user.total += 1
@@ -34,7 +36,8 @@ def solveQuiz(request):
         quiz.save()
         user.save()
     else:
-        inCorrect = InCorrectByDate(user=request.user, quiz=quiz)
+        today = timezone.now().strftime('%Y-%m-%d %H:%M:%S%z')
+        inCorrect = InCorrectByDate(user=request.user, date=today, quiz=quiz)
         inCorrect.save()
         quiz.total += 1
         quiz.incorrect += 1
@@ -48,15 +51,13 @@ def studySpace(request, level):
         term = Term.objects.filter(category=category).order_by("?").first()
         return term
     
-
-
     randomRealtyTerm = get_random("Realty")
     realtyContents = randomRealtyTerm.content.split("\n")
     randomEconomyTerm = get_random("Economy")
     economyContents = randomEconomyTerm.content.split("\n")
 
     quizs = {}
-    quizAll = Quiz.objects.order_by("?").first()
+    quizAll = Quiz.objects.filter(difficulty=level).order_by("?").first()
 
     for category in range(6):
         quiz = Quiz.objects.filter(category=category, difficulty=level).order_by("?").first()
@@ -91,4 +92,19 @@ def stateAll(request):
     return render(request, 'quizApp/current-all.html', context)
 
 def stateCategory(request):
-    return render(request, 'quizApp/current-not-all.html')
+    index = ""
+    profile = Profile.objects.get(user = request.user)
+    
+    index += str(profile.total // 10)
+    index += str(profile.realty // 10)
+    index += str(profile.economy // 10)
+    index += str(profile.selfDevelopment // 10)
+    index += str(profile.discount // 10)
+    index += str(profile.commonSense // 10)
+    index += str(profile.etc // 10)
+
+    print(index)
+    context = {
+        'index': index
+    }
+    return render(request, 'quizApp/current-not-all.html', context)

@@ -432,7 +432,7 @@ if (allScoreGraphViews.length > 0) {
   // 데이터 값에 따라 높이를 조정
   allScoreGraphViews.forEach(function(allScoreGraphView, index) {
     const allScoreDataValue = allScoreDataValues[index]; // 해당 요소에 대응하는 데이터 값
-    allScoreGraphView.style.height = `${(638 / 6) * allScoreDataValue}px`; // 데이터 값을 픽셀 단위로 높이로 설정
+    allScoreGraphView.style.height = `${(638 / 10) * allScoreDataValue}px`; // 데이터 값을 픽셀 단위로 높이로 설정
   });
   //마지막 그래프 색깔 변경
   const allScoreLastScoreGraphView = allScoreGraphViews[allScoreGraphViews.length - 1];

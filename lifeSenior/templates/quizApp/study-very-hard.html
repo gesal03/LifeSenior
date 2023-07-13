@@ -32,8 +32,7 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;" href="{% url 'accounts:logOut' %}">로그아웃</p>
-        </div> class="nav-icon-third" src="{% static 'img/nav-icon-third.png' %}" alt="">
-        </div>
+        </div> 
     </nav>
     <!-- nav bar end -->
 
@@ -174,28 +173,25 @@
                         <p id="p-7">기타</p>
                     </div>
                     <div class="quiz-change-box" id="box-1">
-                        <p class="quiz-box-content-p-fisrt">알쏭달쏭 부동산 지식</p>
-                        <p class="quiz-box-content-p-second">문제</p>
-                        <div class="quiz-change-box" id="box-1">
-                            <p class="quiz-box-content-p-fisrt">{{ quizAll.text }}</p>
-                            <p class="quiz-box-content-p-second">{{ quizAll.description }}</p>
+                        <p class="quiz-box-content-p-fisrt">{{ quizAll.text }}</p>
+                        <p class="quiz-box-content-p-second">{{ quizAll.description }}</p>
+                        <div class="quiz-box-content-quizBtn">
+                            {% for choice in quizAll.choice_set.all %}
+                                <input type="submit" class="quiz-select-btn" name="{{quiz.id}}" value="{{choice.text}}" id="{{choice.isCorrect}}"{% if forloop.last %}style="margin-right: 0;"{% endif %}>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% for quiz, id in quizs.items %}
+                        <div class="quiz-change-box" id="{{ id }}">
+                            <p class="quiz-box-content-p-fisrt">{{ quiz.text }}</p>
+                            <p class="quiz-box-content-p-second">{{ quiz.description }}</p>
                             <div class="quiz-box-content-quizBtn">
-                                {% for choice in quizAll.choice_set.all %}
-                                    <input type="submit" class="quiz-select-btn" name="{{quiz.id}}" value="{{choice.text}}" id="{{choice.isCorrect}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
+                                {% for choice in quiz.choice_set.all %}
+                                <input type="submit" class="quiz-select-btn" name="{{quiz.id}}" value="{{choice.text}}" id="{{choice.isCorrect}}"{% if forloop.last %}style="margin-right: 0;"{% endif %}>
                                 {% endfor %}
                             </div>
                         </div>
-                        {% for quiz, id in quizs.items %}
-                            <div class="quiz-change-box" id="{{ id }}">
-                                <p class="quiz-box-content-p-fisrt">{{ quiz.text }}</p>
-                                <p class="quiz-box-content-p-second">{{ quiz.description }}</p>
-                                <div class="quiz-box-content-quizBtn">
-                                    {% for choice in quiz.choice_set.all %}
-                                    <input type="submit" class="quiz-select-btn" name="{{quiz.id}}" value="{{choice.text}}" id="{{choice.isCorrect}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        {% endfor %}
+                    {% endfor %}
                 </div>
                 <img class="study-next-btn" src="{% static 'img/study-next-btn.png' %}" alt="">
             </div>
