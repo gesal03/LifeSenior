@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Quiz
-from accounts.models import Profile
+from accounts.models import Profile, CorrectByDate, InCorrectByDate
 from .models import Term
 
 # Create your views here.
@@ -15,6 +15,8 @@ def solveQuiz(request):
     user = Profile.objects.get(user = request.user)
 
     if quiz.correct == choice_text:
+        correct = CorrectByDate(user=request.user, quiz=quiz)
+        correct.save()
         quiz.total += 1
         user.total += 1
         if quiz.category == "Realty":
@@ -32,6 +34,8 @@ def solveQuiz(request):
         quiz.save()
         user.save()
     else:
+        inCorrect = InCorrectByDate(user=request.user, quiz=quiz)
+        inCorrect.save()
         quiz.total += 1
         quiz.incorrect += 1
         quiz.save()
@@ -79,7 +83,7 @@ def studySpace(request, level):
     
 
 def stateAll(request):
-    
+
     arr = 234566
     context = {
         'arr': arr
