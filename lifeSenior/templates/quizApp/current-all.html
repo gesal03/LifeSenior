@@ -231,57 +231,60 @@
                     <div class="note-explain">
                         {{ quiz.content }}
                     </div>
-                    <hr>
-                    <p style="color: var(--unnamed, #17181A);
-                    font-size: 20px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;
-                    margin-top: 36px;
-                    margin-left: 40px;"
-                    >관련 퀴즈로 확실히 익히기</p>
-                    <div style="margin-top: 16px;margin-left: 40px; margin-right: 40px; " class="quiz-level-container">
-                        <a href="#" style="text-decoration: none;
-                        color: inherit;">
-                            <div class="quiz-level-box" id="this">
-                                <p class="quiz-level-comment">인생선배가 처음이신가요?</p>
-                                <div class="quiz-level">
-                                    <p class="quiz-level-name">쉬움</p>
-                                    <img src="{% static 'img/study-easy.png' %}" alt="">
+                    <div style="display: flex; flex-direction: column; justify-content: end;">
+                        <hr>
+                        <p style="color: var(--unnamed, #17181A);
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        margin-bottom: 10px;
+                        margin-left: 40px;"
+                        >관련 퀴즈로 확실히 익히기</p>
+                        <div style="margin-left: 40px; margin-right: 40px; " class="quiz-level-container">
+                            <a href="#" style="text-decoration: none;
+                            color: inherit;">
+                                <div class="quiz-level-box" id="this">
+                                    <p class="quiz-level-comment">인생선배가 처음이신가요?</p>
+                                    <div class="quiz-level">
+                                        <p class="quiz-level-name">쉬움</p>
+                                        <img src="{% static 'img/study-easy.png' %}" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="#" style="text-decoration: none;
-                        color: inherit;">
-                            <div class="quiz-level-box">
-                                <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
-                                <div class="quiz-level">
-                                    <p class="quiz-level-name">보통</p>
-                                    <img src="{% static 'img/study-normal.png' %}" alt="">
+                            </a>
+                            <a href="#" style="text-decoration: none;
+                            color: inherit;">
+                                <div class="quiz-level-box">
+                                    <p class="quiz-level-comment">많은 조언을 얻었나요?</p>
+                                    <div class="quiz-level">
+                                        <p class="quiz-level-name">보통</p>
+                                        <img src="{% static 'img/study-normal.png' %}" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="#" style="text-decoration: none;
-                        color: inherit;">
-                            <div class="quiz-level-box">
-                                <p class="quiz-level-comment">난이도를 높여볼까요?</p>
-                                <div class="quiz-level">
-                                    <p class="quiz-level-name">어려움</p>
-                                    <img src="{% static 'img/study-hard.png' %}" alt="">
+                            </a>
+                            <a href="#" style="text-decoration: none;
+                            color: inherit;">
+                                <div class="quiz-level-box">
+                                    <p class="quiz-level-comment">난이도를 높여볼까요?</p>
+                                    <div class="quiz-level">
+                                        <p class="quiz-level-name">어려움</p>
+                                        <img src="{% static 'img/study-hard.png' %}" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="#" style="text-decoration: none;
-                        color: inherit;">
-                            <div class="quiz-level-box">
-                                <p class="quiz-level-comment">이제 인생선배가 되어봐요!</p>
-                                <div class="quiz-level">
-                                    <p class="quiz-level-name">아주 어려움</p>
-                                    <img src="{% static 'img/study-very-hard.png' %}" alt="">
+                            </a>
+                            <a href="#" style="text-decoration: none;
+                            color: inherit;">
+                                <div class="quiz-level-box">
+                                    <p class="quiz-level-comment">이제 인생선배가 되어봐요!</p>
+                                    <div class="quiz-level">
+                                        <p class="quiz-level-name">아주 어려움</p>
+                                        <img src="{% static 'img/study-very-hard.png' %}" alt="">
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
             {% endfor %}
