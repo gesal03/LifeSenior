@@ -35,7 +35,7 @@ def communication_list(request):
     else:
         communication_list = Question.objects.all().order_by('-date')
 
-    noQuestion = Question.objects.filter(answerd=False).order_by("?")[:2]
+    noQuestion = Question.objects.filter(answerd=False).exclude(autor=request.user).order_by("?")[:2]
     myQuestion = Question.objects.filter(autor=request.user).order_by("?")[:2]
     context = {
         'communication_list': communication_list,
@@ -57,7 +57,7 @@ def communication_detail(request, question_id):
         'question': question,
         'sameCategory': sameCategory,
     }
-    return render(request, 'communicationAPP/communication_detail.html', context)
+    return render(request, 'communicationAPP/question-detail.html', context)
 
 #답변하기 : answer_list
 def answer_list(request):

@@ -94,7 +94,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" style="text-decoration: none;
+                    <a href="{% url 'communicationApp:answer_list' %}" style="text-decoration: none;
                     color: inherit;">
                         <div id="question-box-answer">
                             <p style="color: #17181A;
@@ -111,38 +111,27 @@
                                     <p>질문해요</p>
                                 </div>
                                 <div style="display: flex; flex-direction: column;">
-                                    <div class="repeat-box orange" id="question-box-my-question-content-right" style="margin-bottom: 10px;">
-                                        <div class="community-box" >
-                                            <div class="community-box-num">
-                                                <p id="unanswer">Q</p>
-                                            </div>
-                                            <div class="community-box-content">
-                                                <p id="community-box-content-title">제목</p>
-                                                <p id="community-box-content-detail-content">내용 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis itaque harum architecto velit ratione tenetur cupiditate odit omnis beatae neque excepturi, fuga soluta a possimus assumenda reiciendis, magni asperiores.</p>
-                                                <div class="community-box-content-footer">
-                                                    <div class="content-date">
-                                                        <p>23.02.13</p>
+                                    {% for question in noQuestion %}
+                                    <a href="{% url 'communicationApp:communication_detail' question.id %}" style="text-decoration: none;
+                                        color: inherit;">
+                                            <div class="repeat-box orange" id="question-box-my-question-content-right" style="margin-bottom:    10px;">
+                                                <div class="community-box" >
+                                                    <div class="community-box-num">
+                                                        <p id="unanswer">Q</p>
+                                                    </div>
+                                                    <div class="community-box-content">
+                                                        <p id="community-box-content-title">{{question.title}}</p>
+                                                        <p id="community-box-content-detail-content">{{question.content}}</p>
+                                                        <div class="community-box-content-footer">
+                                                            <div class="content-date">
+                                                                <p>{{question.date}}</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="repeat-box orange" id="question-box-my-question-content-right">
-                                        <div class="community-box" >
-                                            <div class="community-box-num">
-                                                <p id="unanswer">Q</p>
-                                            </div>
-                                            <div class="community-box-content">
-                                                <p id="community-box-content-title">제목</p>
-                                                <p id="community-box-content-detail-content">내용 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis itaque harum architecto velit ratione tenetur cupiditate odit omnis beatae neque excepturi, fuga soluta a possimus assumenda reiciendis, magni asperiores.</p>
-                                                <div class="community-box-content-footer">
-                                                    <div class="content-date">
-                                                        <p>23.02.13</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </a>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -166,51 +155,36 @@
                                     <p>질문해요</p>
                                 </div>
                                 <div style="display: flex; flex-direction: column;">
-                                    <div class="repeat-box green" id="question-box-my-question-content-right" style="margin-bottom: 10px;">
-                                        <div class="community-box" >
-                                            <div class="community-box-num">
-                                                <p id="answer">Q</p>
-                                                <p>답변완료</p>
-                                            </div>
-                                            <div class="community-box-content">
-                                                <p id="community-box-content-title">제목</p>
-                                                <p id="community-box-content-detail-content">내용 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis itaque harum architecto velit ratione tenetur cupiditate odit omnis beatae neque excepturi, fuga soluta a possimus assumenda reiciendis, magni asperiores.</p>
-                                                <div class="community-box-content-footer">
-                                                    <div class="content-date">
-                                                        <p>23.02.13</p>
+                                    {% for question in myQuestion %}
+                                    <a href="{% url 'communicationApp:communication_detail' question.id %}" style="text-decoration: none; color: inherit;">
+                                        <div class="repeat-box green" id="question-box-my-question-content-right" style="margin-bottom: 10px;">
+                                            <div class="community-box" >
+                                                <div class="community-box-num">
+                                                    <p id="answer">Q</p>
+                                                    <p>답변완료</p>
+                                                </div>
+                                                <div class="community-box-content">
+                                                    <p id="community-box-content-title">{{question.title}}</p>
+                                                    <p id="community-box-content-detail-content">{{question.content}}</p>
+                                                    <div class="community-box-content-footer">
+                                                        <div class="content-date">
+                                                            <p>{{question.date}}</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="repeat-box green" id="question-box-my-question-content-right">
-                                        <div class="community-box" >
-                                            <div class="community-box-num">
-                                                <p id="answer">Q</p>
-                                                <p>답변완료</p>
-                                            </div>
-                                            <div class="community-box-content">
-                                                <p id="community-box-content-title">제목</p>
-                                                <p id="community-box-content-detail-content">내용 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis itaque harum architecto velit ratione tenetur cupiditate odit omnis beatae neque excepturi, fuga soluta a possimus assumenda reiciendis, magni asperiores.</p>
-                                                <div class="community-box-content-footer">
-                                                    <div class="content-date">
-                                                        <p>23.02.13</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    </a>
+                                    {% endfor %}
                                 </div>
-                                
                             </div>
                         </div>
                     </a>
                 </div>
-
             </div>
-       </div>
-       <hr style="color:  rgba(149, 150, 157, 0.50);width: 100%;">
-       <div class="container-community">
+        </div>
+        <hr style="color:  rgba(149, 150, 157, 0.50);width: 100%;">
+        <div class="container-community">
         <img id="container-community-logo-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
         <p id="container-community-first-p">실시간 소통 게시판</p>
         <p id="container-community-second-p">인생선배에게 지금바로 질문하세요!</p>
