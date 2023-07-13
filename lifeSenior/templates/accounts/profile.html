@@ -16,7 +16,7 @@
         <div class="nav-left">
             <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
             <a href="{% url 'main' %}" style=" color: #95969D;" >홈</a>
-            <a class="nav-second" style="color: #95969D;" href="./study.html">오늘의 공부</a>
+            <a class="nav-second" style="color: #95969D;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
             <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
         </div>
         <div class="nav-right">
@@ -26,13 +26,15 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: normal;">부기님</p>
+            line-height: normal;">{{ request.user.profile.name }}님</p>
+            <a href="{% url 'accounts:logOut' %}">
             <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:40px;
             color: var(--1, #95969D);
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: normal;" href="{% url 'accounts:logOut' %}">로그아웃</p>
+            line-height: normal;">로그아웃</p>
+            </a>
         </div>
     </nav>
 
@@ -72,20 +74,19 @@
         <div id="user-img">
             <p class="user-info-title">프로필 사진</p>
             <div id="user-img-box">
-                
-                <img src="{% static 'img/user-img.png' %}" alt="">
+                <img src="{{request.user.profile.image.url}}" alt="">
             </div>
         </div>
         <div id="user-name">
             <p class="user-info-title">이름</p>
             <form action="" method="post">
-                <input style="padding-left: 44px;" type="text" placeholder="프로필에 사용할 이름을 8자 이내로 입력해주세요.">
+                <input style="padding-left: 44px;" type="text" placeholder="{{request.user.profile.name}}">
             </form>
         </div>
         <div id="user-introduce">
             <p class="user-info-title">한 줄 소개</p>
             <form action="" method="post">
-                <input style="padding-left: 44px;" type="textarea" placeholder="소개글을 40자 이내로 작성해주세요.">
+                <input style="padding-left: 44px;" type="textarea" placeholder="{{request.user.profile.description}}">
             </form>
         </div>
     </div>
@@ -109,6 +110,9 @@
                     </div>
                     <div class="score-graph" id="all-score">
                         <div class="score-graph-count">
+                            <p>9</p>
+                            <p>8</p>
+                            <p>7</p>
                             <p>6</p>
                             <p>5</p>
                             <p>4</p>
@@ -208,24 +212,22 @@
                             <div class="score-graph-view">
                                 <div class="score-graph-body" id="not-all-score-body">
                                 </div>
-                                <div style="display: flex; flex-direction: column;" class="score-graph-date">
+                                <div class="score-graph-date">
                                     <p>트렌드</p>
-                                    <!-- <p>자기계발</p> -->
                                 </div>
                             </div>
                             <div class="score-graph-view">
                                 <div class="score-graph-body" id="not-all-score-body">
                                 </div>
-                                <div style="display: flex; flex-direction: column;" class="score-graph-date">
+                                <div class="score-graph-date" style="text-align: center;">
                                     <p>할인</p>
-                                    <!-- <p>자기계발</p> -->
                                 </div>
                             </div>
                             <div class="score-graph-view">
                                 <div class="score-graph-body" id="not-all-score-body">
                                 </div>
                                 <div class="score-graph-date">
-                                    <p>시사상식</p>
+                                    <p>시사</p>
                                 </div>
                             </div>
                             <div class="score-graph-view">
