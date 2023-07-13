@@ -177,7 +177,7 @@
                         <p class="quiz-box-content-p-second">{{ quizAll.description }}</p>
                         <div class="quiz-box-content-quizBtn">
                             {% for choice in quizAll.choice_set.all %}
-                                <input type="submit" class="quiz-select-btn" name="{{quiz.id}}" value="{{choice.text}}" id="{{choice.isCorrect}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
+                                <input type="submit" class="quiz-select-btn {{choice.isCorrect}}" name="{{quiz.id}}" value="{{choice.text}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
                             {% endfor %}
                         </div>
                     </div>
@@ -187,7 +187,7 @@
                             <p class="quiz-box-content-p-second">{{ quiz.description }}</p>
                             <div class="quiz-box-content-quizBtn">
                                 {% for choice in quiz.choice_set.all %}
-                                <input type="submit" class="quiz-select-btn" name="{{quiz.id}}" value="{{choice.text}}" id="{{choice.isCorrect}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
+                                <input type="submit" class="quiz-select-btn {{choice.isCorrect}}" name="{{quiz.id}}" value="{{choice.text}}" {% if forloop.last %}style="margin-right: 0;"{% endif %}>
                                 {% endfor %}
                             </div>
                         </div>
