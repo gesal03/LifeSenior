@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/communicationStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/questionDetailStyle.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <title>lifesenior</title>
+</head>
+<body>
+    <!-- nav bar -->
+    <!-- copy -->
+    <nav>
+        <div class="nav-left">
+            <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
+            <a href="{% url 'main' %}" style="color: #95969D;">홈</a>
+            <a style=" color: #95969D;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
+            <a style=" color: #FFFFFF;" href="{% url 'communicationApp:communication_list' %}">소통 게시판</a>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'accounts:profile' %}">
+                <img class="nav-icon-third" style="margin-right: 15px;" src="{% static 'img/nav-icon-third.png' %}" alt="">
+            </a>
+            <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:30px;
+            color: var(--unnamed, #F6F7FB);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;">{{request.user.profile.name}}님</p>
+            <a href="{% url 'accounts:logOut' %}" style="text-decoration: none;
+            color: inherit;">
+            <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:40px;
+            color: var(--1, #95969D);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;">로그아웃</p>
+            </a>
+        </div>
+    </nav>
+
+        <!-- header -->
+    <!-- copy -->
+    <header class="study-title">
+        <p>어른이 되기 위한 우리의</p>       
+        <p>소통게시판</p>
+    </header>
+    <!-- header end -->
+
+    <!-- nav2 -->
+    <nav id="nav2">
+        <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
+        color: inherit;margin-right: 84px;"><p id="nav2-first">질문하기</p></a>
+        <a href="{% url 'quizApp:studySpace' level=0 %}" style="text-decoration: none;
+        color: inherit;margin-right: 84px;"><p id="nav2-second">내가 한 질문</p></a>
+        <a href="#" style="text-decoration: none;
+        color: inherit;color: #FFFFFF;"><p>답변하기</p></a>
+    </nav>
+
+    <!-- main-scroll-icon -->
+    <!-- copy -->
+    <div class="main-scroll-icon">
+        <img src="{% static 'img/main-scroll-icon.png' %}" alt="Scroll Icon">
+    </div>
+    <!-- main-scroll-icon end -->
+
+    <!-- main-container -->
+    <div id="main-container">
+
+       <div class="container-community">
+        <img id="container-community-logo-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
+        <p id="container-community-first-p">인생선배에서 배운 내용으로</p>
+        <p id="container-community-second-p">다른후배들에게 답변을 해보세요!</p>
+        <div class="container-community-btn-box">
+            <div class="container-community-btn">
+                <!-- <input type="submit" value="대출"> -->
+                <input type="submit" value="부동산">
+                <input type="submit" value="경제">
+                <input type="submit" value="트렌드">
+                <input type="submit" value="할인">
+                <input type="submit" value="시사상식">
+                <!-- <input type="submit" value="자취 및 생활방식">
+                <input type="submit" value="여행">
+                <input type="submit" value="제태크">
+                <input type="submit" value="계약">
+                <input type="submit" value="취미">
+                <input type="submit" value="자격증">
+                <input type="submit" value="대학">
+                <input type="submit" value="취직">
+                <input type="submit" value="대출"> -->
+                <input type="submit" value="기타">
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    최신순
+                </button>
+                <ul class="dropdown-menu" style="text-align: center;">
+                    <li><a class="dropdown-item" href="#">최신순</a></li>
+                    <li><a class="dropdown-item" href="#">추천순</a></li>
+                    <li><a class="dropdown-item" href="#">조회순</a></li>
+                    <li><a class="dropdown-item" href="#">답변완료순</a></li>
+                    <li><a class="dropdown-item" href="#">답변없는순</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 답변 없는 질문 박스 -->
+        <a href="#" style="text-decoration: none;
+        color: inherit;">
+            <div class="community-box" >
+                <div class="community-box-num">
+                    <p id="unanswer">01</p>
+                </div>
+                <div class="community-box-content">
+                    <p id="community-box-content-title">제목</p>
+                    <p id="community-box-content-detail-content">내용 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis itaque harum architecto velit ratione tenetur cupiditate odit omnis beatae neque excepturi, fuga soluta a possimus assumenda reiciendis, magni asperiores.</p>
+                    <div class="community-box-content-footer">
+                        <div class="content-icon-box">
+                            <div class="save">
+                                <img src="{% static 'img/main-save-icon.png' %}" alt="">
+                                <p>123</p>
+                            </div>
+                            <div class="saw">
+                                <img src="{% static 'img/main-saw-icon.png' %}" alt="">
+                                <p>123</p>
+                            </div>
+                            <div class="comment">
+                                <img src="{% static 'img/main-comment-icon.png' %}" alt="">
+                                <p>123</p>
+                            </div>
+                        </div>
+                        <div class="content-date">
+                            <p>23.02.13</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        
+        <!-- 답변 있는 질문 박스 -->
+        <a href="#" style="text-decoration: none;
+        color: inherit;">
+            <div class="community-box" >
+                <div class="community-box-num">
+                    <p id="answer">01</p>
+                    <p>답변완료</p>
+                </div>
+                <div class="community-box-content">
+                    <p id="community-box-content-title">제목</p>
+                    <p id="community-box-content-detail-content">내용 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis itaque harum architecto velit ratione tenetur cupiditate odit omnis beatae neque excepturi, fuga soluta a possimus assumenda reiciendis, magni asperiores.</p>
+                    <div class="community-box-content-footer">
+                        <div class="content-icon-box">
+                            <div class="save">
+                                <img src="{% static 'img/main-save-icon.png' %}" alt="">
+                                <p>123</p>
+                            </div>
+                            <div class="saw">
+                                <img src="{% static 'img/main-saw-icon.png' %}" alt="">
+                                <p>123</p>
+                            </div>
+                            <div class="comment">
+                                <img src="{% static 'img/main-comment-icon.png' %}" alt="">
+                                <p>123</p>
+                            </div>
+                        </div>
+                        <div class="content-date">
+                            <p>23.02.13</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <img src="{% static 'img/footer.png' %}" alt="">
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- <script type="text/javascript">
+        $(".quiz-select-btn").click(function(){
+            var pk = $(this).attr('name')
+            var text = $(this).attr('value')
+            $.ajax({ // .like 버튼을 클릭하면 <새로고침> 없이 ajax로 서버와 통신하겠다.
+                type: "POST", // 데이터를 전송하는 방법을 지정
+                url: "{% url 'quizApp:solveQuiz' %}", // 통신할 url을 지정
+                data: {'pk': pk, 'text': text, 'csrfmiddlewaretoken': '{{ csrf_token }}'}, // 서버로 데이터 전송시 옵션
+                dataType: "json", // 서버측에서 전송한 데이터를 어떤 형식의 데이터로서 해석할 것인가를 지정, 없으면 알아서 판단
+                // 서버측에서 전송한 Response 데이터 형식 (json)
+                // {'likes_count': post.like_count, 'message': message }
+                success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
+                    console.log("success")
+                },
+                error: function(request, status, error){ // 통신 실패시 - 로그인 페이지 리다이렉트  
+                    console.log("fail")
+                },
+            });
+        })
+    </script> -->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/mainJs.js' %}"></script>
+</body>
+</html>
