@@ -1,0 +1,1202 @@
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 64px;
+  font: 24px;
+  line-height: 23.76px;
+
+  background-color: #17181A;
+  color: #FFFFFF;
+}
+.nav-left,.nav-right{
+  display: flex;
+  flex-direction: row;
+}
+.nav-left {
+  margin-left: 55.59px;
+}
+.nav-left a{
+  margin-left: 16px;
+  text-decoration: none;
+}
+.nav-left img{
+  max-width: 10%;
+}
+.nav-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 135px;
+}
+.nav-right img{
+  cursor: pointer;
+  margin-right: 35px;
+}
+.nav-right :last-child{
+  margin-right: 0px;
+}
+.nav-icon-first{
+  width: 23px;
+  height: 35.764px; 
+}
+.nav-icon-second{
+  width: 26px;
+  height: 39.464px;
+}
+.nav-icon-third{
+  width: 43px;
+  height: 42px;
+}
+
+header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #f6f7FB;
+  background-image: url(../img/study-header-img.png);
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 344px;
+}
+header :nth-child(1){
+  margin-top: 94px;
+  font-size: 35px;
+  line-height: 80px;
+}
+header :nth-child(2){
+  font-size: 70px;
+  line-height: 80px;
+}
+
+.sotonggesipan-naega-han-dabbyeon {
+  align-items: center;
+  background-color: var(--ds7mm2);
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 3270px;
+  width: 1920px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .lnb {
+  align-items: center;
+  background-color: var(--black);
+  display: flex;
+  gap: 64px;
+  height: 62px;
+  justify-content: center;
+  padding: 12px 0px;
+  position: relative;
+  width: 1920px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .menu0 {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  margin-bottom: -3.00px;
+  margin-top: -3.00px;
+  padding: 10px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-1-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-2-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-3-1 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-4 {
+  color: var(--ds7mm2);
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-l);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-267 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-right: 474.0px;
+  margin-top: 92px;
+  min-height: 105px;
+  padding: 0 0.0px;
+  width: 706px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-266 {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 10.69px;
+  margin-top: -11px;
+  min-width: 41px;
+  transform: rotate(-90.00deg);
+}
+
+.sotonggesipan-naega-han-dabbyeon .overlap-group {
+  height: 63px;
+  margin-top: 0;
+  position: relative;
+  width: 41px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .ellipse-54 {
+  background-color: var(--izobsc);
+  border-radius: 20.63px;
+  height: 41px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(180.00deg);
+  width: 41px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .union {
+  height: 41px;
+  left: 0;
+  position: absolute;
+  top: 21px;
+  transform: rotate(90.00deg);
+  width: 41px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-5 {
+  color: transparent;
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 50px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-354 {
+  align-items: flex-start;
+  display: flex;
+  gap: 100px;
+  height: 168px;
+  margin-top: 76px;
+  min-width: 1040px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-3 {
+  align-items: flex-end;
+  background-color: var(--ds7mm2);
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px 5px #0000001a;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 168px;
+  padding: 30px 42px;
+  width: 280px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-6 {
+  align-self: center;
+  letter-spacing: 2.40px;
+  line-height: normal;
+  min-height: 24px;
+  min-width: 132px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-34 {
+  align-items: flex-end;
+  display: flex;
+  gap: 4px;
+  height: 63px;
+  min-width: 193px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-1 {
+  color: var(--black);
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  min-height: 63px;
+  min-width: 117px;
+  text-align: center;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-bottom: 5px;
+  min-height: 24px;
+  min-width: 68px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-9 {
+  align-self: center;
+  letter-spacing: 2.40px;
+  line-height: normal;
+  min-height: 24px;
+  min-width: 166px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-2 {
+  color: var(--izobsc);
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  min-height: 63px;
+  min-width: 117px;
+  text-align: center;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-351 {
+  align-items: center;
+  background-color: var(--ds7mm2);
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px 5px #0000001a;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 168px;
+  padding: 30px 0;
+  width: 280px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-8 {
+  letter-spacing: 2.40px;
+  line-height: normal;
+  min-height: 24px;
+  min-width: 132px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-3 {
+  color: var(--izobsc);
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  min-height: 63px;
+  min-width: 78px;
+  text-align: center;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-353 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 126px;
+  min-height: 239px;
+  width: 1034px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-352 {
+  align-items: flex-start;
+  background-image: url(../img/union-1.svg);
+  background-size: 100% 100%;
+  display: flex;
+  height: 132px;
+  margin-left: 120.59px;
+  min-width: 471px;
+  padding: 26.0px 59.0px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-13 {
+  color: transparent;
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-m);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 30px;
+  min-height: 55px;
+  text-align: center;
+  width: 351px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-342 {
+  height: 30px;
+  margin-top: 24px;
+  width: 970px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .group-341 {
+  align-items: flex-start;
+  display: flex;
+  gap: 820px;
+  height: 28px;
+  margin-left: 4.0px;
+  margin-top: 25px;
+  min-width: 1038px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-1 {
+  letter-spacing: 2.40px;
+  line-height: normal;
+  min-height: 28px;
+  min-width: 107px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sotonggesipan-naega-han-dabbyeon .line-19 {
+  height: 20px;
+  margin-top: 104px;
+  width: 1920px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .frame-1000002911 {
+  gap: 38px;
+  margin-top: 50px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .title01 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .vector {
+  height: 41.26px;
+  min-width: 62.63px;
+  position: relative;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-14 {
+  color: transparent;
+  font-family: var(--font-family-nanum_gothic);
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 50px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-15 {
+  height: 31px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: 527px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .title02 {
+  align-items: flex-start;
+  display: flex;
+  gap: 130px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .filter_chip {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .filter_chip_0 {
+  align-items: flex-start;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .fillter_chip {
+  align-items: center;
+  background-color: var(--x2);
+  border-radius: 26px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 14px 20px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-16 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-17 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-18 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .fillter_chip-1 {
+  align-items: center;
+  background-color: var(--x8cuxrb);
+  border-radius: 26px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 14px 20px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-19 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-20 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-21 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-22 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-23 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-24 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-25 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-26 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-27 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-28 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-29 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-30 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-31 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .dropdown {
+  height: 48px;
+  min-width: 120px;
+  position: relative;
+}
+
+.sotonggesipan-naega-han-dabbyeon .dropdown-1 {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  left: 20px;
+  position: relative;
+  top: 13px;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-32 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .vector-1 {
+  height: 11px;
+  min-width: 17px;
+  position: relative;
+}
+
+.sotonggesipan-naega-han-dabbyeon .list_contents {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 82px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .div-line-stroke {
+  height: 1px;
+  min-width: 1920px;
+  position: relative;
+}
+
+.sotonggesipan-naega-han-dabbyeon .postbox {
+  align-items: center;
+  background-color: var(--ds7mm2);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 239px;
+  justify-content: space-around;
+  padding: 34px 36px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .post {
+  align-items: flex-start;
+  display: flex;
+  gap: 22px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .num {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .num_-answer_-true {
+  background-color: var(--izobsc);
+  border-radius: 50px;
+  height: 64px;
+  min-width: 64px;
+  position: relative;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number {
+  height: 21px;
+  left: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 21px;
+  white-space: nowrap;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-2 {
+  letter-spacing: 0;
+  line-height: 20px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .divline {
+  height: 64px;
+  min-width: 1px;
+  object-fit: cover;
+  position: relative;
+}
+
+.sotonggesipan-naega-han-dabbyeon .contents {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  width: 1000px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .title {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: 960px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-3 {
+  height: 87px;
+  letter-spacing: 0;
+  line-height: 30px;
+  position: relative;
+  width: 960px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .status {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.sotonggesipan-naega-han-dabbyeon .status-1 {
+  gap: 12px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .status-2 {
+  gap: 4px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-34 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-4 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-35 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .x21-k {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-36 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-5 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-37 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-6 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .date {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-39 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-7 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-40 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-41 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-8 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-42 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-9 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-44 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-10 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-45 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-46 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-11 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-47 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-12 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-49 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-13 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-50 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-51 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-14 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-52 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-15 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-54 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-16 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-55 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-56 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-17 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .text-57 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-18 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .pagenation {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 1.0px;
+  margin-top: 89px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .pagenation-item {
+  height: 54px;
+  min-width: 46px;
+  position: relative;
+}
+
+.sotonggesipan-naega-han-dabbyeon .numbers {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .frame-13 {
+  gap: 10px;
+  padding: 20px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-19 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-20 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-21 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-22 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-23 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-24 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-25 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-26 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-27 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .frame-140 {
+  gap: 10px;
+  padding: 20px 16px;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-28 {
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .date-5 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .frame {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .num-5 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .number-29 {
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.sotonggesipan-naega-han-dabbyeon .status-3 {
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+  width: fit-content;
+}
+
+.sotonggesipan-naega-han-dabbyeon .x21-k-5 {
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}

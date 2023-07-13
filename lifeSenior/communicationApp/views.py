@@ -32,7 +32,11 @@ def my_question(request):
 
 #내가 한 답변 : my_answer
 def my_answer(request):
-    return render(request, 'communicationAPP/my_answer.html')
+    my_answer = Question.objects.all().order_by('-date')
+    context = {
+        'my_answer': my_answer
+    }
+    return render(request, 'communicationAPP/my_answer.html', context)
 
 #질문하기 작성할 때 : question_create
 def question_create(request):
