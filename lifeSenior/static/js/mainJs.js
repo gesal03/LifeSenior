@@ -39,14 +39,14 @@ $(".quiz-overlay").hide();
 
 $(".correctA").click(function(){
   console.log("ss");
-  $(".correctA").css("background-color","#FF5B16");
-  $(".correctA").css("color","#F6F7FB");
+  $(this).css("background-color","#FF5B16");
+  $(this).css("color","#F6F7FB");
   $(".quiz-overlay").show();
   $(".quiz-correct-modal").show();
 });
 $(".incorrectA").click(function(){
-  $(".incorrectA").css("background-color","#FF5B16");
-  $(".incorrectA").css("color","#F6F7FB");
+  $(this).css("background-color","#FF5B16");
+  $(this).css("color","#F6F7FB");
   $(".quiz-overlay").show();
   $(".quiz-incorrect-modal").show();
 });
