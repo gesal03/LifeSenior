@@ -1,0 +1,218 @@
+.quiz-note-box{
+    display: flex;
+    flex-direction: column;
+
+    width: 1181px;
+    height: 607px;
+    border-radius: 30px;
+    background: #F6F7FB;
+    box-shadow: 8px 8px 50px 10px rgba(0, 0, 0, 0.10);
+    margin-bottom: 80px;
+}
+.quiz-note-box-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: #FF5B16;
+    border-radius: 30px 30px 0 0; 
+}
+.quiz-note-box-top-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 40px;
+}
+.quiz-note-box-top-first-top{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-bottom: 16px;
+    color: #FFF;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.quiz-note-box-top-first-top img{
+    margin-left: 25px;
+    width: 80px;
+    height: 17px;
+}
+.quiz-note-box-top-first-bottom{
+    display: flex;
+    flex-direction: row;
+
+    color: var(--unnamed, #17181A);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.quiz-note-box-top-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 39px;
+}
+.quiz-note-box-top-right-first{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+.quiz-note-box-top-right-first :nth-child(1){
+    margin-bottom: 8px;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.quiz-note-box-top-right-first :nth-child(2){
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.quiz-note-box-top-right-second{
+    position: relative;
+    top: 30px;
+    width: 134px;
+    height: 134px;
+    border-radius: 134px;
+    margin-left: 20px;
+}
+.quiz-note-box-top-right-second img{
+    position: absolute;
+    top: 5px;
+    width: 134px;
+    height: 134px;
+
+}
+.quiz-note-box-bottom{
+    display: flex;
+    flex-direction: column;
+    height: 473px;
+
+    justify-content: end;
+}
+.note-explain{
+    margin-top: 55px;
+    margin-bottom: 44px;
+    margin-left: 40px;
+    margin-right: 102px;
+
+    color: var(--unnamed, #17181A);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px;
+}
+.quiz-note-box-bottom hr{
+    margin-bottom: 36px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.not-all-score-container-text-first,.not-all-score-container-text-second{
+    display: flex;
+    flex-direction: row;
+}
+.score-container-text-highlight{
+    color: #FF5B16;
+}
+#ss{
+    margin-bottom: 100px;
+}
+#sss{
+    margin-bottom: 55.48px;
+}
+.score-container-text{
+    display: flex;
+    flex-direction: column;
+
+    color: #000;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+}
+.score-container-text-img{
+    width: 50.3px;
+    height: 32.6px;
+
+    margin-bottom: 14px;
+}
+.score-container-text-first,.score-container-text-second,.score-container-text-third{
+    display: flex;
+    flex-direction: row;
+}
+
+.question-detail-answer-box{
+    width: 1181px;
+}
+.question-detail-answer-box-content{
+    width: 100%;
+    height: fit-content;
+    padding: 47px;
+    border-radius: 30px;
+    background: #F6F7FB;
+    box-shadow: 8px 8px 50px 10px rgba(0, 0, 0, 0.10);
+    margin-bottom: 30px;
+}
+.question-detail-answer-box-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upload-comment{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 124px;
+}
+.upload-comment img, .view-comment img{
+    width: 86px;
+    height: 86px;
+    margin-right: 14px;
+}
+.upload-comment-box{
+    display: flex;
+    flex-direction: row;
+}
+.upload-comment-box :first-child{
+    width: 977px;
+    height: 176px;
+    border-radius: 20px;
+    background: #EBECF0;
+    border: none;
+    padding: 20px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    vertical-align: top;
+}
+.upload-comment-box :last-child{
+    border: none;
+    color: #FFF;
+    background-color: #17181A;
+    border-radius: 45px;
+    height: 70px;
+    width: 70px;
+    margin-left: 10px;
+}
+.view-comment{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 70px;
+}
+.view-comment-box{
+    display: flex;
+    flex-direction: column;
+}
+.view-comment-box-top{
+    display: flex;
+    flex-direction: row;
+}

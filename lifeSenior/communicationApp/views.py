@@ -35,7 +35,7 @@ def communication_list(request):
     else:
         communication_list = Question.objects.all().order_by('-date')
 
-    noQuestion = Question.objects.filter(answerd=False).order_by("?")[:2]
+    noQuestion = Question.objects.filter(answerd=False).exclude(autor=request.user).order_by("?")[:2]
     myQuestion = Question.objects.filter(autor=request.user).order_by("?")[:2]
     context = {
         'communication_list': communication_list,
@@ -57,16 +57,74 @@ def communication_detail(request, question_id):
         'question': question,
         'sameCategory': sameCategory,
     }
-    return render(request, 'communicationAPP/communication_detail.html', context)
+    return render(request, 'communicationAPP/question-detail.html', context)
 
 #답변하기 : answer_list
 def answer_list(request):
-    return render(request, 'communicationApp/answer.html')
+    if request.method == 'POST':
+        categorys = [0, 1, 2, 3, 4, 5]
+        # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+        sort = 'date'
+
+        index=0
+        for category in categorys:
+            if index==0:
+                questions = Question.objects.filter(category=category, answerd=False).exclude(autor=request.user)
+            else:
+                index+=1
+                question = Question.objects.filter(category=category, answerd=False).exclude(autor=request.user)
+                questions.union(question)
+
+        if sort == 'date':
+            communication_list = questions.order_by('-date')
+        elif sort == 'likes':
+            communication_list = questions.order_by('-recommend')
+        elif sort == 'views':
+            communication_list = questions.order_by('-views')
+        elif sort == 'answerd':
+            communication_list = questions.filter(answerd=True).order_by('-date')
+        else:
+            communication_list = questions.filter(answerd=False).order_by('-date')
+    else:
+        communication_list = Question.objects.filter(answerd=False).exclude(autor=request.user).order_by("-date")
+    context = {
+        'communication_list': communication_list,
+    }
+    return render(request, 'communicationApp/answer.html', context)
 
 
 #내가 한 질문 : my_question
 def my_question(request):
-    return render(request, 'my_question.html')
+    if request.method == 'POST':
+        categorys = [0, 1, 2, 3, 4, 5]
+        # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+        sort = 'date'
+
+        index=0
+        for category in categorys:
+            if index==0:
+                questions = Question.objects.filter(category=category, autor=request.user)
+            else:
+                index+=1
+                question = Question.objects.filter(category=category, autor=request.user)
+                questions.union(question)
+
+        if sort == 'date':
+            communication_list = questions.order_by('-date')
+        elif sort == 'likes':
+            communication_list = questions.order_by('-recommend')
+        elif sort == 'views':
+            communication_list = questions.order_by('-views')
+        elif sort == 'answerd':
+            communication_list = questions.filter(answerd=True).order_by('-date')
+        else:
+            communication_list = questions.filter(answerd=False).order_by('-date')
+    else:
+        communication_list = Question.objects.filter(autor=request.user).order_by("-date")
+    context = {
+        'communication_list': communication_list,
+    }
+    return render(request, 'my_question.html', context)
 
 #내가 한 답변 : my_answer
 def my_answer(request):
