@@ -1,7 +1,9 @@
+from datetime import date
+import datetime
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
-from .models import Profile
+from .models import Profile, CorrectByDate
 
 # Create your views here.
 def home(request):
@@ -39,4 +41,32 @@ def logOut(request):
     return redirect('index')
 
 def profile(request):
-    return render(request, "accounts/profile.html")
+    index = ""
+    correctQuizCount = ""
+    today = date.today()
+    
+    profile = Profile.objects.get(user = request.user)
+    index += str(profile.total // 10)
+    index += str(profile.realty // 10)
+    index += str(profile.economy // 10)
+    index += str(profile.selfDevelopment // 10)
+    index += str(profile.discount // 10)
+    index += str(profile.commonSense // 10)
+    index += str(profile.etc // 10)
+
+    for index in range(6,0,-1):
+        day = today - datetime.timedelta(days=index)
+        correctQuiz = CorrectByDate.objects.filter(user=request.user, date=day)
+        quizs = correctQuiz.values_list('quiz', flat=True).distinct()
+        correctQuizCount += str(quizs.count())
+
+    context = {
+        'categoryList': index,
+        'allList': correctQuizCount,
+    }
+
+    return render(request, "accounts/profile.html", context)
+
+def updateProfile(request):
+    if request.method == 'POST':
+        pass

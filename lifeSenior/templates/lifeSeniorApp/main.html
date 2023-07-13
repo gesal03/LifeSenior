@@ -29,13 +29,15 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: normal;">부기님</p>
+            line-height: normal;">{{request.user.profile.name}}님</p>
+            <a href="{% url 'accounts:logOut' %}">
             <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:40px;
             color: var(--1, #95969D);
             font-size: 16px;
             font-style: normal;
             font-weight: 700;
-            line-height: normal;" href="{% url 'accounts:logOut' %}">로그아웃</p>
+            line-height: normal;">로그아웃</p>
+            </a>
         </div>
     </nav>
 
