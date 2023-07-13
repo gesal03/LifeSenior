@@ -1,0 +1,29 @@
+#main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.text-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 1180px;
+}
+.box-title{
+    color: #000;
+    font-family: NanumGothic;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.box-title input{
+    border-radius: 20px;
+    background: #F6F7FB;
+    box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.10);
+    border: none;
+    font-family: NanumGothic;
+    font-size: 24px;
+    width: 980px;
+}
