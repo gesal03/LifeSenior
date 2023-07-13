@@ -3,31 +3,49 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1920, maximum-scale=1.0" />
-    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="{% static ' https://animaproject.s3.amazonaws.com/home/favicon.png' %}" />
     <meta name="og:type" content="website" />
     <meta name="twitter:card" content="photo" />
-    <link rel="stylesheet" type="text/css" href="css/sotonggesipan-naega-han-dabbyeon.css" />
-    <link rel="stylesheet" type="text/css" href="css/styleguide.css" />
-    <link rel="stylesheet" type="text/css" href="css/globals.css" />
+    <link rel="stylesheet" type="text/css" href="{% static ' css/sotonggesipan-naega-han-dabbyeon.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleguide.css ' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static ' css/globals.css' %}" />
   </head>
-  <nav>
-    <div class="nav-left">
-        <img src="./img/main-nav-logo.png" alt="로고">
-        <a href="#" style="color: #FFFFFF;">인생선배</a>
-    </div>
-    <div class="nav-right">
-        <a style="color: #FFFFFF;text-decoration: none;" href="./login.html"><p>로그인</p></a>
-    </div>
-</nav>
-
-<header>
-  <img src="./img/main-nav-logo.png" alt="">
-  <p>매일 하나씩 배워가는 인생조언</p>
-  <p>어렵고 막막한 생활지식 배우기</p>
-  <p>이제 인생선배를 통해 어른이 되어보아요.</p>
-  <a href="./login.html"><button>지금 시작하기</button></a>
-</header>
+  
   <body style="margin: 0; background: #f6f7fb">
+    <!-- nav bar -->
+    <!-- copy -->
+    <nav>
+      <div class="nav-left" style="display: flex;">
+          <img src="{% static 'img/main-nav-logo.png' %}" alt="로고">
+          <a href="{% url 'main' %}" style=" color: #95969D;" >홈</a>
+          <a class="nav-second" style="color: #FFFFFF;" href="{% url 'quizApp:studySpace' level=0 %}">오늘의 공부</a>
+          <a class="nav-third" href="#" style=" color: #95969D;">소통 게시판</a>
+      </div>
+      <div class="nav-right">
+          <img class="nav-icon-third" style="margin-right: 15px;" src="{% static 'img/nav-icon-third.png' %}" alt="">
+          <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:30px;
+          color: var(--unnamed, #F6F7FB);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;">부기님</p>
+          <p style="color: #FFFFFF;top:50%;margin-bottom: 0px; margin-right:40px;
+          color: var(--1, #95969D);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;" href="{% url 'accounts:logOut' %}">로그아웃</p>
+      </div>
+  </nav>
+  <!-- nav bar end -->
+
+  <!-- header -->
+  <!-- copy -->
+  <header class="study-title" style="display: flex;">
+      <p>어른이 되기 위한 우리의</p>       
+      <p>오늘의 공부</p>
+  </header>
+  <!-- header end -->
     <input type="hidden" id="anPageName" name="page" value="sotonggesipan-naega-han-dabbyeon" />
     <div class="container-center-horizontal">
       <div class="sotonggesipan-naega-han-dabbyeon screen">
@@ -47,8 +65,9 @@
           <div class="group-266">
             <div class="overlap-group">
               <div class="ellipse-54"></div>
-              <img class="union" src="img/union.svg" alt="Union" />
+              <img class="union" src="{% static ' img/union.svg' %}" alt="Union" />
             </div>
+            
           </div>
           <p class="text-5">
             <span class="nanumgothic-bold-orange-32px">부기 후배</span
@@ -88,16 +107,16 @@
               ><span class="nanumgothic-bold-eerie-black-20px">를 <br />채우면 인생 선배가 될 수 있어요!</span>
             </p>
           </div>
-          <img class="group-342" src="img/group-342.png" alt="Group 342" />
+          <img class="group-342" src="{% static 'img/group-342.png ' %}" alt="Group 342" />
           <div class="group-341 nanumgothic-bold-mountain-mist-24px">
             <div class="text-1">인생 후배</div>
             <div class="text-1">인생 선배</div>
           </div>
         </div>
-        <img class="line-19" src="img/line-19.svg" alt="Line 19" />
+        <img class="line-19" src="{% static ' img/line-19.svg' %}" alt="Line 19" />
         <div class="frame-1000002911 frame">
           <div class="title01">
-            <img class="vector" src="img/vector.svg" alt="Vector" />
+            <img class="vector" src="{% static ' img/vector.svg' %}" alt="Vector" />
             <div class="text-14 valign-text-middle">
               <span
                 ><span class="nanumgothic-bold-orange-32px">부기 후배</span
@@ -166,13 +185,13 @@
             <div class="dropdown">
               <div class="dropdown-1">
                 <div class="text-32 valign-text-middle nanumgothic-bold-mountain-mist-20px">최신순</div>
-                <img class="vector-1" src="img/vector-1.svg" alt="Vector" />
+                <img class="vector-1" src="{% static 'img/vector-1.svg ' %}" alt="Vector" />
               </div>
             </div>
           </div>
         </div>
         <div class="list_contents">
-          <img class="div-line-stroke" src="img/divline--stroke-.svg" alt="DivLine (Stroke)" />
+          <img class="div-line-stroke" src="{% static 'img/divline--stroke-.svg ' %}" alt="DivLine (Stroke)" />
           <div class="postbox">
             <div class="post">
               <div class="num">
@@ -181,7 +200,7 @@
                 </div>
                 <div class="text-2 nanumgothic-bold-orange-16px">답변완료</div>
               </div>
-              <img class="divline" src="img/divline.svg" alt="divline" />
+              <img class="divline" src="{% static 'img/divline.svg ' %}" alt="divline" />
               <div class="contents">
                 <div class="title valign-text-middle nanumgothic-bold-eerie-black-28px">
                   전세사기일까봐 무서워요,, 도와주세요ㅠㅠ
@@ -216,7 +235,7 @@
               </div>
             </div>
           </div>
-          <img class="div-line-stroke" src="img/divline--stroke-.svg" alt="DivLine (Stroke)" />
+          <img class="div-line-stroke" src=" {% static ' img/divline--stroke-.svg' %}" alt="DivLine (Stroke)" />
           <div class="postbox">
             <div class="post">
               <div class="num-5">
@@ -225,7 +244,7 @@
                 </div>
                 <div class="text-2 nanumgothic-bold-orange-16px">답변완료</div>
               </div>
-              <img class="divline" src="img/divline.svg" alt="divline" />
+              <img class="divline" src="{% static ' img/divline.svg' %}" alt="divline" />
               <div class="contents">
                 <div class="title valign-text-middle nanumgothic-bold-eerie-black-28px">
                   전세사기일까봐 무서워요,, 도와주세요ㅠㅠ
@@ -260,16 +279,16 @@
               </div>
             </div>
           </div>
-          <img class="div-line-stroke" src="img/divline--stroke-.svg" alt="DivLine (Stroke)" />
+          <img class="div-line-stroke" src="{% static 'img/divline--stroke-.svg ' %}" alt="DivLine (Stroke)" />
           <div class="postbox">
             <div class="post">
-              <div class="num-5">
+              <div class="num-5">               
                 <div class="num_-answer_-true">
                   <div class="number valign-text-middle nanumgothic-bold-white-lilac-28px">01</div>
                 </div>
                 <div class="text-2 nanumgothic-bold-orange-16px">답변완료</div>
               </div>
-              <img class="divline" src="img/divline.svg" alt="divline" />
+              <img class="divline" src="{% static 'img/divline.svg ' %}" alt="divline" />
               <div class="contents">
                 <div class="title valign-text-middle nanumgothic-bold-eerie-black-28px">
                   전세사기일까봐 무서워요,, 도와주세요ㅠㅠ
@@ -304,16 +323,16 @@
               </div>
             </div>
           </div>
-          <img class="div-line-stroke" src="img/divline--stroke-.svg" alt="DivLine (Stroke)" />
+          <img class="div-line-stroke" src="{% static ' img/divline--stroke-.svg' %}" alt="DivLine (Stroke)" />
           <div class="postbox">
             <div class="post">
-              <div class="num-5">
+              <div class="num-5">                
                 <div class="num_-answer_-true">
                   <div class="number valign-text-middle nanumgothic-bold-white-lilac-28px">01</div>
                 </div>
                 <div class="text-2 nanumgothic-bold-orange-16px">답변완료</div>
               </div>
-              <img class="divline" src="img/divline.svg" alt="divline" />
+              <img class="divline" src="{% static ' img/divline.svg' %}" alt="divline" />
               <div class="contents">
                 <div class="title valign-text-middle nanumgothic-bold-eerie-black-28px">
                   전세사기일까봐 무서워요,, 도와주세요ㅠㅠ
@@ -348,7 +367,7 @@
               </div>
             </div>
           </div>
-          <img class="div-line-stroke" src="img/divline--stroke-.svg" alt="DivLine (Stroke)" />
+          <img class="div-line-stroke" src="{% static 'img/divline--stroke-.svg ' %}" alt="DivLine (Stroke)" />
           <div class="postbox">
             <div class="post">
               <div class="num-5">
@@ -357,7 +376,7 @@
                 </div>
                 <div class="text-2 nanumgothic-bold-orange-16px">답변완료</div>
               </div>
-              <img class="divline" src="img/divline.svg" alt="divline" />
+              <img class="divline" src="{% static ' img/divline.svg' %}" alt="divline" />
               <div class="contents">
                 <div class="title valign-text-middle nanumgothic-bold-eerie-black-28px">
                   전세사기일까봐 무서워요,, 도와주세요ㅠㅠ
@@ -392,10 +411,10 @@
               </div>
             </div>
           </div>
-          <img class="div-line-stroke" src="img/divline--stroke-.svg" alt="DivLine (Stroke)" />
+          <img class="div-line-stroke" src="{% static ' img/divline--stroke-.svg ' %}" alt="DivLine (Stroke)" />
         </div>
         <div class="pagenation">
-          <img class="pagenation-item" src="img/-.svg" alt="&lt;" />
+          <img class="pagenation-item" src="{% static 'img/-.svg ' %}" alt="&lt;" />
           <div class="numbers">
             <div class="frame-13 frame"><div class="number-19 number-29 nanumgothic-bold-eerie-black-24px">1</div></div>
             <div class="frame-13 frame">
@@ -426,16 +445,16 @@
               <div class="number-28 number-29 nanumgothic-bold-mountain-mist-24px">10</div>
             </div>
           </div>
-          <img class="pagenation-item" src="img/--1.svg" alt="&gt;" />
+          <img class="pagenation-item" src="{% static 'img/--1.svg ' %}" alt="&gt;" />
         </div>
       </div>
     </div>
     <div class="main-scroll-icon">
-      <img src="./img/main-scroll-icon.png" alt="Scroll Icon">
+      <img src="{% static 'img/main-scroll-icon.png ' %}" alt="Scroll Icon">
   </div>
-    <script src="./js/scroll.js"></script>
+    <script src="{% static ' js/scroll.js' %}"></script>
   </body>
 </html>
 <footer>
-  <img src="./img/footer.png" alt="">
+  <img src=".{% static 'img/footer.png ' %}" alt="">
 </footer>

@@ -467,9 +467,10 @@ if (allScoreGraphViews.length > 0) {
   allScoreLastScoreGraphView.style.backgroundColor = '#FF5B16';
 }
 
-
+const index = $("#category").attr('name');
+console.log(index)
 //항목별 점수 그래프 높이 설정
-const notAllScoreDataValues = [2, 4, 5, 2, 3, 2, 4]; //맞춘 수
+const notAllScoreDataValues = index; //맞춘 수
 const notAllScoreGraphViews = document.querySelectorAll('#not-all-score-body');
 
 if (notAllScoreDataValues.length > 0) {
