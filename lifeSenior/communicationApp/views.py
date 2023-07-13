@@ -50,6 +50,7 @@ def communication_detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     category = question.category
     question.views += 1
+    question.save()
     
     sameCategory = Question.objects.filter(category=category).exclude(pk=question_id).order_by("?")[:5]
 
