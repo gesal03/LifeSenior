@@ -22,9 +22,6 @@ def communication_detail(request):
 def answer_list(request):
     return render(request, 'communicationAPP/answer_list.html')
 
-#질문에 답변하기_질문하나 클릭시 : answer_detail
-def answer_detail(request, answer_detail):
-    return render(request, 'communicationAPP/answer_detail.html')
 
 #내가 한 질문 : my_question
 def my_question(request):

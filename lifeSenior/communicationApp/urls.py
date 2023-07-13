@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import home, communication_list, communication_detail, my_question, my_answer, question_create, answer_create, answer_list, answer_detail
+from .views import home, communication_list, communication_detail, my_question, my_answer, question_create, answer_create, answer_list
 
 
 app_name = 'communicationApp'
@@ -14,7 +14,6 @@ urlpatterns = [
     path('question_create', question_create, name='question_create'), #질문하기_작성할때
     path('answer_create', answer_create, name='answer_create'), #답변하기_작성할때
     path('answer_list', answer_list, name='answer_list'), #답변하기_리스트
-    path('answer_detail', answer_detail, name='answer_detail') #답변하기_질문하나 클릭하면 나오는 화면
 ]
 
     
