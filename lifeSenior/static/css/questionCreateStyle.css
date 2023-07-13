@@ -9,6 +9,7 @@
     justify-content: space-between;
 
     width: 1180px;
+    margin-bottom: 50px;
 }
 .box-title{
     color: #000;
@@ -27,5 +28,28 @@
     font-family: NanumGothic;
     font-size: 24px;
     width: 980px;
-    margin-bottom: 50px;
+    
+}
+.key-word{
+    display: flex;
+    flex-direction: row;
+}
+.key-word p{
+    width: fit-content;
+    height: 70px;
+    border-radius: 45px;
+    background: #EBECF0;
+    color: var(--unnamed, #17181A);
+    font-family: NanumGothic;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 20px;
+    margin-right: 20px;
+}
+.key-word p:hover{
+    color: #F5F6FA;
+    background-color: #FF5B16;
+    cursor: pointer;
 }

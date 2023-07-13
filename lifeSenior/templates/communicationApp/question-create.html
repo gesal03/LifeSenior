@@ -99,9 +99,14 @@
         </div>
         <div class="text-box">
             <p class="box-title">관련 키워드</p>
-            <form action="" method="post">
-                <input style="height: 367px;" type="text" placeholder="ㄴ">
-            </form>
+            <div class="key-word">
+                <p>부동산</p>
+                <p>경제</p>
+                <p>트렌드</p>
+                <p>할인</p>
+                <p>시사상식</p>
+                <p>기타</p>
+            </div>
         </div>
         <div class="text-box">
             <p class="box-title">질문 제목</p>
@@ -145,8 +150,13 @@
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(".key-word p").click(function(){
+            $(this).css("color","#F5F6FA");
+            $(this).css("background-color","#FF5B16");
+        })
+    </script>
     <script src="{% static 'js/scroll.js' %}"></script>
     <script src="{% static 'js/mainJs.js' %}"></script>
 </body>
