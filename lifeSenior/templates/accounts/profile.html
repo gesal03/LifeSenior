@@ -92,7 +92,6 @@
     <hr>
     <div id="user-quiz-grade">
         <div class="text-box">
-            
             <img src="{% static 'img/profile-logo.png' %}" alt="">
             <div style="display: flex; flex-direction: row;">
                 <p class="text-highlight">후배</p>
@@ -103,11 +102,138 @@
         </div>
         <div id="user-quiz-container">
             <div style="width: 700px;height: 100%;">
-
+                <div class="score-box">
+                    <div class="score-box-nav">
+                        <p id="nav-all-score">전체 점수</p>
+                        <p id="nav-not-all-score" >항목별 점수</p>
+                    </div>
+                    <div class="score-graph" id="all-score">
+                        <div class="score-graph-count">
+                            <p>6</p>
+                            <p>5</p>
+                            <p>4</p>
+                            <p>3</p>
+                            <p>2</p>
+                            <p>1</p>
+                            <p>0</p>
+                        </div>
+                        <div class="score-graph-view-box">
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="all-score-body" >
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>05</p>
+                                    <p>/</p>
+                                    <p>19</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>05</p>
+                                    <p>/</p>
+                                    <p>19</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>05</p>
+                                    <p>/</p>
+                                    <p>19</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>05</p>
+                                    <p>/</p>
+                                    <p>19</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>05</p>
+                                    <p>/</p>
+                                    <p>19</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>05</p>
+                                    <p>/</p>
+                                    <p>19</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="score-graph" id="not-all-score">
+                        <div class="score-graph-count">
+                            <p>100</p>
+                            <p>80</p>
+                            <p>60</p>
+                            <p>40</p>
+                            <p>20</p>
+                            <p>0</p>
+                        </div>
+                        <div class="score-graph-view-box">
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="not-all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>전체</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="not-all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>부동산</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="not-all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>경제</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="not-all-score-body">
+                                </div>
+                                <div style="display: flex; flex-direction: column;" class="score-graph-date">
+                                    <p>자기개발</p>
+                                    <!-- <p>자기계발</p> -->
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="not-all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>시사상식</p>
+                                </div>
+                            </div>
+                            <div class="score-graph-view">
+                                <div class="score-graph-body" id="not-all-score-body">
+                                </div>
+                                <div class="score-graph-date">
+                                    <p>기타</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="user-last-week">
-                <p class="text-highlight" style="margin-top: 30px; text-align: center; font-size: 24px;">지난주 공부</p>
-                <div class="user-last-week-content-box" style=" margin-top: 70px; margin-bottom: 35px;">
+                <p class="text-highlight" style="margin-top: 50px; text-align: center; font-size: 24px;">지난주 공부</p>
+                <div class="user-last-week-content-box" style=" margin-top: 100px; margin-bottom: 70px;">
                     <div class="user-last-week-content">
                         <p>공부</p>
                         <p>3개</p>
@@ -274,6 +400,8 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/graphJs.js' %}"></script>
+    <script src="{% static 'js/profileJs.js' %}"></script>
     <script>
     $(document).ready(function() {
         var progressBarWidth = $(".progress-bar").width();
