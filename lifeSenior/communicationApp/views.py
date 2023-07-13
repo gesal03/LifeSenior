@@ -151,17 +151,17 @@ def question_create(request):
         question.save()
         return redirect('communicationApp:communcation')
     else:
-        return render(request, 'communicationAPP/question_create.html')
+        return render(request, 'communicationAPP/question-create.html')
 
 #답변하기 작성할 때 : answer_create
-def answer_create(request, q_id):
+def answer_create(request, question_id):
     if request.method == 'POST':
         answer = Answer(author=request.user,
                         content=request.POST['content'],)
         answer.save()
         return redirect('communicationApp:answer')
     else:
-        return render(request, 'communicationAPP/answer_create.html')
+        return render(request, 'communicationApp/answer-create.html')
 
 #답변하기 추천 기능 : answer_recommend
 def answer_recommend(request, answer_id):

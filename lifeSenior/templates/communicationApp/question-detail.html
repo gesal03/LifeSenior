@@ -54,7 +54,7 @@
 
     <!-- nav2 -->
     <nav id="nav2">
-        <a href="#" style="text-decoration: none;
+        <a href="{% url 'communicationApp:question_create' %}" style="text-decoration: none;
         color: inherit;margin-right: 84px;"><p id="nav2-first" style="color:#95969D;">질문하기</p></a>
         <a href="{% url 'communicationApp:my_question' %}" style="text-decoration: none;
         color: inherit;margin-right: 84px;"><p id="nav2-second">내가 한 질문</p></a>
@@ -209,7 +209,7 @@
                         padding: 20px 40px;
                         width: 473px;
                         margin-top: 20px;">다른 후배들에게도 추천해요!</div></a>
-                    <a href="#" style="text-decoration: none;
+                    <a href="{% url 'communicationApp:answer_create' question.id %}" style="text-decoration: none;
                     color: inherit;"><div style="color: #F6F7FB;
                         font-family: NanumGothic;
                         font-size: 32px;
