@@ -43,7 +43,7 @@ def communication_list(request):
         'myQuestion': myQuestion,
 
     }
-    return render(request, 'communicationAPP/communication_list.html', context)
+    return render(request, 'communicationApp/communication.html', context)
 
 #소통게시판 메인_질문하나 클릭하면 나오는 화면 : communication_detail
 def communication_detail(request, question_id):
@@ -61,7 +61,7 @@ def communication_detail(request, question_id):
 
 #답변하기 : answer_list
 def answer_list(request):
-    return render(request, 'communicationAPP/answer_list.html')
+    return render(request, 'communicationApp/answer.html')
 
 
 #내가 한 질문 : my_question
@@ -88,3 +88,5 @@ def answer_create(request):
 def answer_recommend(request, answer_id):
     return render(request, 'answer_recommend.html')
 
+def test(request):
+    return render(request, 'communicationApp/question-detail')
