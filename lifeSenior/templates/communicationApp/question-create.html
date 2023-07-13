@@ -94,7 +94,8 @@
         <div class="text-box">
             <p class="box-title">질문 제목</p>
             <form action="" method="post">
-                <input style="height: 120px;" type="text" placeholder="ㄴ">
+                {% csrf_token %}
+                <input style="height: 120px;" type="text" name="title" placeholder="질문의 제목을 40자 이내로 작성해주세요.">
             </form>
         </div>
         <div class="text-box">
@@ -111,7 +112,8 @@
         <div class="text-box">
             <p class="box-title">질문 내용</p>
             <form action="" method="post">
-                <input style="height: 1099px;" type="text" placeholder="ㄴ">
+                {% csrf_token %}
+                <input style="height: 1099px;" type="text" name="content" placeholder="질문의 내용을 입력해주세요.">
             </form>
         </div> 
         <div style="display: flex;flex-direction: row; margin-top: 220px;">
@@ -125,7 +127,7 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;" value="업로드">
-            <a href="#" style="text-decoration: none;
+            <a href="{% url 'communicationApp:communication_list' %}" style="text-decoration: none;
             color: inherit;">
                 <p style="border-radius: 40px;
                 background: #EBECF0;
