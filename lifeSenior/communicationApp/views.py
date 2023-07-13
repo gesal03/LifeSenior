@@ -14,7 +14,7 @@ def communication_list(request):
 
         categorys=[]
         for index in categoryArr:
-            categorys.append(int(index))
+            categorys.append(int(index)-1)
         # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
 
         print(categorys)
@@ -24,9 +24,9 @@ def communication_list(request):
             if index==0:
                 questions = Question.objects.filter(category=category)
             else:
-                index+=1
                 question = Question.objects.filter(category=category)
-                questions.union(question)
+                questions = questions | question
+            index += 1
 
         if sort == 'date':
             communication_list = questions.order_by('-date')
