@@ -88,12 +88,21 @@ def studySpace(request, level):
 def stateAll(request):
     today = date.today()
     
-    inCorrectQuiz = InCorrectByDate.objects.filter(user=request.user, date=today).distinct().values_list('quiz')
+    inCorrectQuiz = InCorrectByDate.objects.filter(user=request.user, date=today)
+    quizIds = inCorrectQuiz.values_list('quiz', flat=True).distinct()
 
+    quizs=[]
+    for quizId in quizIds:
+        quiz = Quiz.objects.get(pk=quizId)
+        quizs.append(quiz)
+
+
+    # print(inCorrectQuiz)
     arr = 234566
     context = {
         'arr': arr,
-        'inCorrectQuiz': inCorrectQuiz
+        'inCorrectQuiz': inCorrectQuiz,
+        'quizs':quizs
     }
     return render(request, 'quizApp/current-all.html', context)
 
