@@ -131,7 +131,7 @@ def my_question(request):
     context = {
         'communication_list': communication_list,
     }
-    return render(request, 'communication/my-question.html', context)
+    return render(request, 'communicationApp/my-question.html', context)
 
 #내가 한 답변 : my_answer
 def my_answer(request):
