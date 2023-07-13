@@ -292,8 +292,8 @@ header :nth-child(2){
     display: flex;
     flex-direction: row;
 
+    margin-bottom: 30px;
     margin-top: 60px;
-    margin-bottom: 120px;
     justify-content: space-between;
 }
 .quiz-level-box{
@@ -660,6 +660,9 @@ header :nth-child(2){
 .quiz-note-box-bottom{
     display: flex;
     flex-direction: column;
+    height: 473px;
+
+    justify-content: end;
 }
 .note-explain{
     margin-top: 55px;
@@ -674,6 +677,7 @@ header :nth-child(2){
     line-height: 40px;
 }
 .quiz-note-box-bottom hr{
+    margin-bottom: 36px;
     margin-left: 40px;
     margin-right: 40px;
 }
