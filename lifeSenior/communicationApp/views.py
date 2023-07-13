@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Question
+from .models import Answer, Question
 
 # Create your views here.
 def home(request):
@@ -82,15 +82,21 @@ def question_create(request):
         question = Question(author=request.user,
                             title=request.POST['title'],
                             category=request.POST['category'],
-                            content=request.POST['content'],
-                            )
+                            content=request.POST['content'],)
         question.save()
         return redirect('communicationApp:communcation')
-    return render(request, 'communicationAPP/question_create.html')
+    else:
+        return render(request, 'communicationAPP/question_create.html')
 
 #답변하기 작성할 때 : answer_create
-def answer_create(request):
-    return render(request, 'communicationAPP/answer_create.html')
+def answer_create(request, q_id):
+    if request.method == 'POST':
+        answer = Answer(author=request.user,
+                        content=request.POST['content'],)
+        answer.save()
+        return redirect('communicationApp:answer')
+    else:
+        return render(request, 'communicationAPP/answer_create.html')
 
 #답변하기 추천 기능 : answer_recommend
 def answer_recommend(request, answer_id):
