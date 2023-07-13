@@ -9,7 +9,7 @@ def home(request):
 #소통게시판 : communication_list
 def communication_list(request):
     if request.method == 'POST':
-        arr = request.POST.get('array', None)
+        arr = request.POST.get('array', False)
         print(arr)
         categorys = [0, 1, 2, 3, 4, 5]
         # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
