@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .views import home, communication_list, communication_detail, my_question, my_answer, question_create, answer_create, answer_list,test,getList, create_comment
+from .views import home, communication_list, communication_detail, my_question, my_answer, question_create, answer_create, answer_list,test,getList, create_comment,getMyList,getAnswerList
 
 
 app_name = 'communicationApp'
@@ -18,7 +18,9 @@ urlpatterns = [
     path('answer_list', answer_list, name='answer_list'), #답변하기_리스트
     path('test', test, name="test"),
     path('create_comment/<int:question_id>', create_comment, name="create_comment"),
-    path('getList', getList, name="getList")
+    path('getList', getList, name="getList"),
+    path('getMyList', getMyList, name="getMyList"),
+    path('getAnwerList', getAnswerList, name="getAnswerList")
     
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

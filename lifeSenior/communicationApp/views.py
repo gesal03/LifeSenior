@@ -42,6 +42,78 @@ def getList(request):
     }
     return render(request, 'communicationApp/test.html', context)
 
+def getMyList(request):
+    categoryArr = request.POST.getlist('array[]', None)
+    sort = request.POST.get('sort', None)
+    categorys=[]
+    for index in categoryArr:
+        categorys.append(int(index)-1)
+    # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+    print(categorys)
+    print(sort)
+    index=0
+    for category in categorys:
+        if index==0:
+            questions = Question.objects.filter(category=category, autor=requestuser)
+        else:
+            question = Question.objects.filter(category=category, autor=requestuser)
+            questions.union(question)
+        index+=1
+    if sort == 'date':
+        communication_list = questions.order_by('-date')
+    elif sort == 'likes':
+        communication_list = questions.order_by('-recommend')
+    elif sort == 'views':
+        communication_list = questions.order_by('-views')
+    elif sort == 'answerd':
+        communication_list = questions.filter(answerd=True).order_by('-date')
+    else:
+        communication_list = questions.filter(answerd=False).order_by('-date')
+
+    # communication_list = Question.objects.all().order_by('-date')
+    # print(communication_list)
+    # print(questions)
+    context = {
+        'communication_list': communication_list,
+    }
+    return render(request, 'communicationApp/test.html', context)
+
+def getAnswerList(request):
+    categoryArr = request.POST.getlist('array[]', None)
+    sort = request.POST.get('sort', None)
+    categorys=[]
+    for index in categoryArr:
+        categorys.append(int(index)-1)
+    # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+    print(categorys)
+    print(sort)
+    index=0
+    for category in categorys:
+        if index==0:
+            questions = Question.objects.filter(category=category, answerd=False).exclude(autor=request.user)
+        else:
+            question = Question.objects.filter(category=category, answerd=False).exclude(autor=request.user)
+            questions.union(question)
+        index+=1
+    if sort == 'date':
+        communication_list = questions.order_by('-date')
+    elif sort == 'likes':
+        communication_list = questions.order_by('-recommend')
+    elif sort == 'views':
+        communication_list = questions.order_by('-views')
+    elif sort == 'answerd':
+        communication_list = questions.filter(answerd=True).order_by('-date')
+    else:
+        communication_list = questions.filter(answerd=False).order_by('-date')
+
+    # communication_list = Question.objects.all().order_by('-date')
+    # print(communication_list)
+    # print(questions)
+    context = {
+        'communication_list': communication_list,
+    }
+    return render(request, 'communicationApp/test.html', context)
+
 #-----기본 메인 화면-----
 #소통게시판 : communication_list
 def communication_list(request):
@@ -149,9 +221,9 @@ def my_question(request):
             if index==0:
                 questions = Question.objects.filter(category=category, autor=request.user)
             else:
-                index+=1
                 question = Question.objects.filter(category=category, autor=request.user)
                 questions.union(question)
+            index+=1
 
         if sort == 'date':
             communication_list = questions.order_by('-date')
