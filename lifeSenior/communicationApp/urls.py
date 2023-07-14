@@ -20,7 +20,7 @@ urlpatterns = [
     path('create_comment/<int:question_id>', create_comment, name="create_comment"),
     path('getList', getList, name="getList"),
     path('getMyList', getMyList, name="getMyList"),
-    path('getAnwerList', getAnswerList, name="getAnswerList")
+    path('getAnswerList', getAnswerList, name="getAnswerList")
     
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
