@@ -100,12 +100,12 @@
         <div class="text-box">
             <p class="box-title">관련 키워드</p>
             <div class="key-word">
-                <p>부동산</p>
-                <p>경제</p>
-                <p>트렌드</p>
-                <p>할인</p>
-                <p>시사상식</p>
-                <p>기타</p>
+                <p id="one">부동산</p>
+                <p id="two">경제</p>
+                <p id="three">트렌드</p>
+                <p id="four">할인</p>
+                <p id="five">시사상식</p>
+                <p id="six">기타</p>
             </div>
         </div>
         <div class="text-box">
@@ -143,6 +143,9 @@
         </form>
     </div>
 
+    <form action="" method="post">
+        <input id="what" type="hidden" value="">
+    </form>
     <!-- footer -->
     <footer>
         <img src="{% static 'img/footer.png' %}" alt="">
@@ -154,7 +157,48 @@
         $(".key-word p").click(function(){
             $(this).css("color","#F5F6FA");
             $(this).css("background-color","#FF5B16");
-        })
+        });
+
+        var what = 0;
+
+        $("#one").click(function(){
+            what = 1;
+            $("#what").val(what);
+            var value = $("#what").val();
+            console.log(value);
+
+        });
+        $("#two").click(function(){
+            what = 2;
+            $("#what").val(what);
+            var value = $("#what").val();
+            console.log(value);
+        });
+        $("#three").click(function(){
+            what = 3;
+            $("#what").val(what);
+            var value = $("#what").val();
+            console.log(value);
+        });
+        $("#four").click(function(){
+            what = 4;
+            $("#what").val(what);
+            var value = $("#what").val();
+            console.log(value);
+        });
+        $("#five").click(function(){
+            what = 5;
+            $("#what").val(what);
+            var value = $("#what").val();
+            console.log(value);
+        });
+        $("#six").click(function(){
+            what = 6;
+            $("#what").val(what);
+            var value = $("#what").val();
+            console.log(value);
+        });
+
     </script>
     <script src="{% static 'js/scroll.js' %}"></script>
     <script src="{% static 'js/mainJs.js' %}"></script>
