@@ -54,9 +54,9 @@ def getMyList(request):
     index=0
     for category in categorys:
         if index==0:
-            questions = Question.objects.filter(category=category, autor=requestuser)
+            questions = Question.objects.filter(category=category, autor=request.user)
         else:
-            question = Question.objects.filter(category=category, autor=requestuser)
+            question = Question.objects.filter(category=category, autor=request.user)
             questions.union(question)
         index+=1
     if sort == 'date':
