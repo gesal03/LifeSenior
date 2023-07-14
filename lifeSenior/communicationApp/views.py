@@ -194,7 +194,8 @@ def question_create(request):
 def answer_create(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     if request.method == 'POST':
-        myImg = request.FILES['answerImage']
+        myImg = request.FILES.get('answerImage')
+        print(myImg)
         answer = Answer(question=question,
                         autor=request.user,
                         image=myImg,
