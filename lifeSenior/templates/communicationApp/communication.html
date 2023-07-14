@@ -272,6 +272,7 @@
                 clickedIds = clickedIds.filter(function(number) {
                     return number !== oneNum;
                 });
+                $("#question2").remove();
                 oneCount=0;
                 $("#one").css("color","#95969D");
                 $("#one").css("background-color","#EBECF0");
@@ -280,8 +281,9 @@
                 type: "POST", // 데이터를 전송하는 방법을 지정
                 url: "{% url 'communicationApp:getList' %}", // 통신할 url을 지정
                 data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
-                dataType: "json", 
+                dataType: "text", 
                 success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
+                    console.log(response)
                     $("#question").html(response);
                     console.log("success")
                 },
@@ -344,7 +346,7 @@
                 type: "POST", // 데이터를 전송하는 방법을 지정
                 url: "{% url 'communicationApp:getList' %}", // 통신할 url을 지정
                 data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
-                dataType: "json", 
+                dataType: "text", 
                 success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
                     $("#question").html(response);
                     console.log("success")
@@ -374,7 +376,7 @@
                 type: "POST", // 데이터를 전송하는 방법을 지정
                 url: "{% url 'communicationApp:getList' %}", // 통신할 url을 지정
                 data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
-                dataType: "json", 
+                dataType: "text", 
                 success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
                     $("#question").html(response);
                     console.log("success")
@@ -404,7 +406,7 @@
                 type: "POST", // 데이터를 전송하는 방법을 지정
                 url: "{% url 'communicationApp:getList' %}", // 통신할 url을 지정
                 data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
-                dataType: "json", 
+                dataType: "text", 
                 success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
                     $("#question").html(response);
                     console.log("success")
@@ -434,7 +436,7 @@
                 type: "POST", // 데이터를 전송하는 방법을 지정
                 url: "{% url 'communicationApp:getList' %}", // 통신할 url을 지정
                 data: {'array': clickedIds,'sort':sort,'csrfmiddlewaretoken': '{{ csrf_token }}'},
-                dataType: "json", 
+                dataType: "text", 
                 success: function(response){ // 통신 성공시 - 동적으로 좋아요 갯수 변경, 유저 목록 변경
                     $("#question").html(response);
                     console.log("success")

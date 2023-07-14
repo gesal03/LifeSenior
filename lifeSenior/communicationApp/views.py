@@ -35,7 +35,8 @@ def getList(request):
         communication_list = questions.filter(answerd=False).order_by('-date')
 
     # communication_list = Question.objects.all().order_by('-date')
-    print(communication_list)
+    # print(communication_list)
+    # print(questions)
     context = {
         'communication_list': communication_list,
     }
