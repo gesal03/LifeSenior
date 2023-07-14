@@ -1,6 +1,6 @@
 from datetime import date
 import datetime
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import Profile, CorrectByDate
@@ -79,6 +79,20 @@ def profile(request):
 
     return render(request, "accounts/profile.html", context)
 
-def updateProfile(request):
+def update_profile(request):
+    profile = get_object_or_404(Profile, user=request.user)
+    print(profile.name)
     if request.method == 'POST':
-        pass
+        myImg = request.FILES.get('answerImage')
+        name = request.POST['name']
+        description = request.POST['description']
+        profile = get_object_or_404(Profile, user=request.user).update(
+            name=name,
+            description=description,
+            image=myImg
+        )
+        print(profile)
+        profile.save()
+        return redirect("accounts:profile")
+    else:
+        print("error")

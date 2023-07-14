@@ -23,7 +23,6 @@ def getList(request):
             question = Question.objects.filter(category=category)
             questions = questions | question
         index += 1
-    print(questions)
     if sort == 'date':
         communication_list = questions.order_by('-date')
     elif sort == 'likes':
@@ -36,7 +35,7 @@ def getList(request):
         communication_list = questions.filter(answerd=False).order_by('-date')
 
     # communication_list = Question.objects.all().order_by('-date')
-
+    print(communication_list)
     context = {
         'communication_list': communication_list,
     }
