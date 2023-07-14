@@ -107,43 +107,9 @@
             </div>
         </div>
         <!-- 답변 없는 질문 박스 -->
-        {% for question in communication_list%}
-        <a href="{% url 'communicationApp:communication_detail' question.id%}"      style="text-decoration: none; color: inherit;">
-            <div class="community-box" >
-                <div class="community-box-num">
-                    {% if question.answerd == False %}
-                        <p id="unanswer">Q</p>
-                    {% else %}
-                        <p id="answer">Q</p>
-                        <p>답변완료</p>
-                    {% endif %}
-                </div>
-                <div class="community-box-content">
-                    <p id="community-box-content-title">{{question.title}}</p>
-                    <p id="community-box-content-detail-content">{{question.content}}</p>
-                    <div class="community-box-content-footer">
-                        <div class="content-icon-box">
-                            <div class="save">
-                                <img src="{% static 'img/main-save-icon.png' %}" alt="">
-                                <p>{{question.recommend}}</p>
-                            </div>
-                            <div class="saw">
-                                <img src="{% static 'img/main-saw-icon.png' %}" alt="">
-                                <p>{{question.views}}</p>
-                            </div>
-                            <div class="comment">
-                                <img src="{% static 'img/main-comment-icon.png' %}" alt="">
-                                <p>{{question.comment_set.count}}</p>
-                            </div>
-                        </div>
-                        <div class="content-date">
-                            <p>{{question.date}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <a id='question'>
+           
         </a>
-        {% endfor %}
     </div>
 
     <!-- footer -->
