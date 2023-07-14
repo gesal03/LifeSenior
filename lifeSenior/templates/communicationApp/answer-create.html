@@ -81,7 +81,7 @@
             <div class="score-container-text" id="sss">
                 <img class="score-container-text-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
                 <div class="score-container-text-first">
-                    <p class="score-container-text-highlight">나도 인생선배</p>
+                    <p class="score-container-text-highlight">{{question.autor.profile.name}}</p>
                     <p>님의&nbsp;</p>
                     <p class="score-container-text-highlight">질문</p>
                     <p>입니다.</p>
@@ -91,13 +91,13 @@
                 <div class="quiz-note-box-top">
                     <div class="quiz-note-box-top-left">
                         <div class="quiz-note-box-top-first-top">
-                            <p>Q:ss</p>
+                            <p>Q. "{{question.title}}"</p>
                         </div>
                     </div>
                     <div class="quiz-note-box-top-right">
                         <div class="quiz-note-box-top-right-first">
-                            <p>상상부기</p>
-                            <p>운영자 인생선배</p>
+                            <p>{{question.autor.profile.name}}</p>
+                            <p>인생후배</p>
                         </div>
                         <div class="quiz-note-box-top-right-second">
                             <img src="{% static 'img/study-user-img.png' %}" alt="">
@@ -106,26 +106,24 @@
                 </div>
                 <div class="quiz-note-box-bottom">
                     <div class="note-explain">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, deleniti? Fugit, neque. Totam consequuntur nobis doloremque ad voluptatibus! Similique quis ducimus impedit enim repellat, minus ex reiciendis. Excepturi, eius quod.
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias ex provident doloribus dolor quos rem minima numquam vero laboriosam ut, temporibus natus. A nostrum exercitationem necessitatibus eum cum adipisci praesentium!
+                        {{question.content}}
                     </div>
                     <div style="display: flex; flex-direction: column; justify-content: end;">
                         <hr>
                         <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                            <p style="
-                        color: #F6F7FB;
-                        font-family: NanumGothic;
-                        font-size: 24px;
-                        font-style: normal;
-                        font-weight: 700;
-                        line-height: normal;
-                        border-radius: 22px;
-                        width: fit-content;
-                        padding: 10px;
-                        margin-left: 40px;
-                        margin-bottom: 30px;
-                        background-color: #FF5B16;"
-                        >부동산</p>
+                        {% if question.category == 0 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">부동산</p>
+                        {%elif question.category == 1 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">경제</p>
+                        {%elif question.category == 2 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">트렌드</p>
+                        {%elif question.category == 3 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">할인</p>
+                        {%elif question.category == 4 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">시사</p>
+                        {%else %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">기타</p>
+                        {% endif %}
                         <p style="
                         color: #F6F7FB;
                         font-family: NanumGothic;
@@ -140,7 +138,7 @@
                         margin-bottom: 30px;
                         background-color: #FF5B16;
                         margin-right: 40px;"
-                        >추천 43</p>
+                        >추천 {{question.recommend}}</p>
                         </div>
                         
                     </div>
@@ -169,16 +167,15 @@
                 <p>을 해보세요!</p>
             </div>
         </div>
+        <form action="" method="POST">
+        {%csrf_token%}
         <div class="text-box">
             <p class="box-title">답변 내용</p>
-            <form action="" method="post">
-                <input style="height: 1099px;" type="text" placeholder="{{request.user.profile.name}}">
-            </form>
+            <input style="height: 1099px;" type="text", name="content" placeholder="{{request.user.profile.name}}">
         </div> 
         <div class="text-box">
             <p class="box-title">이미지 업로드</p>
             <div class="img"></div>
-            <form action="" method="post">
                 <div class="button" style="width: 180px;
                 text-align: center;
                 height: 70px;
@@ -193,7 +190,6 @@
                     </label>
                 </div>
                 <input class="imgUploadTag" type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
-            </form>
         </div> 
         <div style="display: flex;flex-direction: row;margin-top: 220px;">
             <input type="submit" style="border-radius: 40px;
@@ -206,7 +202,7 @@
             font-style: normal;
             font-weight: 700;
             line-height: normal;" value="업로드">
-            <a href="#" style="text-decoration: none;
+            <a href="{% url 'communicationApp:communication_detail' question.id %}" style="text-decoration: none;
             color: inherit;">
                 <p style="border-radius: 40px;
                 background: #EBECF0;
@@ -222,7 +218,8 @@
                 padding-top: 12%;
                 margin-left: 30px;">나가기</p>
             </a>
-        </div>   
+        </div>  
+        </form> 
     </div>
 
     <!-- footer -->

@@ -181,24 +181,32 @@ def my_answer(request):
 #질문하기 작성할 때 : question_create
 def question_create(request):
     if request.method == 'POST':
-        question = Question(author=request.user,
+        question = Question(autor=request.user,
                             title=request.POST['title'],
-                            category=request.POST['category'],
+                            category=0,
                             content=request.POST['content'],)
         question.save()
-        return redirect('communicationApp:communcation')
+        return redirect('communicationApp:communication_list')
     else:
-        return render(request, 'communicationAPP/question-create.html')
+        return render(request, 'communicationApp/question-create.html')
 
 #답변하기 작성할 때 : answer_create
 def answer_create(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
     if request.method == 'POST':
-        answer = Answer(author=request.user,
+        print(request.POST['chooseFile'])
+        answer = Answer(question=question,
+                        autor=request.user,
+                        image=request.POST['chooseFile'],
                         content=request.POST['content'],)
         answer.save()
-        return redirect('communicationApp:answer')
+        return redirect('communicationApp:communication_detail', question_id=question.id)
     else:
-        return render(request, 'communicationApp/answer-create.html')
+        question = get_object_or_404(Question, pk=question_id)
+        context={
+            'question':question,
+        }
+        return render(request, 'communicationApp/answer-create.html', context)
 
 #답변하기 추천 기능 : answer_recommend
 def answer_recommend(request, answer_id):

@@ -91,12 +91,11 @@
                 <p>을 해보세요!</p>
             </div>
         </div>
+        <form action="" method="post">
+        {% csrf_token %}
         <div class="text-box">
             <p class="box-title">질문 제목</p>
-            <form action="" method="post">
-                {% csrf_token %}
                 <input style="height: 120px;" type="text" name="title" placeholder="질문의 제목을 40자 이내로 작성해주세요.">
-            </form>
         </div>
         <div class="text-box">
             <p class="box-title">관련 키워드</p>
@@ -111,10 +110,7 @@
         </div>
         <div class="text-box">
             <p class="box-title">질문 내용</p>
-            <form action="" method="post">
-                {% csrf_token %}
                 <input style="height: 1099px;" type="text" name="content" placeholder="질문의 내용을 입력해주세요.">
-            </form>
         </div> 
         <div style="display: flex;flex-direction: row; margin-top: 220px;">
             <input type="submit" style="border-radius: 40px;
@@ -143,7 +139,8 @@
                 padding-top: 12%;
                 margin-left: 30px;">나가기</p>
             </a>
-        </div>   
+        </div> 
+        </form>
     </div>
 
     <!-- footer -->

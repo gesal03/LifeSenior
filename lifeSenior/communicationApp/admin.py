@@ -8,7 +8,7 @@ class QuestionAdmin(admin.ModelAdmin):
 admin.site.register(Question, QuestionAdmin)
 
 class AnswerAdmin(admin.ModelAdmin):
-    list_display = ()
+    list_display = ('question', 'autor', 'image', 'content')
 
 admin.site.register(Answer, AnswerAdmin)
 

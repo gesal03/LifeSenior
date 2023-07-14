@@ -75,7 +75,7 @@
             <div class="score-container-text" id="sss">
                 <img class="score-container-text-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
                 <div class="score-container-text-first">
-                    <p class="score-container-text-highlight">나도 인생선배</p>
+                    <p class="score-container-text-highlight">{{question.autor.profile.name}}</p>
                     <p>님의&nbsp;</p>
                     <p class="score-container-text-highlight">질문</p>
                     <p>입니다.</p>
@@ -85,13 +85,13 @@
                 <div class="quiz-note-box-top">
                     <div class="quiz-note-box-top-left">
                         <div class="quiz-note-box-top-first-top">
-                            <p>Q:ss</p>
+                            <p>Q:"{{question.title}}"</p>
                         </div>
                     </div>
                     <div class="quiz-note-box-top-right">
                         <div class="quiz-note-box-top-right-first">
-                            <p>상상부기</p>
-                            <p>운영자 인생선배</p>
+                            <p>{{question.autor.profile.name}}</p>
+                            <p>인생후배</p>
                         </div>
                         <div class="quiz-note-box-top-right-second">
                             <img src="{% static 'img/study-user-img.png' %}" alt="">
@@ -100,26 +100,24 @@
                 </div>
                 <div class="quiz-note-box-bottom">
                     <div class="note-explain">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, deleniti? Fugit, neque. Totam consequuntur nobis doloremque ad voluptatibus! Similique quis ducimus impedit enim repellat, minus ex reiciendis. Excepturi, eius quod.
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias ex provident doloribus dolor quos rem minima numquam vero laboriosam ut, temporibus natus. A nostrum exercitationem necessitatibus eum cum adipisci praesentium!
+                        {{question.content}}
                     </div>
                     <div style="display: flex; flex-direction: column; justify-content: end;">
                         <hr>
                         <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                            <p style="
-                        color: #F6F7FB;
-                        font-family: NanumGothic;
-                        font-size: 24px;
-                        font-style: normal;
-                        font-weight: 700;
-                        line-height: normal;
-                        border-radius: 22px;
-                        width: fit-content;
-                        padding: 10px;
-                        margin-left: 40px;
-                        margin-bottom: 30px;
-                        background-color: #FF5B16;"
-                        >부동산</p>
+                        {% if question.category == 0 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">부동산</p>
+                        {%elif question.category == 1 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">경제</p>
+                        {%elif question.category == 2 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">트렌드</p>
+                        {%elif question.category == 3 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">할인</p>
+                        {%elif question.category == 4 %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">시사</p>
+                        {%else %}
+                        <p style="color: #F6F7FB; font-family: NanumGothic;font-size: 24px;font-style: normal;font-weight: 700;line-height: normal;border-radius: 22px;width: fit-content;padding: 10px;margin-left: 40px;margin-bottom: 30px;background-color: #FF5B16;">기타</p>
+                        {% endif %}
                         <p style="
                         color: #F6F7FB;
                         font-family: NanumGothic;
@@ -134,7 +132,7 @@
                         margin-bottom: 30px;
                         background-color: #FF5B16;
                         margin-right: 40px;"
-                        >추천 43</p>
+                        >추천 {{question.recommend}}</p>
                         </div>
                         
                     </div>
@@ -147,7 +145,7 @@
                 <img class="score-container-text-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
                 <div class="score-container-text-first">
                     <p>현재 총&nbsp;</p>
-                    <p class="score-container-text-highlight">1개의 답변</p>
+                    <p class="score-container-text-highlight">{{question.answer_set.count}}개의 답변</p>
                     <p>이&nbsp;</p>
                     <p class="score-container-text-highlight">달렸습니다.</p>
                 </div>
@@ -157,12 +155,13 @@
                     <p>해보세요!</p>
                 </div>
             </div>
+            {% for answer in question.answer_set.all %}
             <div class="question-detail-answer-box">
                 <div class="score-container-text" style="margin-bottom: 35px;" id="sss">
                     <img class="score-container-text-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
                     <div style="display: flex;flex-direction: row;justify-content: space-between;width: 100%;">
                         <div class="score-container-text-first">
-                            <p class="score-container-text-highlight">아기사자</p>
+                            <p class="score-container-text-highlight">{{answer.autor.profile.name}}</p>
                             <p>님의&nbsp;</p>
                             <p class="score-container-text-highlight">답변</p>
                             <p>입니다.</p>
@@ -181,13 +180,15 @@
                         margin-bottom: 30px;
                         background-color: #FF5B16;
                         margin-right: 40px;"
-                        >추천 43</p>
+                        >추천 {{answer.recommend}}</p>
                         </div>
                     </div>
+                <div class="question-detail-answer-box-content" style="display:flex;flex-direction:column;align-items:center;">
+                    <p>{{answer.content}}</p>
+                    <img style="width: 50%;height:50%; margin-top:30px;" src="{{answer.image.url}}" alt="">
                 </div>
-                <div class="question-detail-answer-box-content">
-                    <img style="width: 100%;" src="" alt="">
-                </div>
+            </div>
+            {% endfor %}
                 <div class="question-detail-answer-box-text">
                     <p style="color: #95969D;
                     text-align: center;
@@ -240,82 +241,22 @@
                 </div>
             </div>
         </div>
-       <div class="container-community" style="margin-top: 400px;">
+        <div class="container-community" style="display:flex; flex-direction:column;align-items:center;margin:0 auto;margin-top: 200px;">
             <img id="container-community-logo-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
-            <p id="container-community-first-p">인생선배에서 배운 내용으로</p>
-            <p id="container-community-second-p">다른후배들에게 답변을 해보세요!</p>
-            <div class="container-community-btn-box">
-                <div class="container-community-btn">
-                    <!-- <input type="submit" value="대출"> -->
-                    <input type="submit" value="부동산">
-                    <input type="submit" value="경제">
-                    <input type="submit" value="트렌드">
-                    <input type="submit" value="할인">
-                    <input type="submit" value="시사상식">
-                    <!-- <input type="submit" value="자취 및 생활방식">
-                    <input type="submit" value="여행">
-                    <input type="submit" value="제태크">
-                    <input type="submit" value="계약">
-                    <input type="submit" value="취미">
-                    <input type="submit" value="자격증">
-                    <input type="submit" value="대학">
-                    <input type="submit" value="취직">
-                    <input type="submit" value="대출"> -->
-                    <input type="submit" value="기타">
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        최신순
-                    </button>
-                    <ul class="dropdown-menu" style="text-align: center;">
-                        <li><a class="dropdown-item" href="#">최신순</a></li>
-                        <li><a class="dropdown-item" href="#">추천순</a></li>
-                        <li><a class="dropdown-item" href="#">조회순</a></li>
-                        <li><a class="dropdown-item" href="#">답변완료순</a></li>
-                        <li><a class="dropdown-item" href="#">답변없는순</a></li>
-                    </ul>
-                </div>
-            </div>
+            <p id="container-community-first-p" style="margin-bottom: 100px;">이 글을 본 후배님들이 함께 읽은 질문입니다.</p>
             <!-- 답변 없는 질문 박스 -->
-            <a href="#" style="text-decoration: none;
-            color: inherit;">
-                <div class="community-box" >
-                    <div class="community-box-num">
-                        <p id="unanswer">01</p>
-                    </div>
-                    <div class="community-box-content">
-                        <p id="community-box-content-title">제목</p>
-                        <p id="community-box-content-detail-content">내용 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis itaque harum architecto velit ratione tenetur cupiditate odit omnis beatae neque excepturi, fuga soluta a possimus assumenda reiciendis, magni asperiores.</p>
-                        <div class="community-box-content-footer">
-                            <div class="content-icon-box">
-                                <div class="save">
-                                    <img src="{% static 'img/main-save-icon.png' %}" alt="">
-                                    <p>123</p>
-                                </div>
-                                <div class="saw">
-                                    <img src="{% static 'img/main-saw-icon.png' %}" alt="">
-                                    <p>123</p>
-                                </div>
-                                <div class="comment">
-                                    <img src="{% static 'img/main-comment-icon.png' %}" alt="">
-                                    <p>123</p>
-                                </div>
-                            </div>
-                            <div class="content-date">
-                                <p>23.02.13</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        
+            {% for question in sameCategory%}
             <!-- 답변 있는 질문 박스 -->
             <a href="#" style="text-decoration: none;
             color: inherit;">
                 <div class="community-box" >
                     <div class="community-box-num">
-                        <p id="answer">01</p>
-                        <p>답변완료</p>
+                        {% if question.answerd == False %}
+                            <p id="unanswer">Q</p>
+                        {% else %}
+                            <p id="answer">Q</p>
+                            <p>답변완료</p>
+                        {% endif %}
                     </div>
                     <div class="community-box-content">
                         <p id="community-box-content-title">제목</p>
@@ -342,6 +283,7 @@
                     </div>
                 </div>
             </a>
+            {% endfor %}
         </div>
         <div id="comment-container" style="width: 1177px;margin: 0 auto; margin-top: 200px;">
             <p style="color: #000;

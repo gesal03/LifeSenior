@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from .views import home, communication_list, communication_detail, my_question, my_answer, question_create, answer_create, answer_list,test,getList
 
@@ -18,5 +20,5 @@ urlpatterns = [
     path('getList', getList, name="getList")
     
 ]
-
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
     
