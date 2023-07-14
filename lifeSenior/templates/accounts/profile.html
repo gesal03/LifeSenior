@@ -106,7 +106,7 @@
         margin-bottom: 40px;
         border-radius: 40px;
         background-color: rgba(128, 128, 128, 0.1);">
-        <form action="" method="post">
+        <form action="{}" method="post">
             <div id="user-name">
                 <p class="user-info-title">이름</p>
                     <input style="padding-left: 44px;" type="text" placeholder="{{request.user.profile.name}}">
@@ -115,24 +115,6 @@
                 <p class="user-info-title">한 줄 소개</p>
                     <input style="padding-left: 44px;" type="textarea" placeholder="{{request.user.profile.description}}">
             </div>
-            <div class="text-box">
-                <p class="box-title">이미지 업로드</p>
-                <div class="img"></div>
-                    <div class="button" style="width: 180px;
-                    text-align: center;
-                    height: 70px;
-                    background-color: #FF5B16;
-                    color: #EBECF0;
-                    border-radius: 45px;
-                    padding: 20px;
-                    cursor: pointer;
-                    font-size: 17px;">
-                        <label for="chooseFile">
-                            이미지 업로드 버튼
-                        </label>
-                    </div>
-                    <input class="imgUploadTag" type="file" id="chooseFile" name="answerImage" accept="image/*" onchange="loadFile(this)">
-            </div> 
             <div style="margin-bottom: 30px; text-align: center;">
                 <input style="background-color: #FF5B16; 
                 color: #F6F7FB;
@@ -481,47 +463,5 @@
         $(".speech-bubble").css("left", offset);
     });
     </script>
-    <script>
-        function loadFile(input) {
-          var file = input.files[0];
-          var name = document.getElementById('fileName');
-          name.textContent = file.name;
-        
-          var newImage = document.createElement("img");
-          newImage.setAttribute("class", 'img');
-          newImage.src = URL.createObjectURL(file);
-          newImage.style.width = "70%";
-          newImage.style.height = "70%";
-          newImage.style.visibility = "hidden";
-          newImage.style.objectFit = "contain";
-        
-          var container = document.getElementById('image-show');
-          container.appendChild(newImage);
-        }
-        
-        var submit = document.querySelector('button[type="submit"]');
-        submit.onclick = function(event) {
-          event.preventDefault();
-        
-          var input = document.getElementById('chooseFile');
-          var file = input.files[0];
-        
-          if (file) {
-            var formData = new FormData();
-            formData.append('answerImage', file);
-            formData.append('content', document.querySelector('textarea[name="content"]').value);
-            formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
-        
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', '{% url "communicationApp:answer_create" question.id %}');
-            xhr.onload = function() {
-              if (xhr.status === 200) {
-                // 서버 응답이 성공적으로 도착한 경우 처리할 로직 작성
-              }
-            };
-            xhr.send(formData);
-          }
-        };
-        </script>
 </body>
 </html>
