@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .models import Profile, CorrectByDate
+from communicationApp.models import Answer, Question
 
 # Create your views here.
 def home(request):
@@ -60,9 +61,20 @@ def profile(request):
         quizs = correctQuiz.values_list('quiz', flat=True).distinct()
         correctQuizCount += str(quizs.count())
 
+    answers = Answer.objects.filter(autor=request.user)
+    answerCount = answers.count()
+    answerRecommendCount=0
+    for answer in answers:
+        answerRecommendCount += answer.recommend
+    questionCount = Question.objects.filter(autor=request.user).count()
+    
+
     context = {
         'categoryList': index,
         'allList': correctQuizCount,
+        'answerCount': answerCount,
+        'answerRecommendCount': answerRecommendCount,
+        'questionCount': questionCount
     }
 
     return render(request, "accounts/profile.html", context)
