@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Answer, Question
+from .models import Answer, Question, Comment
 
 # Create your views here.
 def home(request):
@@ -23,7 +23,6 @@ def getList(request):
             question = Question.objects.filter(category=category)
             questions = questions | question
         index += 1
-    print(questions)
     if sort == 'date':
         communication_list = questions.order_by('-date')
     elif sort == 'likes':
@@ -36,7 +35,80 @@ def getList(request):
         communication_list = questions.filter(answerd=False).order_by('-date')
 
     # communication_list = Question.objects.all().order_by('-date')
+    # print(communication_list)
+    # print(questions)
+    context = {
+        'communication_list': communication_list,
+    }
+    return render(request, 'communicationApp/test.html', context)
 
+def getMyList(request):
+    categoryArr = request.POST.getlist('array[]', None)
+    sort = request.POST.get('sort', None)
+    categorys=[]
+    for index in categoryArr:
+        categorys.append(int(index)-1)
+    # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+    print(categorys)
+    print(sort)
+    index=0
+    for category in categorys:
+        if index==0:
+            questions = Question.objects.filter(category=category, autor=request.user)
+        else:
+            question = Question.objects.filter(category=category, autor=request.user)
+            questions.union(question)
+        index+=1
+    if sort == 'date':
+        communication_list = questions.order_by('-date')
+    elif sort == 'likes':
+        communication_list = questions.order_by('-recommend')
+    elif sort == 'views':
+        communication_list = questions.order_by('-views')
+    elif sort == 'answerd':
+        communication_list = questions.filter(answerd=True).order_by('-date')
+    else:
+        communication_list = questions.filter(answerd=False).order_by('-date')
+
+    # communication_list = Question.objects.all().order_by('-date')
+    # print(communication_list)
+    # print(questions)
+    context = {
+        'communication_list': communication_list,
+    }
+    return render(request, 'communicationApp/test.html', context)
+
+def getAnswerList(request):
+    categoryArr = request.POST.getlist('array[]', None)
+    sort = request.POST.get('sort', None)
+    categorys=[]
+    for index in categoryArr:
+        categorys.append(int(index)-1)
+    # sorts = ['date', 'likes', 'views', 'answerd', 'notAnswerd']
+    print(categorys)
+    print(sort)
+    index=0
+    for category in categorys:
+        if index==0:
+            questions = Question.objects.filter(category=category, answerd=False).exclude(autor=request.user)
+        else:
+            question = Question.objects.filter(category=category, answerd=False).exclude(autor=request.user)
+            questions.union(question)
+        index+=1
+    if sort == 'date':
+        communication_list = questions.order_by('-date')
+    elif sort == 'likes':
+        communication_list = questions.order_by('-recommend')
+    elif sort == 'views':
+        communication_list = questions.order_by('-views')
+    elif sort == 'answerd':
+        communication_list = questions.filter(answerd=True).order_by('-date')
+    else:
+        communication_list = questions.filter(answerd=False).order_by('-date')
+
+    # communication_list = Question.objects.all().order_by('-date')
+    # print(communication_list)
+    # print(questions)
     context = {
         'communication_list': communication_list,
     }
@@ -149,9 +221,9 @@ def my_question(request):
             if index==0:
                 questions = Question.objects.filter(category=category, autor=request.user)
             else:
-                index+=1
                 question = Question.objects.filter(category=category, autor=request.user)
                 questions.union(question)
+            index+=1
 
         if sort == 'date':
             communication_list = questions.order_by('-date')
@@ -194,10 +266,11 @@ def question_create(request):
 def answer_create(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     if request.method == 'POST':
-        print(request.POST['chooseFile'])
+        myImg = request.FILES.get('answerImage')
+        print(myImg)
         answer = Answer(question=question,
                         autor=request.user,
-                        image=request.POST['chooseFile'],
+                        image=myImg,
                         content=request.POST['content'],)
         answer.save()
         return redirect('communicationApp:communication_detail', question_id=question.id)
@@ -211,6 +284,17 @@ def answer_create(request, question_id):
 #답변하기 추천 기능 : answer_recommend
 def answer_recommend(request, answer_id):
     return render(request, 'answer_recommend.html')
+
+def create_comment(request, question_id):
+    content = request.POST['comment']
+    question= get_object_or_404(Question,pk=question_id)
+    comment = Comment(
+        autor=request.user,
+        question=question,
+        content=content
+    )
+    comment.save()
+    return redirect('communicationApp:communication_detail', question_id=question.id)
 
 def test(request):
     return render(request, 'communicationApp/question-detail.html')

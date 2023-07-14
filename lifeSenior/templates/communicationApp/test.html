@@ -1,6 +1,6 @@
 {% load static %}
 {% for question in communication_list%}
-<a href="#" style="text-decoration: none; color: inherit;">
+<a href="{% url 'communicationApp:communication_detail' question.id%}" style="text-decoration: none; color: inherit;">
     <div class="community-box" >
         <div class="community-box-num">
             {% if question.answerd == False %}

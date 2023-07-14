@@ -13,6 +13,6 @@ class AnswerAdmin(admin.ModelAdmin):
 admin.site.register(Answer, AnswerAdmin)
 
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ()
+    list_display = ('question', 'autor', 'content', 'date')
 
 admin.site.register(Comment, CommentAdmin)

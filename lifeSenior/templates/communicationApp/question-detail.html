@@ -72,7 +72,7 @@
     <!-- main-container -->
     <div style="margin-top: 92px;" id="main-container">
         <div class="quiz-note">
-            <div class="score-container-text" id="sss">
+            <div class="score-container-text"  id="sss">
                 <img class="score-container-text-img" src="{% static 'img/main-nav-logo.png' %}" alt="">
                 <div class="score-container-text-first">
                     <p class="score-container-text-highlight">{{question.autor.profile.name}}</p>
@@ -259,25 +259,25 @@
                         {% endif %}
                     </div>
                     <div class="community-box-content">
-                        <p id="community-box-content-title">제목</p>
-                        <p id="community-box-content-detail-content">내용 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores officiis itaque harum architecto velit ratione tenetur cupiditate odit omnis beatae neque excepturi, fuga soluta a possimus assumenda reiciendis, magni asperiores.</p>
+                        <p id="community-box-content-title">{{question.title}}</p>
+                        <p id="community-box-content-detail-content">{{question.content}}</p>
                         <div class="community-box-content-footer">
                             <div class="content-icon-box">
                                 <div class="save">
                                     <img src="{% static 'img/main-save-icon.png' %}" alt="">
-                                    <p>123</p>
+                                    <p>{{question.recommend}}</p>
                                 </div>
                                 <div class="saw">
                                     <img src="{% static 'img/main-saw-icon.png' %}" alt="">
-                                    <p>123</p>
+                                    <p>{{question.views}}</p>
                                 </div>
                                 <div class="comment">
                                     <img src="{% static 'img/main-comment-icon.png' %}" alt="">
-                                    <p>123</p>
+                                    <p>{{question.answer_set.count}}</p>
                                 </div>
                             </div>
                             <div class="content-date">
-                                <p>23.02.13</p>
+                                <p>{{question.date}}</p>
                             </div>
                         </div>
                     </div>
@@ -296,12 +296,14 @@
             <div class="upload-comment">
                 <img src="{% static 'img/study-user-img.png' %}" alt="">
                 <div>
-                    <form action="" class="upload-comment-box">
-                        <input type="text" placeholder="아기사자님의 답변에 대해 피드백을 남겨주세요.">
+                    <form action="{% url 'communicationApp:create_comment' question.id %}" method="POST" class="upload-comment-box">
+                        <input type="text" name="comment" placeholder="아기사자님의 답변에 대해 피드백을 남겨주세요.">
+                        {% csrf_token %}
                         <input type="submit" value="업로드">
                     </form>
                 </div>
             </div>
+            {% for comment in question.comment_set.all %}
             <div class="view-comment">
                 <img src="{% static 'img/study-user-img.png' %}" alt="">
                 <div class="view-comment-box">
@@ -312,7 +314,7 @@
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
-                        margin-right: 20px;">이름</p>
+                        margin-right: 20px;">{{comment.autor.profile.name}}</p>
                         <p style="color: #95969D;
                         font-family: NanumGothic;
                         font-size: 16px;
@@ -320,7 +322,7 @@
                         font-weight: 400;
                         line-height: normal;
                         display: flex;
-                        align-items: center;">날짜</p>
+                        align-items: center;">{{comment.date}}</p>
                     </div>
                     <div style="color: #95969D;
                     font-family: NanumGothic;
@@ -329,10 +331,11 @@
                     font-weight: 400;
                     line-height: normal;
                     width: 977px;" class="view-comment-box-bottom">
-                        <p>rmfafscsdcscdscs</p>
+                        <p>{{comment.content}}</p>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 
