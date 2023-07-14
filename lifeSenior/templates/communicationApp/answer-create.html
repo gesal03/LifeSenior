@@ -167,7 +167,7 @@
                 <p>을 해보세요!</p>
             </div>
         </div>
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
         {%csrf_token%}
         <div class="text-box">
             <p class="box-title">답변 내용</p>
@@ -189,7 +189,7 @@
                         이미지 업로드 버튼
                     </label>
                 </div>
-                <input class="imgUploadTag" type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+                <input class="imgUploadTag" type="file" id="chooseFile" name="answerImage" accept="image/*" onchange="loadFile(this)">
         </div> 
         <div style="display: flex;flex-direction: row;margin-top: 220px;">
             <input type="submit" style="border-radius: 40px;

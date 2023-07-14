@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .views import home, communication_list, communication_detail, my_question, my_answer, question_create, answer_create, answer_list,test,getList
+from .views import home, communication_list, communication_detail, my_question, my_answer, question_create, answer_create, answer_list,test,getList, create_comment
 
 
 app_name = 'communicationApp'
@@ -17,6 +17,7 @@ urlpatterns = [
     path('answer_create/<int:question_id>', answer_create, name='answer_create'), #답변하기_작성할때
     path('answer_list', answer_list, name='answer_list'), #답변하기_리스트
     path('test', test, name="test"),
+    path('create_comment/<int:question_id>', create_comment, name="create_comment"),
     path('getList', getList, name="getList")
     
 ]

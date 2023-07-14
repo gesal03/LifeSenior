@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Answer, Question
+from .models import Answer, Question, Comment
 
 # Create your views here.
 def home(request):
@@ -194,10 +194,10 @@ def question_create(request):
 def answer_create(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     if request.method == 'POST':
-        print(request.POST['chooseFile'])
+        myImg = request.FILES['answerImage']
         answer = Answer(question=question,
                         autor=request.user,
-                        image=request.POST['chooseFile'],
+                        image=myImg,
                         content=request.POST['content'],)
         answer.save()
         return redirect('communicationApp:communication_detail', question_id=question.id)
@@ -211,6 +211,17 @@ def answer_create(request, question_id):
 #답변하기 추천 기능 : answer_recommend
 def answer_recommend(request, answer_id):
     return render(request, 'answer_recommend.html')
+
+def create_comment(request, question_id):
+    content = request.POST['comment']
+    question= get_object_or_404(Question,pk=question_id)
+    comment = Comment(
+        autor=request.user,
+        question=question,
+        content=content
+    )
+    comment.save()
+    return redirect('communicationApp:communication_detail', question_id=question.id)
 
 def test(request):
     return render(request, 'communicationApp/question-detail.html')
