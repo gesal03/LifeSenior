@@ -21,7 +21,7 @@ class Question(models.Model):
 class Answer(models.Model):
     question    = models.ForeignKey(Question, on_delete=models.CASCADE, default=1) #questionFK
     autor       = models.ForeignKey(user, on_delete=models.CASCADE, related_name='author_answer') #작성자
-    content     = models.TextField("CONTENT", max_length=50, default="답변 내용") #답변 내용
+    content     = models.TextField("CONTENT", max_length=200, default="답변 내용") #답변 내용
     image       = models.ImageField("IMAGE", upload_to="questionAnswer/", default="static/img/defaultImg.png") #답변 사진
     recommend   = models.PositiveIntegerField("RECOMMEND", default=0) #추천수수집을 위한 모델
 

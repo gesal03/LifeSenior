@@ -453,7 +453,7 @@ window.onload = function() {
 //전체 함수 그래프 높이 설정
 const dd = $("#test").attr('name');
 console.log(dd);
-const allScoreDataValues = dd //맞춘 수
+const allScoreDataValues = [2, 3, 5, 1, 9, 8, 4]; //맞춘 수
 const allScoreGraphViews = document.querySelectorAll('#all-score-body');
 
 if (allScoreGraphViews.length > 0) {
